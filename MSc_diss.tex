@@ -35,8 +35,8 @@
 \definecolor{citecolor}{rgb}{0.2,0.7,0.9}
 \definecolor{urlcolor}{rgb}{0,0,1}
 \hypersetup{
-    colorlinks, linkcolor={Black},
-    citecolor={Black}, urlcolor={Black}
+    colorlinks, linkcolor={Blue},
+    citecolor={Blue}, urlcolor={Black}
 }
 % Figures
 \usepackage{subcaption}
@@ -246,11 +246,25 @@ Using methyl nitrate as a tracer of marine $RONO_2$ \cite{Simpson2006} revealed 
 The brief description of the measurement sites and data is presented in section \ref{sec:data}. In section \ref{sec:method} the methodology used in this work is defined. Section \ref{sec:res} contains the results. Section \ref{sec:discuss} discusses the results, particularly focusing attention on the analysis of the discrepancy between the observational data and the results of theoretical modelling. Conclusions constitute section \ref{sec:conclusion}.
 
 \section{Methodology} \label{sec:method}
-\subsection{Model development}
-A one box model was developed to investigate the impact of alkyl nitrate chemistry on ozone production efficiency. It will be written using the programming language FACSIMILE.
+\subsection{Model development and description}
+A one (0D) box model is developed to investigate the impact of alkyl nitrate chemistry on ozone production efficiency. It is written from scratch using FACSIMILE for Windows. This special high-level programming language is a powerful modelling tool designed to efficiently solve differential equations including those resulting from a set of chemical reactions of interest.
 
-\subsection{Photolysis rate coefficients}
-From MCMv3.3.
+The model is intended to represent the steady state of the troposphere under mean summer daytime meteorology and clear skies. To achieve that the air temperature is fixed at $25^{\circ}C$ and relative humidity at 70\%. There is no transport and mixing in the model.
+
+\subsection{Chemical mechanism}
+The chemical mechanism of the model is based on recommendations from \citep{Atkinson2004} and the Master Chemical Mechanism (http://mcm.leeds.ac.uk/MCM/home.htt). On a whole it includes 90 species and 165 reactions. It is focused on representation of the chemistry related to $O_3$ production, namely:
+\begin{itemize}
+\item $O_3$ null cycle, HOx and NOx cycles;
+\item oxidation of methane ($CH_4$) and other alkanes, namely ethane ($C_2H_6$), propane ($C_3H_8$), n-butane ($nC_4H_{10}$), i-butane ($iC_4H_{10}$), n-pentane ($nC_5H_{12}$) and i-pentane ($nC_5H_{12}$)
+\item alkyl nitrate chemistry.
+\end{itemize}
+
+Photolysis rates are calculated externally using parameters from MCMv3.3.
+
+The only sink for NOx is alkyl nitrates.
+
+\subsection{Emissions and deposition}
+There are no emissions and deposition is the model.
 
 \subsection{Design of experiments}
 Hypothesis: ANs have an impact on O3.
