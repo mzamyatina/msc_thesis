@@ -83,13 +83,17 @@
 
 \input{MSc_diss_title}
 
+\tableofcontents
+\newpage
+
 \begin{abstract}
-This work is based on alkyl nitrate measurements from four field campaigns, from ground-based sites across the British Isles and aircraft measurements over the North Atlantic. The ratios between the alkyl nitrates and their parent hydrocarbons are compared with those expected from the photochemical theory. The sensitivity analysis to the theoretical assumptions and uncertainties in measurements revealed a good general agreement between observed and theoretical data.
+Abstract.
 \end{abstract}
 
 \section{Introduction} \label{sec:intro}
-The Earth’s atmosphere is the recipient of a vast range of chemical compounds emitted by natural and anthropogenic sources. The oxidation of these compounds is the main process taking place in the atmosphere that keeps their concentrations at levels that do not distort the chemical balance of the atmosphere \citep{Prinn2003}. In other words, oxidation is a removal mechanism for these compounds (various pollutants and greenhouse gases), and its rate is often referred to as the “cleansing” capacity of the atmosphere. This capacity depends mainly on two factors: the global burden of the principal oxidants such as ozone ($O_3$), the hydroxyl radical ($OH$) and hydrogen peroxide ($H_2O_2$), and climate \citep{Prinn2003,Thompson1992}.
+The Earth’s atmosphere is the recipient of a vast range of chemical compounds emitted by natural and anthropogenic sources. The oxidation of these compounds is the main process taking place in the atmosphere that keeps their concentrations at levels that do not distort the chemical balance of the atmosphere \citep{Prinn2003}. In other words, oxidation is a removal “cleansing” mechanism for these compounds (various pollutants and greenhouse gases), and its rate is often referred to as the oxidizing capacity of the atmosphere. This capacity depends mainly on two factors: the global burden of the principal oxidants such as ozone ($O_3$), the hydroxyl radical ($OH$) and hydrogen peroxide ($H_2O_2$), and climate \citep{Prinn2003,Thompson1992}.
 
+\subsection{Tropospheric ozone}
 Tropospheric ozone ($O_3$) plays an important role in the chemical and thermal balance of the atmosphere. Although it accounts only for about 10\% of the total ozone, it is a primary precursor to the formation of hydroxyl radicals ($OH$) which in association with hydrogen peroxide ($H_2O_2$) determines the ‘cleansing’ capacity of the atmosphere \citep{Prinn2003,Tarasick2008,Thompson1992}. On the other hand, being a source of the main pollutant removal agents, ozone is an air pollutant itself. Long exposure to its high concentrations causes respiratory problems in humans and damage to sensitive plant species \citep{Fowler2008}. Last but not least characteristic of tropospheric ozone is that it is an important greenhouse gas with a current estimated radiative forcing of  $0.40\pm 0.20~Wm^{–2}$ which is approximately one fifth of the $CO_2$ radiative forcing \citep{Hartmann2013,Myhre2013}. Due to these reasons a considerable interest in quantifying tropospheric ozone concentrations, budget and trends exists for more than a 100 years \citep{Becker2004}.
 
 Unlike many other air pollutants, tropospheric ozone is not directly emitted, but produced following the oxidation of carbon monoxide ($CO$), methane ($CH_4$), and nonmethane volatile compounds (nmVOCs) in the presence of nitrogen oxides (NOx) \citep{Crutzen1973,Myhre2013}. The emissions of these precursors arise from both natural and anthropogenic sources which have increased/intensified since pre-industrial times \citep{Parrish2014,Volz1988} (Figure 1). Presumably it has led to a roughly doubling in background tropospheric ozone concentration \citep{Guicherit2000,Hartmann2013,Tarasick2008,Vingarzan2004}, although contribution from another major source, transport from the stratosphere, may also took place \citep{Fowler2008}. Climate is also believed to be a key driver of ozone production and destruction since the chemical reactions affecting ozone concentration are strongly dependent on such climatic factors as temperature, rainfall and humidity. Therefore in a changing climate tropospheric ozone is not anymore a local air quality issue, but is a global pollution problem \citep{Fowler2008}.
@@ -136,6 +140,7 @@ A considerable effort has been made to tackle these problems, and generally ther
 
 The second way to understanding the discrepancies between models and observations is to conduct an idealised theoretical study using a conceptual model. The advantage of this approach is that such kind of models can be quite easily constructed, and more importantly can be focused on representation of a certain chemical reactions which presumably could explain the discrepancy between models and observations. An example of such set of reactions is alkyl nitrate chemistry.
 
+\subsection{Alkyl nitrates}
 Alkyl nitrates are important tropospheric trace gases which are formed following the same chemistry that leads to the production of ozone \citep{Reeves2007}. The simplest example, in case of $CH_4$ oxidation, can be described by the set of reactions below (also shown in Figure 2).
 
 %\input{O3CycleScheme}
@@ -210,8 +215,14 @@ At high NOx levels (urban environment) reactions (8) and (9) dominate for $CH_3O
 
 To sum up, alkyl nitrates are produced as a minor branch of the reaction of peroxy radicals with NO \citep{Day2003}. Since these compounds are removed from the troposphere by photolysis and OH oxidation they can provide information on photochemical evolution of an air mass through relationships with their parent hydrocarbons \citep{Bertman1995}. Acting as reservoir species for reactive nitrogen (NOy) and having a relatively long atmospheric lifetimes alkyl nitrates play an important role in long range transport of NOx. Furthermore, alkyl nitrates link to ozone and carbonyl production making them useful tracers for both species \citep{Worton2010}. Despite their relative importance alkyl nitrates are usually not included in the climate-chemistry models, for example in UKCA (Reeves, personal communication), which potentially could lead to discrepancies between models and observations described before. 
 
-\subsection{Objectives}
-The overall purpose of this research is to investigate the impact of alkyl nitrate chemistry on ozone production efficiency. Specific aims are:
+\subsection{Motivation}
+lalala
+
+\section{Overall objective and specific aims}
+\subsection{Overall objective}
+The overall purpose of this research is to investigate the impact of alkyl nitrate chemistry on ozone production efficiency.
+\subsection{Specific aims}
+Specific aims are:
 \begin{itemize}
 \item to investigate of the relationship between ozone production and carbon bond emissions (see Data and Methods);
 \item to analyse the impact of inclusion of alkyl nitrates chemistry on this relationship;
@@ -235,6 +246,75 @@ Using methyl nitrate as a tracer of marine $RONO_2$ \cite{Simpson2006} revealed 
 The brief description of the measurement sites and data is presented in section \ref{sec:data}. In section \ref{sec:method} the methodology used in this work is defined. Section \ref{sec:res} contains the results. Section \ref{sec:discuss} discusses the results, particularly focusing attention on the analysis of the discrepancy between the observational data and the results of theoretical modelling. Conclusions constitute section \ref{sec:conclusion}.
 
 \section{Methodology} \label{sec:method}
+\subsection{Model development}
+A one box model was developed to investigate the impact of alkyl nitrate chemistry on ozone production efficiency. It will be written using the programming language FACSIMILE.
+
+\subsection{Photolysis rate coefficients}
+From MCMv3.3.
+
+\subsection{Design of experiments}
+Hypothesis: ANs have an impact on O3.
+
+To test the hypothesis box model runs were performed at a series of different NOx and VOCs initial concentrations, so that an $O_3$ isopleth plot could be constructed, similar to those found in \citep{Dodge1977} and \citep{Sillman1999}. The following initial concentrations were used:
+
+\begin{table} % model setup: O3, CO
+\caption{Model setup}
+\centering
+\begin{tabular}{ccc}
+\hline
+Compound       & Initial concentration, ppb \\
+\hline
+$O_3$          & 40 \\
+$CO$           & 100 \\
+\hline
+\end{tabular}
+\end{table}	
+
+\begin{table} % model setup: NOx
+\caption{Model setup: NOx initial concentrations (in ppb)}
+\centering
+\begin{tabular}{ccc}
+\hline
+$NO$      & $NO_2$      & NOx  ($=NO+NO_2$) \\
+\hline
+0.0015    & 0.0035      & 0.005 \\
+0.007     & 0.018       & 0.025 \\
+0.015     & 0.035       & 0.05  \\
+0.03      & 0.07        & 0.1   \\
+0.07      & 0.18        & 0.25  \\
+0.15      & 0.35        & 0.5   \\
+0.25      & 0.5         & 0.75  \\
+0.3       & 0.7         & 1     \\
+0.7       & 1.8         & 2.5   \\
+1.5       & 3.5         & 5     \\
+3         & 7           & 10    \\
+\hline
+\end{tabular}
+\end{table}	
+
+\begin{table} % model setup: VOCs
+\caption{Model setup: VOCs initial concentrations (ppb)}
+\centering
+\begin{tabular}{ccccccccc}
+\hline
+Experiment number & $CH_4$ & $C_2H_6$ & $C_3H_8$ & $nC_4H_{10}$ & $iC_4H_{10}$ & $nC_5H_{12}$ & $iC_5H_{12}$ \\
+\hline
+1  & 1780 &	0.620 &	0.100 &	0.050 &	0.250 &	0.250 &	0.250 \\
+2  & 1807 &	1.258 &	0.390 &	0.245 &	0.325 &	0.275 &	0.425 \\
+3  & 1834 &	1.896 &	0.680 &	0.440 &	0.400 &	0.300 &	0.600 \\
+4  & 1861 &	2.534 &	0.970 &	0.635 &	0.475 &	0.325 &	0.775 \\
+5  & 1888 &	3.172 &	1.260 &	0.830 &	0.550 &	0.350 &	0.950 \\
+6  & 1915 &	3.810 &	1.550 &	1.025 &	0.625 &	0.375 &	1.125 \\
+7  & 1942 &	4.448 &	1.840 &	1.220 &	0.700 &	0.400 &	1.300 \\
+8  & 1969 &	5.086 &	2.130 &	1.415 &	0.775 &	0.425 &	1.475 \\
+9  & 1996 &	5.724 &	2.420 &	1.610 &	0.850 &	0.450 &	1.650 \\
+10 & 2023 &	6.362 &	2.710 &	1.805 &	0.925 &	0.475 &	1.825 \\
+11 & 2050 &	7.000 &	3.000 &	2.000 &	1.000 &	0.500 &	2.000 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Bertman}
 Below is the simplified scheme of atmospheric hydrocarbon oxidation leading to the formation of alkyl nitrates (see also Fig. \ref{fig:scheme_bertman}). It begins from the process of $H$ abstraction by the $OH$ radical where the fraction of the primary or secondary radical is denoted by $\alpha_1$.
 \begin{equation} \label{eq:alkane_oh}
 RH + \bullet OH \xrightarrow{k_1, \alpha_1} R\bullet + H_2O
