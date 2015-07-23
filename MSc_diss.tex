@@ -216,8 +216,18 @@ At high NOx levels (urban environment) reactions (8) and (9) dominate for $CH_3O
 
 To sum up, alkyl nitrates are produced as a minor branch of the reaction of peroxy radicals with NO \citep{Day2003}. Since these compounds are removed from the troposphere by photolysis and OH oxidation they can provide information on photochemical evolution of an air mass through relationships with their parent hydrocarbons \citep{Bertman1995}. Acting as reservoir species for reactive nitrogen (NOy) and having a relatively long atmospheric lifetimes alkyl nitrates play an important role in long range transport of NOx. Furthermore, alkyl nitrates link to ozone and carbonyl production making them useful tracers for both species \citep{Worton2010}. Despite their relative importance alkyl nitrates are usually not included in the climate-chemistry models, for example in UKCA (Reeves, personal communication), which potentially could lead to discrepancies between models and observations described before. 
 
+!! from \citep{Finlayson-Pitts2000}
+The relationship between the peroxy radical concentration and the ozone photolysis rate constant for these higher NO conditions can be again approximated using steady-state analysis [..]. While OH is recycled in its reactions with CO and CH4 via HO2, it is pernanetly removed at higher NOx concentrations by the reaction of OH with NO2, forming nitric acid:
+OH + NO2 = M = HONO2 (113).
+This reaction is primarily a daytime reaction because most OH sources are photolytic in nature. As a result, the NO2 reaction with OH competes!!!! with NO2 photolysis (page 290/993)!!
+         Rate coeff (OH+NO2 = HNO3)  J(NO2 = NO+O)
+Book     2.47e-30          7.00e-3
+My model 1.15e-11          4.39e-03
+Thus, the reaction with OH is not usually a dominant loss process for NO2, but it is still sufficiently fact to from significant amounts of HNO3 during the day, particularly in polluted regions with relatively large NO2 concentrations.
+Nitric acid undergoes both wet and dry deposition rapidly and can be neutralized by ammonia, the major gaseous base found in the atmosphere.
+
 \subsection{Motivation}
-lalala
+lalalaep
 
 \section{Overall objective and specific aims}
 \subsection{Overall objective}
@@ -229,7 +239,6 @@ Specific aims are:
 \item to analyse the impact of inclusion of alkyl nitrates chemistry on this relationship;
 \item to analyse everything mentioned above in various NOx regimes.
 \end{itemize}
-
 
 \section{Literature review} \label{sec:data}
 Alkyl nitrates ($RONO_2$) are organic tropospheric trace gases. They are produced photochemically through the oxidation of their parent hydrocarbons \citep{Roberts1990} or emitted directly from equatorial oceans \citep{Blake2003} and biomass burning \citep{Simpson2002}. Being involved in the ozone production chemistry, these species can act as reservoirs of nitrogen oxides which availability largely affects the production of ozone \citep{Reeves2007}. Since the alkyl nitrates have atmospheric lifetimes ranging from several days to about a month, they can redistribute nitrogen oxides presented over polluted continental regions to clean remote marine environments, and therefore are considered as one of the tracers for determining the anthropogenic influence \citep{Atherton1989, Reeves2007, Worton2005}.
@@ -248,28 +257,57 @@ The brief description of the measurement sites and data is presented in section 
 
 \section{Methodology} \label{sec:method}
 \subsection{Model development and description}
-A one (0D) box model is developed to investigate the impact of alkyl nitrate chemistry on ozone production efficiency. It is written from scratch using FACSIMILE for Windows. This special high-level programming language is a powerful modelling tool designed to efficiently solve differential equations including those resulting from a set of chemical reactions of interest.
+A zero-dimensional (box) model is developed to investigate the impact of alkyl nitrate chemistry on ozone production efficiency. Its code is written using FACSIMILE for Windows. FACSIMILE is a special high-level programming language which is a powerful modelling tool designed to efficiently solve differential equations including those resulting from a set of chemical reactions.
 
-The model is intended to represent the steady state of the troposphere under mean summer daytime meteorology and clear skies. To achieve that the air temperature is fixed at $25^{\circ}C$ and relative humidity at 70\%. There is no transport and mixing in the model.
+The model is intended to represent the steady state of the troposphere under mean summer daytime meteorology and clear skies. To achieve that a number of assumptions have been made. First, the model assumes a uniform mixing of individual constituents of the troposphere, second, there are no atmospheric transport (no 'winds') and no emissions of species into the box meaning that the time evolution of each species is controlled by the chemical interactions alone and determined by their initial concentrations. The air temperature and relative humidity are assumed to be $25^{\circ}C$ and 70\% respectively and are fixed in all model runs. Other assumptions concerning the chemical mechanism can be found in the next section.
+
+!! For long-lived species, averaging may be reasonable.
 
 \subsection{Chemical mechanism}
-The chemical mechanism of the model is based on recommendations from \citep{Atkinson2004} and information from the Master Chemical Mechanism, MCM v3.3 \citep{Jenkin1997,Saunders2003}, via website: http://mcm.leeds.ac.uk/MCM. (On a whole it includes 90 species and 165 reactions). The mechanism is developed to represent the chemistry that governs the production and loss of ozone, hydrocarbons and alkyl nitrates. These include:
+The chemical mechanism of the model is based on recommendations from \citep{Atkinson2004} and information from the Master Chemical Mechanism, MCM v3.3 \citep{Jenkin1997,Saunders2003}, retrieved via website: http://mcm.leeds.ac.uk/MCM. On a whole it includes 90 species and 165 reactions. The mechanism is developed to represent the chemistry that governs the production and loss of ozone, hydrocarbons and alkyl nitrates. These include:
 \begin{itemize}
 \item the formation of ozone as a result of the photolysis of $NO_2$ followed by the reaction of ground-state oxygen atom ($O(^3P)$) with molecular oxygen and a third body, M ($N_2$ or $O_2$);
 \item the loss of ozone through its photolysis and reactions with $O(^3P)$, $OH$, $HO_2$ and $NO$, among which the last is of particular interest because it gives back $NO_2$;
 \item the formation of alkylperoxy radicals ($RO_2$) from oxidation of the hydrocarbons;
 \item the competition of $NO$ and $HO_2$ for reaction with $HO_2$ and $RO_2$;
 \item the formation of alkyl nitrates which adds up to the competition of $NO$ and $HO_2$ for reaction with the peroxy radicals;
-\item the loss of alkyl nitrates through their photolysis and the reaction with $OH$;
+\item the loss of alkyl nitrates through their photolysis and reaction with $OH$;
 \item the subsequent reactions of hydroperoxides and aldehydes formed from the organic reactions mentioned above.
-\item oxidation of methane ($CH_4$) and other alkanes, namely ethane ($C_2H_6$), propane ($C_3H_8$), n-butane ($nC_4H_{10}$), i-butane ($iC_4H_{10}$), n-pentane ($nC_5H_{12}$) and i-pentane ($nC_5H_{12}$)
+\end{itemize}
+The full list of reactions can be found in Appendix ?? \ref{sec:appendix1}. It is important to mention that due to purely theoretical purpose of this research and its focus on investigation of the impact of alkyl nitrate chemistry on ozone production some of the reactions that lead to formation of species that serve as a sink for $NO_x$ are not included into the chemical mechanism. However, these reactions play an important role in the chemistry of the troposphere, and below here is a description of their role and anticipated effect of their exclusion.
+\begin{itemize}
+\item The formation of the nitric acid ($HNO_3$) is a major loss process for $NO_x$ during daytime in the atmosphere (e.g. \citep{Holloway2010}). Being a 'sticky' molecule $HNO_3$ readily adsorbs to surfaces, particularly if there is water on the surface, and deposits either in precipitation (wet deposition) or in dry form (dry deposition)/undergoes dry and wet deposition. Because of the high deposition velocity, dry deposition of $HNO_3$ can be responsible for much of the removal of inorganic nitrogen from the troposphere \citep{Finlayson-Pitts2000}, which means that exclusion of $HNO_3$ formation from the chemical mechanism potentially leads to overproduction of ozone, (because the competition between $NO_2$ photolysis and its oxidation by $OH$ radical ($NO_2 + OH \xrightarrow{M} HNO_3$) is ignored and other reactions).
+\item the formation of nitrous acid ($HONO$) which photolysis during morning hours could be one of the sources of $OH$ radicals in the troposphere;
+(\citep{Finlayson-Pitts2000})
+!! HONO is formed whenever NO2 and water are present, its contribution to the total acidity has become of interest and concern. But since it photolyses rapidly, its concentrations and contribution to the total acidity during the day are not significant compared to sulfuric and nitric acids.
+\item the formation of the nitrate radical ($NO_3$);
+(\citep{Finlayson-Pitts2000})
+NO2 also reacts with O3, forming the nitrate radical,
+NO2 + O3 = NO3 + O2.
+NO3 is recognized to be a major contributor to the chemistry of organics in the troposphere at night. Because it absorbs in the red region of the spectrum, it photolyzes rapidly during the day so that its chemistry other than photolysis is essentially restricted to the dark hours.
+In addition to reacting with organics, NO3 also reacts with NO2, forming dinitrogen pentoxide in a reversible, equilibrium reaction:
+NO3 + NO2 <=> M N2O5.
+In any case, because of this equilibrium, sink for N2O5 such as hydrolysis are, in essence, also sinks for NO3 as well.
+\item the formation of dinitrogen pentoxide ($N_2O_5$)
+In the troposphere N2O5 is an important nighttime source of nitric acid through its rapid hydrolysis on wet surfaces and aerosol particles:
+N2O5 + H2O = surfaces, aerosol particles 2HNO3.
+The NO2-NO3 reaction may also have a small contribution from a two-body reaction:
+NO3+NO2 = NO+NO2+O2
+however, it appears to be minor.
+\item the formation of peroxyacetyl nitrate ($RC(O)OONO_2$, PAN)
 \end{itemize}
 
-Since the most alkoxy radicals ($RO$) react rapidly with $O_2$ under atmospheric conditions and most large (>=C4) alkoxy radicals also rapidly decompose or isomerize, alkyl nitrate formation from reaction RO+NO2 = RONO2 is relatively unimportant for most organics under atmospheric conditions while observations showed that the reaction RO2+NO = RONO2 gives a higher yield.
+!! from \citep{Finlayson-Pitts2000}
+! In urban areas: air pollution is characterized more by the formation of ozone and other oxidants rather than by SO2, particles, and sulfuric acid. In these regions, the primary pollutants are NOx (mainly NO) and volatile organic compounds (VOC), which undergo photochemical reactions in sunlight to form a host of secondary pollutants, the most of which is O3. Some of these are criteria pollutants for which air quality standards have been set, such as O3, SO2, CO, NO2, PM10 and PM2.5. Other are so-called "trace" noncritetia pollutants, e.g., gaseous peroxyacetyl nitrate (CH3C(O)OONO2,,PAN), nitric acid (HNO3 or HONO2), formaldehyde (HCHO), and formic acid (HCOOH). The overall reaction is now written as:
+VOC + NOx + hv = O3 + PAN + HNO3 + ... + Particles, etc. (6)
 
-Since one of the main mechanisms of the alkyl nitrate production (>C3!!) is the gas gas phase oxidation of alkanes by OH in the presence of NOx.
+! oxidation of methane ($CH_4$) and other alkanes, namely ethane ($C_2H_6$), propane ($C_3H_8$), n-butane ($nC_4H_{10}$), i-butane ($iC_4H_{10}$), n-pentane ($nC_5H_{12}$) and i-pentane ($nC_5H_{12}$)
 
-Apart from methane in the model there are other nonmethane 
+! Since the most alkoxy radicals ($RO$) react rapidly with $O_2$ under atmospheric conditions and most large (>=C4) alkoxy radicals also rapidly decompose or isomerize, alkyl nitrate formation from reaction RO+NO2 = RONO2 is relatively unimportant for most organics under atmospheric conditions while observations showed that the reaction RO2+NO = RONO2 gives a higher yield (from \citep{Atkinson2000}, actually from 1982).
+
+! Since one of the main mechanisms of the alkyl nitrate production (>C3!!) is the gas gas phase oxidation of alkanes by OH in the presence of NOx (\citep{Newland2013}).
+
+! Apart from methane in the model there are other nonmethane 
 It is worth mentioning that only alkanes  
 Due to purely theoretical purpose of this investigation the only sink for NOx considered in the mechanism is their loss due to formation of alkyl nitrates. It means that reactions involving formation of nitric acid ($HNO_3$) and peroxyacetyl nitrates (PAN) are not considered here, which could lead to discrepancies between our modelling results and those from other research studies.
 
@@ -305,8 +343,8 @@ To test the hypothesis box model runs were performed at a series of different NO
 Parameter & Initial mixing ratio & Type \\
 \hline
 $H_2O$    & 2\%                  & Fixed    \\
-$O_2$     & 21\%     ???         & Fixed    \\
-$N_2$     & 79\%        ???      & Fixed    \\
+$O_2$     & 21\%                 & Fixed    \\
+$N_2$     & 78\%                 & Fixed    \\
 $H_2$     & 525 ppb  ???         & Variable \\
 $O_3$     & 40 ppb               & Variable \\
 $CO$      & 100 ppb              & Variable \\
@@ -438,6 +476,17 @@ It has to be noted that eq. \eqref{eq:model} assumes no mixing with surrounding 
 \section{Results} \label{sec:res}
 Dependence of alkyl nitrate yield on carbon number (paper about n-alkanes): bigger yield of ANs from larger carbon number means that the potential for contributing to photochemical air pollution may be less for the larger (C>6) n-alkanes that for the smaller ones.
 
+\subsection{Justification of model performance}
+!! from \citep{Finlayson-Pitts2000}
+Urban:
+Certain reproducible features of time-concentration profiles for  pollutants are observed in "smoggy" ambient air. Figure 1.3, a classic example of historical interest, shows such profiles for NO, NO2, and total oxidant (mainly O3) in Pasadena, California, during a  severe photochemical air pollution episode in July 1973.
+Reproducible  features  include  the  following:
+\begin{itemize}
+\item In the early morning, the concentration of NO rises and  reaches a maximum at a time that approximately coincides with the  maximum emissions of NO, in this case, peak  automobile  traffic; 
+\item Subsequently, NO2 rises to a maximum;
+\item Oxidant (e.g., O3) levels, which are relatively low in the  early morning, increase significantly about noon when the NO concentration drops to a low value.
+\end{itemize}
+
 \section{Discussion} \label{sec:discuss}
 The experimental results presented in the previous section provide an opportunity to speculate about the behaviour of our simple model of alkyl nitrate production and loss with time in comparison with the observational data. 
 
@@ -456,5 +505,7 @@ The experimental results presented in the previous section provide an opportunit
 \end{landscape}
 
 \bibliography{diss_refs}
+
+\section{Appendix I} \label{sec:appendix1}
 
 \end{document}
