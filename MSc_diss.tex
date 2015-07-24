@@ -276,47 +276,48 @@ The chemical mechanism of the model is based on recommendations from \citep{Atki
 \end{itemize}
 The full list of reactions can be found in Appendix ?? \ref{sec:appendix1}. It is important to mention that due to purely theoretical purpose of this research and its focus on investigation of the impact of alkyl nitrate chemistry on ozone production some of the reactions that lead to formation of species that serve as a sink for $NO_x$ are not included into the chemical mechanism. However, these reactions play an important role in the chemistry of the troposphere, and below here is a description of their role and anticipated effect of their exclusion.
 \begin{itemize}
-\item The formation of the nitric acid ($HNO_3$) is a major loss process for $NO_x$ during daytime in the atmosphere (e.g. \citep{Holloway2010}). Being a 'sticky' molecule $HNO_3$ readily adsorbs to surfaces, particularly if there is water on the surface, and (deposits either in precipitation (wet deposition) or in dry form (dry deposition))/(undergoes dry and wet deposition). Because of the high deposition velocity, dry deposition of $HNO_3$ can be responsible for much of the removal of inorganic nitrogen from the troposphere \citep{Finlayson-Pitts2000}, which means that exclusion of $HNO_3$ (formation and removal)/(chemistry) from the chemical mechanism (potentially) leads to overproduction of ozone in the model, especially at high $NO_2$ concentrations because the competition between $NO_2$ photolysis and its reaction with $OH$ radical ($NO_2 + OH \xrightarrow{M} HNO_3$) is ignored.
+\item The formation of the nitric acid ($HNO_3$) is a major loss process for $NO_x$ during daytime in the atmosphere. Being a 'sticky' molecule $HNO_3$ readily adsorbs to surfaces, particularly if there is water on the surface, and deposits either in precipitation (wet deposition) or in dry form (dry deposition). Because of the high deposition velocity, dry deposition of $HNO_3$ can be responsible for much of the removal of inorganic nitrogen from the troposphere \citep{Finlayson-Pitts2000}, which means that exclusion of $HNO_3$ (formation and removal)/(chemistry) from the chemical mechanism potentially leads to overproduction of ozone in the model, especially at high $NO_2$ concentrations because the competition between $NO_2$ photolysis and its reaction with $OH$ radical ($NO_2 + OH \xrightarrow{M} HNO_3$) is ignored.
 \item Since this research is focused on the daytime chemistry some reactions that are believed to be significant in nighttime are not included into the chemical mechanism of the model. Among them are reactions that involve the nitrate radical ($NO_3$) and dinitrogen pentoxide ($N_2O_5$).
 \begin{itemize}
-\item $NO_3$ radical rapidly photolyzes during the daylight hours, but in nighttime its concentration can increase to measurable levels \citep{Atkinson2008}. This increase in concentration and a lesser availability of the OH radical (which sources are mostly photolytic in nature) makes $NO_3$ radical a major contributor to the night chemistry of organics in the troposphere \citep{Finlayson-Pitts2000}. However, exclusion of $NO_3$ radical reactions from our chemical mechanism should not have a huge impact on the results anyway since the mechanism considers mainly decomposition of alkanes with which $NO_3$ radical reacts to a generally minor extent \citep{Atkinson2008}???.
+\item $NO_3$ radical rapidly photolyzes during the daylight hours, but in nighttime its concentration can increase to measurable levels \citep{Atkinson2008}. This increase in concentration and a lesser availability of the OH radical (which sources are mostly photolytic in nature) make $NO_3$ radical a major contributor to the night chemistry of organics in the troposphere \citep{Finlayson-Pitts2000}. However, exclusion of $NO_3$ radical reactions from our chemical mechanism should not have a huge impact on the results anyway since the mechanism considers mainly decomposition of alkanes with which $NO_3$ radical reacts to a generally minor extent \citep{Atkinson2008}???.
 \item ! the nighttime NO3 radical reaction is of minor significance in term of the overall removal of the alkanes (Atkinson, 1990a)
 \item In addition to reacting with organics, $NO_3$ also reacts with $NO_2$, forming dinitrogen pentoxide ($NO_3 + NO_2 \xleftrightarrow{M} N_2O_5$) which in turn is an important nighttime source of nitric acid through its rapid hydrolysis on wet surfaces and aerosol particles ($N_2O_5 + H_2O \xrightarrow{surf., aerosol} 2HNO_3$) \citep{Finlayson-Pitts2000}. Exclusion of $N_2O_5$ from the chemical mechanism assumes no cycling of nitrogen oxides within the troposphere through $NO_3$ and $N_2O_5$, eventually forming $HNO_3$, which are not included into the mechanism anyway.
 \item ! In any case, because of this equilibrium, sink for N2O5 such as hydrolysis are, in essence, also sinks for NO3 as well.
 \end{itemize}
 \item Another species involved in $NO_x$ tropospheric chemistry is the nitrous acid ($HONO$). The major source of nitrous acid is believed to be heterogeneous 'dark' reactions of $NO_2$, including hydrolysis (reaction with water vapour) of $NO_2$ on aerosol and particulate matter surfaces in nighttime. During the daytime, $HONO$ can be formed by the reaction of $OH$ radical with $NO$ ($OH + NO \xrightarrow{M} HONO$). However, since $HONO$ strongly absorbs UV radiation, it rapidly photolyzes, and under particular conditions (when the nighttime $HONO$ concentration reaches almost 15 ppb \citep{Finlayson-Pitts2000}), photolysis of nighttime-generated $HONO$ can become a major source of $OH$ radicals in the early morning hours ($HONO + hv \rightarrow OH + NO$) \citep{Lammel1996}. Therefore exclusion of $HONO$ from the chemical mechanism potentially leads to underestimation of $OH$ concentrations, but having neither formation nor removal of $HONO$ should balance this effect out???.
-\item Peroxyacetyl nitrates ($RC(O)OONO_2$, PAN)
-is important as a means of transporting NOx over large distances. It is quite stable at low temperatures but decomposes at higher temperatures to release NO2. Hence whether photolysis can compete with the thermal decomposition is of great interest.
-
-The rate constant for PAN decomposition is strongly temperature dependent. As a result, this is important in the atmosphere because PAN acts as a reservoir for NO2. At low temperatures, much of the total NOx may be tied up in PAN; as the atmosphere warms, due to either duirnal temperature variations or the air mass being transported into warmer regions. the rate of PAN decomposition increases. This releases NO2, which can then form other secondary pollutants such as O3 and HNO3.
-
-PAN's thermal decomposition releases both NO2 and an organic free radical (acetylperoxy radical), so that it can act as an NOx reservoir and ultimately as a source of OH in the dark.
-The oxidation of organics produces a variety of free radicals, some of which can form peroxyacyl nitrates. For example, acetaldehyde is a classic precursor to the PAN through the following reaction sequence:
-CH3CHO + OH = CH3CO + H2O; 
-CH3CO + O2 + M = CH3C(O)OO + M;
-CH3C(O)OO + NO2 + M = CH3C(O)OONO2 + M.
-The key feature of the last reaction is that it is reversible.
-Of all the possible fates for PANs in the atmosphere, thermal decomposition is usually the most important.
-The strong dependence has important implications for the role of PAN. When it is formed at lower temperatures or is transported into colder regions, it is stabilized and acts as an NOx reservoir. When an air mass containing PAN is transported into warmer regions, however, the PAN decomposes, releasing both the NO2and the acetylperoxy free radical. If sufficient NO is present, the organic free radical reacts int the following manner:
-CH3C(O)OO + NO = CH3C(O)O + NO2;
-CH3C(O)O = CH3 + CO2
-followed by the reaction of CH3 with O2, etc. to form HCHO and HO2, or HCHO, CH3OH and CH3OOH under low-NOx conditions. As a result, PAN should act as an accelerator for photochemical smog formation.
-At lower temperatures such as those found in the Arctic, the majority  of NOy is often present in the form of PAN because of its thermal stability.
+\item Peroxyacetyl nitrate ($CH_3C(O)OONO_2$, PAN) is the most abundant organic nitrate in the troposphere \citep{Hewitt1994}. A classic precursor to the PAN is acetaldehyde ($CH_3CHO$) which oxidation produces PAN through the following reaction sequence:
+\begin{itemize}
+\item[] $CH_3CHO + OH \rightarrow CH_3CO + H_2O$
+\item[] $CH_3CO + O_2 \xrightarrow{M} CH_3C(O)OO$
+\item[] $CH_3C(O)OO + NO_2 \xrightarrow{M} CH_3C(O)OONO_2$.
 \end{itemize}
+Of all the possible fates for PAN in the atmosphere, thermal decomposition is usually the most important because the rate constant for PAN decomposition strongly depends on temperature. At low temperatures it is quite stable, but at higher temperatures it decomposes giving $NO_2$ and the acetylperoxy radical ($CH_3C(O)OO$) 
+\begin{itemize}
+\item[] $CH_3C(O)OONO_2 \xleftrightarrow{M} NO_2 + CH_3C(O)OO$.
+\end{itemize}
+This temperature dependence has important implications for the role of PAN. When it is formed at lower temperatures (e.g., at high altitude) or transported into colder regions, PAN can act as an $NO_x$ reservoir. Observations of PAN and the sum of reactive nitrogen ($NO_y$) confirm it revealing that PAN can constitute up to 90\% of the total $NO_y$ budget at higher northern latitudes or higher altitudes (e.g., \citep{Jacobi2000}). When an air mass containing PAN is transported into warmer regions, $NO_2$ tied up in PAN can be released back and cause the formation of $O_3$ and $HNO_3$ far away from the original $NO_x$ source. Moreover, if sufficient $NO$ is present, $CH_3C(O)OO$ released from PAN can react in the following manner:
+\begin{itemize}
+\item[] $CH_3C(O)OO + NO \rightarrow CH_3C(O)O + NO_2$
+\item[] $CH_3C(O)O \rightarrow CH_3 + CO_2$
+\end{itemize}
+followed by the reaction of $CH_3$ with $O_2$, etc. to form $HCHO$ and $HO_2$, or $HCHO$, $CH_3OH$ and $CH_3OOH$ under low-$NO_x$ conditions. As a result of this chemistry, PAN can act as an accelerator for photochemical smog formation \citep{Finlayson-Pitts2000}. Exclusion of PAN from the chemical mechanism of the model means that we omit the global transport of $NO_x$ provided by PAN, and therefore do not fully estimate tropospheric ozone production. However, since the focus of this research is on the impact of alkyl nitrate chemistry on ozone such a miscount is acceptable due to purely theoretical purpose of the research.
+\item Inclusion of all chemistry listed above into the model is a subject for future work.
+\end{itemize}
+
+The constructed chemical mechanism has a limited representation of organic chemistry. It includes (oxidation schemes)/(degradation reactions) of only seven alkanes: methane ($CH_4$), ethane ($C_2H_6$), propane ($C_3H_8$), n-butane ($nC_4H_{10}$), i-butane ($iC_4H_{10}$), n-pentane ($nC_5H_{12}$) and i-pentane ($iC_5H_{12}$). While the oxidation scheme of $CH_4$ is full, oxidation of other six alkanes is not full, but terminated at different oxidation steps.
+
+
+It has been done due to computational restrictions and  because otherwise the mechanism would 
+Another limitation of the model's chemical mechanism is that it does not consider all possible organic reactions (which otherwise could lead to a too large number of reactions but is focused on representing the oxidation of alkanes
+full oxidation scheme for methane ($CH_4$) only .
 
 !! from \citep{Finlayson-Pitts2000}
 ! In urban areas: air pollution is characterized more by the formation of ozone and other oxidants rather than by SO2, particles, and sulfuric acid. In these regions, the primary pollutants are NOx (mainly NO) and volatile organic compounds (VOC), which undergo photochemical reactions in sunlight to form a host of secondary pollutants, the most of which is O3. Some of these are criteria pollutants for which air quality standards have been set, such as O3, SO2, CO, NO2, PM10 and PM2.5. Other are so-called "trace" noncritetia pollutants, e.g., gaseous peroxyacetyl nitrate (CH3C(O)OONO2,,PAN), nitric acid (HNO3 or HONO2), formaldehyde (HCHO), and formic acid (HCOOH). The overall reaction is now written as:
 VOC + NOx + hv = O3 + PAN + HNO3 + ... + Particles, etc. (6)
 
-! oxidation of methane ($CH_4$) and other alkanes, namely ethane ($C_2H_6$), propane ($C_3H_8$), n-butane ($nC_4H_{10}$), i-butane ($iC_4H_{10}$), n-pentane ($nC_5H_{12}$) and i-pentane ($nC_5H_{12}$)
-
 ! Since the most alkoxy radicals ($RO$) react rapidly with $O_2$ under atmospheric conditions and most large (>=C4) alkoxy radicals also rapidly decompose or isomerize, alkyl nitrate formation from reaction RO+NO2 = RONO2 is relatively unimportant for most organics under atmospheric conditions while observations showed that the reaction RO2+NO = RONO2 gives a higher yield (from \citep{Atkinson2000}, actually from 1982).
 
 ! Since one of the main mechanisms of the alkyl nitrate production (>C3!!) is the gas gas phase oxidation of alkanes by OH in the presence of NOx (\citep{Newland2013}).
-
-! Apart from methane in the model there are other nonmethane 
-It is worth mentioning that only alkanes  
-Due to purely theoretical purpose of this investigation the only sink for NOx considered in the mechanism is their loss due to formation of alkyl nitrates. It means that reactions involving formation of nitric acid ($HNO_3$) and peroxyacetyl nitrates (PAN) are not considered here, which could lead to discrepancies between our modelling results and those from other research studies.
 
 \subsection{Photolysis}
 To estimate photolysis rates for a given geographical location, one must take into account the latitude and season, as well as the time of the day.
