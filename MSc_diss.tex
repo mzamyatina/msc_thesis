@@ -304,12 +304,18 @@ followed by the reaction of $CH_3$ with $O_2$, etc. to form $HCHO$ and $HO_2$, o
 \item Inclusion of all chemistry listed above into the model is a subject for future work.
 \end{itemize}
 
-The constructed chemical mechanism has a limited representation of organic chemistry. It includes (oxidation schemes)/(degradation reactions) of only seven alkanes: methane ($CH_4$), ethane ($C_2H_6$), propane ($C_3H_8$), n-butane ($nC_4H_{10}$), i-butane ($iC_4H_{10}$), n-pentane ($nC_5H_{12}$) and i-pentane ($iC_5H_{12}$). While the oxidation scheme of $CH_4$ is full, oxidation of other six alkanes is not full, but terminated at different oxidation steps.
+The constructed chemical mechanism has a limited representation of organic chemistry. It includes oxidation of only seven alkanes: methane ($CH_4$), ethane ($C_2H_6$), propane ($C_3H_8$), n-butane ($nC_4H_{10}$), i-butane ($iC_4H_{10}$), n-pentane ($nC_5H_{12}$) and i-pentane ($iC_5H_{12}$). $CH_4$ undergoes a full oxidation in the model, but oxidation of other six alkanes follows the reaction sequence:
+\begin{itemize}
+\item[] $RH + OH \rightarrow RO_2 + H_2O$
+\item[] $RO_2 + HO_2 \rightarrow ROOH + O2$
+\item[] $RO_2 + NO \rightarrow RO + NO_2$
+\item[] $ROOH + hv \rightarrow RO + OH$
+\item[] $ROOH + OH \rightarrow products$
+\item[] $RO + O_2 \rightarrow products$
+\end{itemize}
+and is 'terminated' at different oxidation steps. Ethane oxidation is terminated after the formation of the acetylperoxyl radicals ($C_2H_3CO_3$), propane - after the formation of the propyldioxy radicals ($C_3H_5O_3$), n-butane - after the formation of ethanal ($CH_3CHO$), butanal ($C_3H_7CHO$), methyl ethyl ketone ($C_2H_5COCH_3$), and 1-($\lambda^1$-oxidanylmethoxy)-2-methoxy-ethane ($C_4H_9O_3$), i-butane - after the formation of 2-methylpropanal ($iso-C_3H_7CHO$) and acetone ($CH_3COCH_3$), n-pentane - after the formation of pentanal ($C_4H_9CHO$), methyl propyl ketone ($n-C_3H_7COCH_3$), and diethyl ketone ($(C_2H_5)_2CO$), i-pentane - after the formation of 2-methylbutanal ($sec-C_4H_9CHO$) and isopropyl methyl ketone ($iso-C_3H_7COCH_3$). It has been done to limit the number of reactions in the mechanism, which otherwise would include 1678 reactions describing evolution of 539 species, and therefore would be computationally too expensive. For the same reason all self-reactions of organic peroxy radicals ($RO_2$) are omitted as well. To avoid a huge impact of incomplete oxidation of alkanes on the results the model's simulation time has been restricted to 24 hours.
 
-
-It has been done due to computational restrictions and  because otherwise the mechanism would 
-Another limitation of the model's chemical mechanism is that it does not consider all possible organic reactions (which otherwise could lead to a too large number of reactions but is focused on representing the oxidation of alkanes
-full oxidation scheme for methane ($CH_4$) only .
+No halon chemistry.
 
 !! from \citep{Finlayson-Pitts2000}
 ! In urban areas: air pollution is characterized more by the formation of ozone and other oxidants rather than by SO2, particles, and sulfuric acid. In these regions, the primary pollutants are NOx (mainly NO) and volatile organic compounds (VOC), which undergo photochemical reactions in sunlight to form a host of secondary pollutants, the most of which is O3. Some of these are criteria pollutants for which air quality standards have been set, such as O3, SO2, CO, NO2, PM10 and PM2.5. Other are so-called "trace" noncritetia pollutants, e.g., gaseous peroxyacetyl nitrate (CH3C(O)OONO2,,PAN), nitric acid (HNO3 or HONO2), formaldehyde (HCHO), and formic acid (HCOOH). The overall reaction is now written as:
@@ -398,6 +404,12 @@ Experiment number & $CH_4$ & $C_2H_6$ & $C_3H_8$ & $nC_4H_{10}$ & $iC_4H_{10}$ &
 \hline
 \end{tabular}
 \end{table}
+
+\begin{figure}[h]
+\includegraphics[width=0.5\linewidth]{{./pics/Sillman1999_Fig1}.png}
+%\caption{chem_allAN_netO3_rate}
+\label{fig:O3observations}
+\end{figure}
 
 \subsection{Bertman}
 Below is the simplified scheme of atmospheric hydrocarbon oxidation leading to the formation of alkyl nitrates (see also Fig. \ref{fig:scheme_bertman}). It begins from the process of $H$ abstraction by the $OH$ radical where the fraction of the primary or secondary radical is denoted by $\alpha_1$.
@@ -489,6 +501,12 @@ Reproducible  features  include  the  following:
 \item Subsequently, NO2 rises to a maximum;
 \item Oxidant (e.g., O3) levels, which are relatively low in the  early morning, increase significantly about noon when the NO concentration drops to a low value.
 \end{itemize}
+
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3_rate.png}
+%\caption{chem_allAN_netO3_rate}
+\label{fig:O3observations}
+\end{figure}
 
 \section{Discussion} \label{sec:discuss}
 The experimental results presented in the previous section provide an opportunity to speculate about the behaviour of our simple model of alkyl nitrate production and loss with time in comparison with the observational data. 
