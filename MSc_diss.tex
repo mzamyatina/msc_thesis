@@ -255,13 +255,15 @@ Using methyl nitrate as a tracer of marine $RONO_2$ \cite{Simpson2006} revealed 
 
 The brief description of the measurement sites and data is presented in section \ref{sec:data}. In section \ref{sec:method} the methodology used in this work is defined. Section \ref{sec:res} contains the results. Section \ref{sec:discuss} discusses the results, particularly focusing attention on the analysis of the discrepancy between the observational data and the results of theoretical modelling. Conclusions constitute section \ref{sec:conclusion}.
 
+! Since the most alkoxy radicals ($RO$) react rapidly with $O_2$ under atmospheric conditions and most large (>=C4) alkoxy radicals also rapidly decompose or isomerize, alkyl nitrate formation from reaction RO+NO2 = RONO2 is relatively unimportant for most organics under atmospheric conditions while observations showed that the reaction RO2+NO = RONO2 gives a higher yield (from \citep{Atkinson2000}, actually from 1982).
+
+! Since one of the main mechanisms of the alkyl nitrate production (>C3!!) is the gas gas phase oxidation of alkanes by OH in the presence of NOx (\citep{Newland2013}).
+
 \section{Methodology} \label{sec:method}
 \subsection{Model development and description}
 A zero-dimensional (box) model is developed to investigate the impact of alkyl nitrate chemistry on ozone production efficiency. Its code is written using FACSIMILE for Windows. FACSIMILE is a special high-level programming language which is a powerful modelling tool designed to efficiently solve differential equations including those resulting from a set of chemical reactions.
 
-The model is intended to represent the steady state of the troposphere under mean summer daytime meteorology and clear skies. To achieve that a number of assumptions have been made. First, the model assumes a uniform mixing of individual constituents of the troposphere, second, there are no atmospheric transport (no 'winds') and no emissions of species into the box meaning that the time evolution of each species is controlled by the chemical interactions alone and determined by their initial concentrations. The air temperature and relative humidity are assumed to be $25^{\circ}C$ and 70\% respectively and are fixed in all model runs. Other assumptions concerning the chemical mechanism can be found in the next section.
-
-!! For long-lived species, averaging may be reasonable.
+The model is intended to represent the steady state of the troposphere under mean summer daytime meteorology and clear skies. To achieve that a number of assumptions have been made. First, the model assumes a uniform mixing of individual constituents of the troposphere, second, there are no atmospheric transport (no 'winds') and no emissions of species into the box meaning that the time evolution of each species is controlled by the chemical interactions alone and determined by their initial concentrations. The air temperature and relative humidity are assumed to be $25^{\circ}C$ and 70\% respectively and are fixed in all model runs. Other assumptions concerning the chemical mechanism and photolysis rates can be found in the following sections.
 
 \subsection{Chemical mechanism}
 The chemical mechanism of the model is based on recommendations from \citep{Atkinson2004} and information from the Master Chemical Mechanism, MCM v3.3 \citep{Jenkin1997,Saunders2003}, retrieved via website: http://mcm.leeds.ac.uk/MCM. On a whole it includes 90 species and 165 reactions. The mechanism is developed to represent the chemistry that governs the production and loss of ozone, hydrocarbons and alkyl nitrates. These include:
@@ -313,39 +315,66 @@ The constructed chemical mechanism has a limited representation of organic chemi
 \item[] $ROOH + OH \rightarrow products$
 \item[] $RO + O_2 \rightarrow products$
 \end{itemize}
-and is 'terminated' at different oxidation steps. Ethane oxidation is terminated after the formation of the acetylperoxyl radicals ($C_2H_3CO_3$), propane - after the formation of the propyldioxy radicals ($C_3H_5O_3$), n-butane - after the formation of ethanal ($CH_3CHO$), butanal ($C_3H_7CHO$), methyl ethyl ketone ($C_2H_5COCH_3$), and 1-($\lambda^1$-oxidanylmethoxy)-2-methoxy-ethane ($C_4H_9O_3$), i-butane - after the formation of 2-methylpropanal ($iso-C_3H_7CHO$) and acetone ($CH_3COCH_3$), n-pentane - after the formation of pentanal ($C_4H_9CHO$), methyl propyl ketone ($n-C_3H_7COCH_3$), and diethyl ketone ($(C_2H_5)_2CO$), i-pentane - after the formation of 2-methylbutanal ($sec-C_4H_9CHO$) and isopropyl methyl ketone ($iso-C_3H_7COCH_3$). It has been done to limit the number of reactions in the mechanism, which otherwise would include 1678 reactions describing evolution of 539 species, and therefore would be computationally too expensive. For the same reason all self-reactions of organic peroxy radicals ($RO_2$) are omitted as well. To avoid a huge impact of incomplete oxidation of alkanes on the results the model's simulation time has been restricted to 24 hours.
+and then is 'terminated' after formation of certain species. Ethane oxidation is terminated after formation of the acetylperoxyl radicals ($C_2H_3CO_3$), propane - after formation of the propyldioxy radicals ($C_3H_5O_3$), n-butane - after formation of ethanal ($CH_3CHO$), butanal ($C_3H_7CHO$), methyl ethyl ketone ($C_2H_5COCH_3$), and 1-($\lambda^1$-oxidanylmethoxy)-2-methoxy-ethane ($C_4H_9O_3$), i-butane - after formation of 2-methylpropanal ($iso-C_3H_7CHO$) and acetone ($CH_3COCH_3$), n-pentane - after formation of pentanal ($C_4H_9CHO$), methyl propyl ketone ($n-C_3H_7COCH_3$), and diethyl ketone ($(C_2H_5)_2CO$), i-pentane - after formation of 2-methylbutanal ($sec-C_4H_9CHO$) and isopropyl methyl ketone ($iso-C_3H_7COCH_3$). It has been done to limit the number of reactions in the mechanism, which otherwise would include 1678 reactions describing evolution of 539 species, and therefore would be computationally too expensive. For the same reason all self-reactions of organic peroxy radicals ($RO_2$) are omitted as well. To avoid a huge impact of incomplete oxidation of alkanes on the results the model's simulation time has been restricted to 24 hours.
 
-No halon chemistry.
-
-!! from \citep{Finlayson-Pitts2000}
-! In urban areas: air pollution is characterized more by the formation of ozone and other oxidants rather than by SO2, particles, and sulfuric acid. In these regions, the primary pollutants are NOx (mainly NO) and volatile organic compounds (VOC), which undergo photochemical reactions in sunlight to form a host of secondary pollutants, the most of which is O3. Some of these are criteria pollutants for which air quality standards have been set, such as O3, SO2, CO, NO2, PM10 and PM2.5. Other are so-called "trace" noncritetia pollutants, e.g., gaseous peroxyacetyl nitrate (CH3C(O)OONO2,,PAN), nitric acid (HNO3 or HONO2), formaldehyde (HCHO), and formic acid (HCOOH). The overall reaction is now written as:
-VOC + NOx + hv = O3 + PAN + HNO3 + ... + Particles, etc. (6)
-
-! Since the most alkoxy radicals ($RO$) react rapidly with $O_2$ under atmospheric conditions and most large (>=C4) alkoxy radicals also rapidly decompose or isomerize, alkyl nitrate formation from reaction RO+NO2 = RONO2 is relatively unimportant for most organics under atmospheric conditions while observations showed that the reaction RO2+NO = RONO2 gives a higher yield (from \citep{Atkinson2000}, actually from 1982).
-
-! Since one of the main mechanisms of the alkyl nitrate production (>C3!!) is the gas gas phase oxidation of alkanes by OH in the presence of NOx (\citep{Newland2013}).
-
+Lastly, the chemical mechanism of the model does not include halogen chemistry. Despite that halogens (chlorine ($Cl$), bromine ($Br$) and iodine ($I$)) are very reactive chemical compounds mostly known by their role in anthropogenic stratospheric ozone-depletion chemistry, and that they are directly (for example, reaction of the $Cl$ radical with hydrocarbons (e.g., $CH_4$)) and indirectly (coupling with the cycles of sulfur and nitrogen that eventually influence $O_3$, $OH$ and $NO_x$ concentrations) involved in the tropospheric chemistry \citep{VonGlasow2014,Platt2003}, they are excluded from the chemical mechanism to keep it more transparent.
 \subsection{Photolysis}
-To estimate photolysis rates for a given geographical location, one must take into account the latitude and season, as well as the time of the day.
-
-24-hour average photolysis rates are calculated externally (outside FACSIMILE program) for 1 July using the formula and parametrisations used in MCM v3.3. The formula that describes variation of photolysis rates with solar zenith angle for the core photolysis reactions was determined by the MCM's authors by using a two stream isotopic scattering model and by calculating rates for clear sky conditions at an altitude of 0.5 km on 1 July at a latitude of 45$^{\circ}$N.
-has the following form:
+To estimate photolysis rates for a given geographical location, one must take into account the latitude and season, as well as the time of the day. For the purpose of this research 24-hour average photolysis rates are calculated externally (outside FACSIMILE program) for 1 July using the formula and parametrisations from the MCM v3.3. The formula that describes variation of photolysis rate with solar zenith angle for the core photolysis reactions in the MCM was obtained by its authors using cross-section and quantum yield data and two stream isotopic scattering model described in \citep{Hayman1997}. Their calculations were performed for clear sky conditions at an altitude of 0.5 km for 1 July at a latitude of 45$^{\circ}$N, resulting in the following formula:
 \begin{equation} \label{eq:MCMphotolysis}
 \renewcommand{\theequation}{\arabic{equation}}
 J = l(cos\chi)^mexp(-nsec\chi)
 \end{equation}
-where $J$ - photolysis rate coefficient, $\chi$ - solar zenith angle, $l$, $m$ and $n$ - optimised parameters.
-and it is a result of determination from the available data on absorption cross section and quantum data for the core reactions using two stream  Hayman.
+where $J$ - photolysis rate coefficient, $\chi$ - solar zenith angle, $l$, $m$ and $n$ - optimising parameters \citep{Jenkin1997,Saunders2003}.
 
-The values of solar zenith angle are calculated using formulas from NOAA Solar Calculator (http://www.esrl.noaa.gov/gmd/grad/solcalc/).
+The values of solar zenith angle are calculated using NOAA Solar Calculator (http://www.esrl.noaa.gov/gmd/grad/solcalc/).
 
 \subsection{Design of experiments}
-Hypothesis: ANs have an impact on O3.
+To investigate the influence of alkyl nitrate chemistry on (potential changes in) tropospheric $O_3$ production, box model runs were performed at a series of different $NO_x$ and $VOCs$ initial concentrations, so that an $O_3$ isopleth plot could be constructed, similar to those found in \citep{Dodge1977} and \citep{Sillman1999}.   Table \ref{tab:setupO3CO} shows initial concentrations of 'independent'/global parameters and indicates which of them are fixed or allowed to vary during the model run. Table \ref{tab:setupNOx} and Table \ref{tab:setupVOCs} show the initial concentrations of $NO_x$ and $VOCs$ respectively that are used at a series of experiments.
 
-To test the hypothesis box model runs were performed at a series of different NOx and VOCs initial concentrations, so that an $O_3$ isopleth plot could be constructed, similar to those found in \citep{Dodge1977} and \citep{Sillman1999}. The following initial concentrations were used:
+The lower limit of the range of $NO_x$ and $VOCs$ initial concentrations is based on observational data from Mauna Loa station (Hawaii, US) which is believed to be representative for conditions of remote troposphere. The upper limit is based on data from 
+Marylebone Road station (London, UK) which is a kerbside monitoring site located in central London, in close proximity to a 6 lane road, with very high traffic flow and frequent congestion \citep{VonSchneidemesser2010}, therefore being representative for conditions of urban troposphere.
+
+Two experiments have been performed. The aim of the first one is to reveal the total impact of alkyl nitrate chemistry on $O_3$ production, the aim of the second one is to estimate the contribution of individual alkyl nitrates to changes in $O_3$ production.
+
+For the first experiment the model was run under two configurations, (1) with all alkyl nitrate chemistry switched on, and (2) with all alkyl nitrate chemistry switched off. In every model run $VOCs$ concentrations were (changed according to the data from Table \ref{tab:setupVOCs} and) were fixed throughout the run, while the initial concentrations of $NO_x$ were (changed according to the data from Table \ref{tab:setupNOx} and were) allowed to vary throughout the run. As a result, the first experiment consists of 253 model runs including 11 runs (varying $NO_x$) with inorganic chemistry only.
+
+For the second experiment the model was run using the same approach concerning variations in $NO_x$ and $VOCs$ concentrations, but changes in alkyl nitrate chemistry were treated differently. In every model run reactions of individual alkyl nitrates or their groups (defined in Table\ref{tab:RHandANS} were either switched on or switched off, resulting in other additional 847 model runs.
+
+\begin{table} % RH and ANs
+\caption{Alkyl nitrates and their parent alkanes}\label{tab:RHandANS}
+\centering
+\begin{tabular}{llll}
+\hline
+Parent alkane& Structural formula          & Name                     & Group\\
+\hline
+$CH_4$       & $CH_3ONO_2$                 & methyl nitrate           & $CH_3ONO_2$ \\
+\hline
+$C_2H_6$     & $CH_3CH_2ONO_2$             & ethyl nitrate            & $C_2H_5ONO_2$ \\
+\hline
+$C_3H_8$     & $(CH_3)_2CHONO_2$           & iso-propyl nitrate       & $\Sigma C_3H_7ONO_2$\\
+             & $CH_3(CH_2)_2ONO_2$         & n-propyl nitrate         & \\
+\hline
+$nC_4H_{10}$ & $CH_3(CH_2)_3ONO_2$         & n-butyl nitrate          & $\Sigma nC_4H_9ONO_2$\\
+             & $CH_3CH_2CH(CH_3)ONO_2$     & sec-butyl nitrate        & \\
+\hline
+$iC_4H_{10}$ & $CH_3CH(CH_3)CH_2ONO_2$     & iso-butyl nitrate        & $\Sigma iC_4H_9ONO_2$\\
+             & $CH_2C(CH_3)CH_2ONO_2$      & tert-butyl nitrate       & \\
+\hline
+$nC_5H_{12}$ & $CH_3(CH_2)_4ONO_2$         & n-pentyl nitrate         & $\Sigma nC_5H_{11}ONO_2$\\
+             & $CH_3(CH_2)_2CH(CH_3)ONO_2$ & 2-pentyl nitrate         & \\
+             & $???$                       & 3-pentyl nitrate         & \\
+\hline
+$iC_5H_{12}$ & $???$                       & 2-methylbutyl nitrate    & $\Sigma iC_5H_{11}ONO_2$\\
+             & $(CH_3)_2CH(CH_2)_2ONO_2$   & 3-methyl-2-butyl nitrate & \\
+             & $(CH_3)_2C(CH_2CH_3)ONO_2$  & 2-methyl-2-butyl nitrate & \\
+\hline
+\end{tabular}
+\end{table}
+
+!! For long-lived species, averaging may be reasonable.
 
 \begin{table} % model setup: O3, CO
-\caption{Fixed and variable parameters used in box model runs}
+\caption{Fixed and variable parameters used in box model runs}\label{tab:setupO3CO}
 \centering
 \begin{tabular}{ccc}
 \hline
@@ -354,7 +383,7 @@ Parameter & Initial mixing ratio & Type \\
 $H_2O$    & 2\%                  & Fixed    \\
 $O_2$     & 21\%                 & Fixed    \\
 $N_2$     & 78\%                 & Fixed    \\
-$H_2$     & 525 ppb  ???         & Variable \\
+$H_2$     & 525 ppb              & Variable \\
 $O_3$     & 40 ppb               & Variable \\
 $CO$      & 100 ppb              & Variable \\
 \hline
@@ -362,7 +391,7 @@ $CO$      & 100 ppb              & Variable \\
 \end{table}	
 
 \begin{table} % model setup: NOx
-\caption{Model setup: NOx initial concentrations (ppb)}
+\caption{Model setup: NOx initial concentrations (ppb)}\label{tab:setupNOx}
 \centering
 \begin{tabular}{ccc}
 \hline
@@ -384,7 +413,7 @@ $NO$      & $NO_2$      & NOx  ($=NO+NO_2$) \\
 \end{table}	
 
 \begin{table} % model setup: VOCs
-\caption{Model setup: VOCs initial concentrations (ppb)}
+\caption{Model setup: VOCs concentrations (ppb)}\label{tab:setupVOCs}
 \centering
 \begin{tabular}{ccccccccc}
 \hline
