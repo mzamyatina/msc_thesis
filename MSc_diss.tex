@@ -45,6 +45,7 @@
 \usetikzlibrary{shapes,arrows}
 \usetikzlibrary{positioning}
 \usetikzlibrary{calc}
+\usepackage{epstopdf}
 % Tikz styles
 \tikzstyle{reg} = [rounded rectangle, text width=2cm, fill=black!5, align=center, anchor=west,font=\sffamily\Large\bfseries, minimum height=1cm, inner sep=0]
 \tikzstyle{rad} = [rounded rectangle, draw=none, text width=2cm, fill=red!10, align=center, anchor=west,font=\sffamily\Large\bfseries, minimum height=1cm, inner sep=0]
@@ -533,7 +534,16 @@ Time evolution of species concentrations in the model agrees reasonably well wit
 \item[] $RO_2 + HO_2 \rightarrow ROOH + O_2$
 \item[] $O_3 + HO_2 \rightarrow OH + 2O_2$.
 \end{itemize}
-A more pronounced $O_3$ loss takes place under lower $VOC$ concentrations because in this case more $OH$ radicals are left in the system after oxidation of $CO$ and alkanes leading to a greater concentration of $HO_2$ radicals, and therefore to a greater chance of the last reaction in the sequence.
+A more pronounced $O_3$ loss takes place under lower $VOC$ concentrations because in this case more $OH$ radicals are left in the system after oxidation of $CO$ and alkanes leading to a greater concentration of $HO_2$ radicals, and therefore to a greater recurrence of the last reaction in the sequence.
+
+%\begin{figure}[h] % ModelValidation
+%\includegraphics[width=0.5\linewidth]{{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/chem_noAN_valid_50ppt5000ppt_O3_vs_time}.png}
+%%\caption{out.}\label{fig:ModelValidationO3}
+%\end{figure}
+%\begin{figure}[h] % ModelValidation
+%\includegraphics[width=0.5\linewidth]{{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/chem_noAN_valid_50ppt5000ppt_O1D_vs_time}.png}
+%%\caption{out.}\label{fig:ModelValidationO1D}
+%\end{figure}
 
 The concentration of NOx is the main factor which determines whether O3 is produced or removed in the atmosphere.
 changing balance of the free-radical reactions, and their impact on O3, as the level of NOx increases.
@@ -550,13 +560,10 @@ Reproducible  features  include  the  following:
 \item Oxidant (e.g., O3) levels, which are relatively low in the  early morning, increase significantly about noon when the NO concentration drops to a low value.
 \end{itemize}
 
-%\newpage
-%\clearpage
-%\thispagestyle{empty}% empty page style (?)
-%\begin{landscape}% Landscape page
-%\centering
-%	\input{diss_valid_vs_time}
-%\end{landscape}
+\newpage
+\clearpage
+\thispagestyle{empty}% empty page style (?)
+\input{diss_valid_vs_time}
 
 \section{Results} \label{sec:res}
 \begin{figure}[h] % Sillman1999
