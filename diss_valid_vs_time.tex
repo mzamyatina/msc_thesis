@@ -1,0 +1,31 @@
+\graphicspath{{d:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/}}
+
+\def \expid {chem_noAN_valid_50ppt5000ppt_}
+\def\exppostfix {_vs_time}
+
+%\renewcommand\thesubfigure{\alphalph{\value{subfigure}}}
+\newlength{\subfigsize} \setlength{\subfigsize}{0.3\linewidth}
+\newlength{\subfigwidth} \setlength{\subfigwidth}{\subfigsize}
+%\newlength{\subfigheight} \setlength{\subfigheight}{2.5cm} %keepaspectratio=false,height=\subfigheight
+% 0.3 makes 3x3 matrix
+
+\begin{figure}[h!]
+\centering
+
+\begin{subfigure}[t]{\subfigsize}\includegraphics[width=\subfigwidth]{{\expid O3\exppostfix}.eps}\caption{$O_3$}\label{fig:O3valid}\end{subfigure}\hfill
+\begin{subfigure}[t]{\subfigsize}\includegraphics[width=\subfigwidth]{{\expid O1D\exppostfix}.eps}\caption{$O(^1D)$}\label{fig:O1Dvalid}\end{subfigure}\hfill
+\begin{subfigure}[t]{\subfigsize}\includegraphics[width=\subfigwidth]{{\expid OH\exppostfix}.eps}\caption{$OH$}\label{fig:OHvalid}\end{subfigure}\hfill
+\begin{subfigure}[t]{\subfigsize}\includegraphics[width=\subfigwidth]{{\expid NO\exppostfix}.eps}\caption{$NO$}\label{fig:NOvalid}\end{subfigure}\hfill
+\begin{subfigure}[t]{\subfigsize}\includegraphics[width=\subfigwidth]{{\expid NO2\exppostfix}.eps}\caption{$NO_2$}\label{fig:NO2valid}\end{subfigure}\hfill
+\begin{subfigure}[t]{\subfigsize}\includegraphics[width=\subfigwidth]{{\expid HO2\exppostfix}.eps}\caption{$HO_2$}\label{fig:HO2valid}\end{subfigure}\hfill
+\begin{subfigure}[t]{\subfigsize}\includegraphics[width=\subfigwidth]{{\expid H2O2\exppostfix}.eps}\caption{$H_2O_2$}\label{fig:H2O2valid}\end{subfigure}\hfill
+\begin{subfigure}[t]{\subfigsize}\includegraphics[width=\subfigwidth]{{\expid RO2\exppostfix}.eps}\caption{$\Sigma RO_2$}\label{fig:RO2valid}\end{subfigure}\hfill
+\begin{subfigure}[t]{\subfigsize}\includegraphics[width=\subfigwidth]{{\expid CO\exppostfix}.eps}\caption{$CO$}\label{fig:COvalid}\end{subfigure}\hfill
+
+\caption{Changes in mixing ratios of $O_3$, $O(^1D)$, $OH$, $NO$, $NO_2$, $HO_2$, $H_2O_2$, total $RO_2$ and $CO$ with time (in ppb) under different $NO_x$ and $VOC$ conditions: 
+$NO_x=50$ ppt and minimum sum of $VOCs$ (blue solid lines), 
+$NO_x=50$ ppt and maximum sum of $VOCs$ (red solid lines), 
+$NO_x=5$ ppb and minimum sum of $VOCs$ (blue dashed lines),
+$NO_x=5$ ppb and maximum sum of $VOCs$ (red dashed lines), Minimum sum of $VOCs$ corresponds to case A in Table 5, maximum sum of $VOCs$ - case K. Simulation time 24 hours.}
+\label{fig:res0}
+\end{figure}
