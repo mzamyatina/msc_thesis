@@ -522,28 +522,60 @@ K  & 2050 &	7.000 &	3.000 &	2.000 &	1.000 &	0.500 &	2.000 \\
 \end{tabular}
 \end{table}
 \subsection{Model validation}
-Time evolution of species concentrations in the model agrees reasonably well with photochemical theory as it can be seen, for example, from Figure ???. At low $NO_x$ levels (50 ppt) $O_3$ is being removed from the system because there is not enough $NO$ that could react with the peroxy radicals ($HO_2$ and $RO_2$) to produce $NO_2$ (which photolysis in conjunction with the reaction $O(^3P)+O_2\xrightarrow{M} O_3$ is the main source of $O_3$ in the troposphere). Some additional $O_3$ removal occurs because $HO_2$ radicals can react with $O_3$ leading to the regeneration of $OH$ radicals as part of an $O_3$ depleting $OH$-$HO_2$ ($HO_x$) cycle. In other words, the following reaction sequence dominates:
-\begin{itemize}
-\item[] $O_3 + hv \rightarrow O(^1D) + O_2$
-\item[] $O(^1D) + H_2O \rightarrow OH + OH$
-\item[] $O(^1D) \xrightarrow{M} O(^3P)$
-\item[] $O(^3P) + O_2 \xrightarrow{M} O_3$
-\item[] $OH + CO \rightarrow HO_2 + CO_2$
-\item[] $OH + RH \rightarrow RO_2 + H_2O$
-\item[] $HO_2 + HO_2 \rightarrow H_2O_2 + O_2$
-\item[] $RO_2 + HO_2 \rightarrow ROOH + O_2$
-\item[] $O_3 + HO_2 \rightarrow OH + 2O_2$.
-\end{itemize}
-A more pronounced $O_3$ loss takes place under lower $VOC$ concentrations because in this case more $OH$ radicals are left in the system after oxidation of $CO$ and alkanes leading to a greater concentration of $HO_2$ radicals, and therefore to a greater recurrence of the last reaction in the sequence.
+Due to imperfection of the chemical mechanism time evolution of species concentrations given by the model does not completely agree with the photochemical theory, but reproduces it to some extent. Figure \ref{fig:model_validation} shows an example of output from the model, namely the changes in mixing ratios of the main species within 24-hours of simulation time under contrasting $NO_x$ and $VOC$ conditions. The values shown in Figure \ref{fig:model_validation} have been justified from the theoretical point of view and also compared with those derived from the Atmospheric Chemistry Learner's Box Model (ACLBM, http://guille.zicer.uea.ac.uk/ACLBM). ACLBM is an on-line box model for atmospheric chemistry developed by Prof. Roland von Glasow (University of East Anglia) that allows the selection of several chemical reaction mechanisms, choice of initial concentrations and emission fluxes. For comparison with our modelling data the ACLBM was set up and initialized using values from Tables \ref{tab:setupO3CO}, \ref{tab:setupNOx} and \ref{tab:setupVOCs}, and the '$O_3$-$NO_x$-$CO$-$CH_4$' chemical mechanism was chosen since it is the closest version of the chemical mechanism available in the ACLBM to our model.
 
-%\begin{figure}[h] % ModelValidation
-%\includegraphics[width=0.5\linewidth]{{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/chem_noAN_valid_50ppt5000ppt_O3_vs_time}.png}
-%%\caption{out.}\label{fig:ModelValidationO3}
-%\end{figure}
-%\begin{figure}[h] % ModelValidation
-%\includegraphics[width=0.5\linewidth]{{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/chem_noAN_valid_50ppt5000ppt_O1D_vs_time}.png}
-%%\caption{out.}\label{fig:ModelValidationO1D}
-%\end{figure}
+In theory at low $NO_x$ levels a net $O_3$ removal takes place because there is not enough $NO$ around that could react with the peroxy radicals ($HO_2$ and $RO_2$) to produce $NO_2$, which photolysis in conjunction with the reaction (\ref{reac:O3P+O2}) is the main source of $O_3$ in the troposphere. Some additional $O_3$ removal occurs because $HO_2$ radicals can react with $O_3$ leading to the regeneration of $OH$ radicals as part of an $O_3$ depleting $OH$-$HO_2$ ($HO_x$) cycle. In other words, the following reaction sequence prevails:
+\begin{equation}\label{reac:O3+hv}
+O_3 + hv \rightarrow O(^1D) + O_2
+\end{equation}
+\begin{equation}\label{reac:O1D+H2O}
+O(^1D) + H_2O \rightarrow OH + OH
+\end{equation}
+\begin{equation}\label{reac:O1D=O3P}
+O(^1D) \xrightarrow{M} O(^3P
+\end{equation}
+\begin{equation}\label{reac:O3P+O2}
+O(^3P) + O_2 \xrightarrow{M} O_3
+\end{equation}
+\begin{equation}\label{reac:OH+CO}
+OH + CO \rightarrow HO_2 + CO_2
+\end{equation}
+\begin{equation}\label{reac:OH+RH}
+OH + RH \rightarrow RO_2 + H_2O
+\end{equation}
+\begin{equation}\label{reac:HO2+HO2}
+HO_2 + HO_2 \rightarrow H_2O_2 + O_2
+\end{equation}
+\begin{equation}\label{reac:RO2+HO2}
+RO_2 + HO_2 \rightarrow ROOH + O_2
+\end{equation}
+\begin{equation}\label{reac:O3+HO2}
+O_3 + HO_2 \rightarrow OH + 2O_2
+\end{equation}
+In this case our modelling data agrees well with the theory (Figure \ref{fig:O3valid}), because $O_3$ mixing ratio decreases with time, and this decrease is comparable to one derived from ACLBM (by 6 ppb and 4.5 ppb at low and high $VOCs$ concentrations respectively).
+
+The concentration of $NO_x$ is the main factor which determines whether $O_3$ is produced or removed in the atmosphere \citep{Fowler2008}. Theoretically there are three regimes of $O_3$ production that depend on $NO_x$ levels: low $NO_x$ is characterized by net $O_3$ removal (as seen previously), intermediate $NO_x$ - by net $O_3$ formation, and high $NO_x$ - by net $O_3$ formation or removal depending on $VOCs$ concentration. Since the chemical mechanism of our model does not include reactions of nitric acid ($HNO_3$) we won't expect to see a good representation of high $NO_x$ regime in our model. Therefore, further we consider just a contrasting case.
+
+At higher $NO_x$ levels, reactions of the peroxy radicals with $NO$ provide a link required for catalytic generation of $O_3$ via
+\begin{equation}\label{reac:HO2+NO}
+HO_2 + NO \rightarrow OH + NO_2
+\end{equation}
+\begin{equation}\label{reac:RO2+NO}
+RO_2 + NO \rightarrow RO + NO_2
+\end{equation}
+\begin{equation}\label{eq:NO2+hv}
+NO_2 + hv \rightarrow NO + O(^3P)
+\end{equation}
+\begin{equation} %same
+!!!!! same O(^3P) + O_2 \xrightarrow{M} O_3
+\end{equation}
+The competition between reactions (\ref{reac:HO2+NO}) and (\ref{reac:HO2+HO2}) for $HO_2$, and reactions (\ref{reac:RO2+NO}) and (\ref{reac:RO2+HO2}) for $RO_2$, allows a greater number of free-radical propagated $O_3$ forming cycles to happen prior to termination, therefore resulting in a net $O_3$ formation (as it seen in Figure \ref{fig:O3valid}). It appears that in this case $O_3$ formation is somewhat sensitive to changes in the concentrations of $VOCs$ as well.
+
+
+
+Under the prevailing conditions, NOx levels remain sufficiently low that peroxide formation via... continues to be the major radical sink. Ozone formation in this regime is often referred to as 'NOx limited' or 'NOx sensitive', because the O3 formation rate increases with increasing NOx concentrations. 
+
+In contrast, the O3 formation is insensitive to changes in the concentration of CH4 or CO and to inputs of other VOC. This is because OH reacts with the organics exclusively as part of the free-radical propagated O3 forming cycles, with no competing radical termination reaction being available under the prevailing conditions.
 
 The concentration of NOx is the main factor which determines whether O3 is produced or removed in the atmosphere.
 changing balance of the free-radical reactions, and their impact on O3, as the level of NOx increases.
