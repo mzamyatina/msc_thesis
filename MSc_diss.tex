@@ -552,11 +552,11 @@ RO_2 + HO_2 \rightarrow ROOH + O_2
 \begin{equation}\label{reac:O3+HO2}
 O_3 + HO_2 \rightarrow OH + 2O_2
 \end{equation}
-At low $NO_x$ regime our modelling data agrees well with the theory (Figure \ref{fig:O3valid}). $O_3$ mixing ratio decreases with time, and this decrease is comparable to one derived from ACLBM (by 6 ppb and 4.5 ppb at low and high $VOCs$ concentrations respectively). $NO$ is rapidly converted to $NO_2$ representing a state equilibrium between the two molecules in the troposphere (Figures \ref{fig:NOvalid}, \ref{fig:NO2valid}). $CO$ is lost due to its reaction with $OH$ (Figure \ref{fig:COvalid}). Mixing ratios of other species in our model are of the order of magnitude as in ACLBM.
+At low $NO_x$ regime (for example, 50 ppt) our modelling data agrees well with the theory (Figure \ref{fig:O3valid}). $O_3$ mixing ratio decreases with time, and this decrease is comparable to one derived from ACLBM (by 6 ppb and 4.5 ppb at low and high $VOCs$ concentrations respectively). $NO$ is rapidly (almost instantly) converted to $NO_2$ representing a state equilibrium between the two molecules in the troposphere (Figures \ref{fig:NOvalid}, \ref{fig:NO2valid}). $CO$ is lost due to its reaction with $OH$ (Figure \ref{fig:COvalid}). Mixing ratios of other species in our model are of the order of magnitude as in ACLBM.
 
 \input{diss_valid_vs_time}
 
-When the prevailing $NO_x$ levels are more than 0.5 ppb \citep{Sillman1999}, but less than certain critical value, reactions (\ref{reac:HO2+NO}) and (\ref{reac:RO2+NO}) represent the dominant reaction pathways for $HO_2$ and $RO_2$ providing a link for catalytic generation of $O_3$:
+When the prevailing $NO_x$ levels are more than 0.5 ppb \citep{Sillman1999}, but less than a certain critical value, reactions (\ref{reac:HO2+NO}) and (\ref{reac:RO2+NO}) represent the dominant reaction pathways for $HO_2$ and $RO_2$ providing a link for catalytic generation of $O_3$:
 \begin{equation}\label{reac:HO2+NO}
 HO_2 + NO \rightarrow OH + NO_2
 \end{equation}
@@ -577,33 +577,29 @@ OH + NO_2 \xrightarrow{M} HNO_3
 \end{equation}
 Under these circumstances, the number of free-radical propagated $O_3$ forming cycles decreases with increasing $NO_x$, and the production rate of $O_3$ decreases. However, if the concentrations of $VOCs$ are high, reactions of $OH$ with $CO$ and $RH$ ((\ref{reac:OH+CO}), (\ref{reac:OH+RH})) can compete with reaction (\ref{reac:OH+NO2}), leading to an increase in the $O_3$ production rate.
 
-Since the chemical mechanism of our model does not include the reaction of $HNO_3$ formation, a good representation of $VOC$-sensitive regime by our model is not expected. It also makes it difficult to split $NO_x$-sensitive and $VOC$-sensitive regimes in our model, because this split is determined by the recurrence (size) of the peroxide- and nitric-acid forming reactions \citep{Sillman1999}, while our mechanism lacks one of these reactions. However, needing to evaluate performance of our model under higher $NO_x$ conditions anyway below we consider just a contrasting case of $NO_x$ levels.
+Since the chemical mechanism of our model does not include the reaction of $HNO_3$ formation, a good representation of $VOC$-sensitive regime by our model is not expected. It also makes it difficult to split $NO_x$-sensitive and $VOC$-sensitive regimes in our model, because this split is determined by the recurrence (size) of the peroxide- and nitric-acid forming reactions \citep{Sillman1999}, while our mechanism lacks one of these reactions. However, needing to evaluate performance of our model under higher $NO_x$ conditions anyway below we consider just a contrasting case of $NO_x$ levels, for example, 5 ppb (Figure \ref{fig:model_validation}).
 
-In our model a net $O_3$ formation first occurs at 250 ppt of $NO_x$ and remains so at 10 ppb of $NO_x$ too (Figure \ref{fig:noAN_netO3_rate}).
+At higher $NO_x$ regime (5 ppb) $O_3$ mixing ratio in the model increases with time (Figure \ref{fig:O3valid}) which agrees with the photochemical theory. The net increase is by 186 ppb and 171 ppb at low and high $VOCs$ concentrations respectively. $NO$ is rapidly converted to $NO_2$, but slower than at low $NO_x$ levels because of their higher initial concentrations (Figure \ref{fig:NOvalid}, \ref{fig:NO2valid}). Due to a higher efficiency of reaction (\ref{reac:HO2+NO}) $OH$ mixing ratio is higher at higher $NO_x$ levels, resulting in a more pronounced loss of $CO$ (Figure \ref{fig:COvalid}).
 
-\begin{figure}[h] % noAN_netO3rate_withINORG_ppbC
-\includegraphics[width=0.5\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/chem_noAN_netO3rate_withINORG_ppbC.png}
-\caption{noAN, netO3 rate}\label{fig:noAN_netO3_rate}
+The best way to illustrate the central features of the relationship between $O_3$, $NO_x$ and $VOC$ mentioned above is to construct a ozone isopleth plot in a form shown in Figure \ref{fig:Sillman1999}. The isopleth plot shows that the rate of $O_3$ production is a nonlinear function of the $NO_x$ and $VOC$ concentrations. When $VOC$/$NO_x$ ratios are high, the $O_3$ production rate increases with increasing $NO_x$ eventually reaching a local maximum, and decreasing afterwards as $NO_x$ concentrations continue to increase. The local maximum (the 'ridge line') defines the split into $NO_x$-sensitive and $VOC$-sensitive regimes. Under the 'ridge line' the $VOC$/$NO_x$ ratios are high, and the $O_3$ production rate increases with increasing $NO_x$ and almost insensitive to $VOC$. Above the 'ridge line' the $VOC$/$NO_x$ ratios are low, and the $O_3$ production rate increases with increasing $VOC$ and decreases with increasing $NO_x$ \citep{Sillman2013}.
+
+\begin{figure} % Sillman1999withdotsline and netO3rate
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{{./pics/Sillman1999_Fig1_adapted_withdotssquare}.png}
+  \captionof{figure}{Isopleths giving net rate of $O_3$ production (ppb/h, solid lines) as a function of $VOC$ (ppbC) and $NO_x$ (ppb) for mean summer daytime meteorology and clear skies. The solid lines represent production rates of 1, 2.5, 5, 10, 15, 20 and 30 ppb/h. Adapted from \citep{Sillman1999}.}\label{fig:Sillman1999}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/chem_noAN_netO3rate_withINORG_ppbC.png}
+  \captionof{figure}{Isopleths giving net rate of $O_3$ production (ppb/h, color) as a function of $VOC$ (ppbC) and $NO_x$ (ppb) in the first modelling experiment with alkyl nitrate chemistry switched off combined with an additional run with inorganic chemistry only (i.e. the only $VOC$ is $CO$).}\label{fig:noAN_netO3_rate}
+\end{minipage}
 \end{figure}
 
-\begin{figure}[h] % Sillman1999
-\includegraphics[width=0.5\linewidth]{{./pics/Sillman1999_Fig1_adapted}.png}
-\caption{Isopleths giving net rate of ozone production (ppb/h, solid lines) as a function of $VOC$ (ppbC) and $NO_x$ (ppb) for mean summer daytime meteorology and clear skies. The solid lines represent production rates of 1, 2.5, 5, 10, 15, 20 and 30 ppb/h. Adapted from \citep{Sillman1999}.}\label{fig:Sillman1999}
-\end{figure}
+The same kind of plot can be found in Figure \ref{fig:noAN_netO3_rate}, which is produced using data from our model from the first experiment with alkyl nitrate chemistry switched off. Taking into account the fact that the maximum $NO_x$ mixing ratio considered in the experiment is 10 ppb, our results are directly comparable only with a part of the data from Figure \ref{fig:Sillman1999}, namely with those inside the green dashed square. Moreover, since the minimum $NO_x$ mixing ratio considered in the experiment is 5 ppt, while the corresponding value in Figure \ref{fig:Sillman1999} is 1 ppb, a negative $O_3$ production rate is seen in our results, whereas it stays out of range of Figure \ref{fig:Sillman1999}.
 
-It appears that in this case $O_3$ formation is somewhat sensitive to changes in the concentrations of $VOCs$ as well.
-
-In contrast, the O3 formation is insensitive to changes in the concentration of CH4 or CO and to inputs of other VOC. This is because OH reacts with the organics exclusively as part of the free-radical propagated O3 forming cycles, with no competing radical termination reaction being available under the prevailing conditions.
-
-!! from \citep{Finlayson-Pitts2000}
-Urban:
-Certain reproducible features of time-concentration profiles for  pollutants are observed in "smoggy" ambient air. Figure 1.3, a classic example of historical interest, shows such profiles for NO, NO2, and total oxidant (mainly O3) in Pasadena, California, during a  severe photochemical air pollution episode in July 1973.
-Reproducible  features  include  the  following:
-\begin{itemize}
-\item In the early morning, the concentration of NO rises and  reaches a maximum at a time that approximately coincides with the  maximum emissions of NO, in this case, peak  automobile  traffic; 
-\item Subsequently, NO2 rises to a maximum;
-\item Oxidant (e.g., O3) levels, which are relatively low in the  early morning, increase significantly about noon when the NO concentration drops to a low value.
-\end{itemize}
+One can see the same pattern in these two figures. At high $VOC$/$NO_x$ ratios, the rate of $O_3$ production increases with increasing $NO_x$ and reaches its maximum at the highest $NO_x$ and $VOC$ levels (which corresponds to the top right corner of the green dashed square). The change in $O_3$ production rate at high $VOC$/$NO_x$ ratios in our model is largely insensitive to $VOC$, which fits into the theory. At low $VOC$/$NO_x$ ratios the $O_3$ production rate starts to depend on $VOC$ concentration also resembling the behaviour of ozone isopleths at the top left corner of the green dashed square. The overall tendency of $O_3$ production rate to increase with increasing $VOC$ and $NO_x$ is present in both figures showing that the model reproduces this feature according to the theory. However, the modelled values of $O_3$ production rates are much lower than those in Figure \ref{fig:Sillman1999}: in the model the maximum production rate is 9 ppb/h, while in theory it is 30 ppb/h, meaning that our model underestimates the $O_3$ production rate, but reproduces some features of the relationship between $O_3$, $NO_x$ and $VOC$.
 
 \section{Results} \label{sec:res}
 \begin{figure}[h] % allAN_netO3_rate
