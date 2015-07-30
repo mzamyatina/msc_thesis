@@ -587,25 +587,45 @@ The best way to illustrate the central features of the relationship between $O_3
 \centering
 \begin{minipage}{.5\textwidth}
   \centering
-  \includegraphics[width=.99\linewidth]{{./pics/Sillman1999_Fig1_adapted_withdotssquare}.png}
+  \includegraphics[width=.99\linewidth]{{./pics/Sillman1999_Fig1_adapted_withdotsrectangle}.png}
   \captionof{figure}{Isopleths giving net rate of $O_3$ production (ppb/h, solid lines) as a function of $VOC$ (ppbC) and $NO_x$ (ppb) for mean summer daytime meteorology and clear skies. The solid lines represent production rates of 1, 2.5, 5, 10, 15, 20 and 30 ppb/h. Adapted from \citep{Sillman1999}.}\label{fig:Sillman1999}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   \centering
   \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/chem_noAN_netO3rate_withINORG_NOx_1ppb_100ppb.png}
-  \captionof{figure}{Isopleths giving net rate of $O_3$ production (ppb/h, color) as a function of $VOC$ (ppbC) and $NO_x$ (ppb) in the first modelling experiment with alkyl nitrate chemistry switched off combined with an additional run with inorganic chemistry only (i.e. the only $VOC$ is $CO$).}\label{fig:noAN_netO3_rate}
+  \captionof{figure}{Isopleths giving net rate of $O_3$ production (ppb/h, color) as a function of $VOC$ (ppbC) and $NO_x$ (ppb) in the first modelling experiment with alkyl nitrate chemistry switched off combined with an additional run with inorganic chemistry only (i.e. the only $VOC$ is $CO$).}\label{fig:noAN_netO3rate}
 \end{minipage}
 \end{figure}
 
 Rewrite!
 
-The same kind of plot can be found in Figure \ref{fig:noAN_netO3_rate}, which is produced using data from our model from the first experiment with alkyl nitrate chemistry switched off. Taking into account the fact that the maximum $NO_x$ mixing ratio considered in the experiment is 10 ppb, our results are directly comparable only with a part of the data from Figure \ref{fig:Sillman1999}, namely with those inside the green dashed square. Moreover, since the minimum $NO_x$ mixing ratio considered in the experiment is 5 ppt, while the corresponding value in Figure \ref{fig:Sillman1999} is 1 ppb, a negative $O_3$ production rate is seen in our results, whereas it stays out of range of Figure \ref{fig:Sillman1999}.
+The same kind of plot can be found in Figure \ref{fig:noAN_netO3rate}, which is produced using data from our model from the first experiment with alkyl nitrate chemistry switched off. Taking into account the fact that the maximum $NO_x$ mixing ratio considered in the experiment is 10 ppb, our results are directly comparable only with a part of the data from Figure \ref{fig:Sillman1999}, namely with those inside the green dashed square. Moreover, since the minimum $NO_x$ mixing ratio considered in the experiment is 5 ppt, while the corresponding value in Figure \ref{fig:Sillman1999} is 1 ppb, a negative $O_3$ production rate is seen in our results, whereas it stays out of range of Figure \ref{fig:Sillman1999}.
 
 One can see the same pattern in these two figures. At high $VOC$/$NO_x$ ratios, the rate of $O_3$ production increases with increasing $NO_x$ and reaches its maximum at the highest $NO_x$ and $VOC$ levels (which corresponds to the top right corner of the green dashed square). The change in $O_3$ production rate at high $VOC$/$NO_x$ ratios in our model is largely insensitive to $VOC$, which fits into the theory. At low $VOC$/$NO_x$ ratios the $O_3$ production rate starts to depend on $VOC$ concentration also resembling the behaviour of ozone isopleths at the top left corner of the green dashed square. The overall tendency of $O_3$ production rate to increase with increasing $VOC$ and $NO_x$ is present in both figures showing that the model reproduces this feature according to the theory. However, the modelled values of $O_3$ production rates are much lower than those in Figure \ref{fig:Sillman1999}: in the model the maximum production rate is 9 ppb/h, while in theory it is 30 ppb/h, meaning that our model underestimates the $O_3$ production rate, but reproduces some features of the relationship between $O_3$, $NO_x$ and $VOC$.
 
 \section{Results} \label{sec:res}
+\subsection{Sensitivity of $O_3$ production to alkyl nitrate chemistry}
 
+A number of simulations for evaluating the sensitivity of the $O_3$ production to alkyl nitrate chemistry were carried out. This was accomplished by switching on and off all reactions present in the chemical mechanism that describe formation or destruction of all alkyl nitrates.
 
+\begin{figure}
+\centering
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/chem_noAN_netO3rate_noINORG_NOx_5ppt_100ppb.png}
+\end{minipage}
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3rate_noINORG_NOx_5ppt_100ppb.png}
+\end{minipage}
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3ratediff_noINORG_NOx_5ppt_100ppb.png}
+\end{minipage}
+\caption{Isopleths giving net rate of $O_3$ production (ppb/h, color) as a function of $VOC$ (ppbC) and $NO_x$ (ppb) with alkyl nitrate chemistry switched off (left) and switched on (middle). Difference between them is shown on the right.}
+\end{figure}
+
+The simulations that compared ... provided insight into which reactions... under changing $NO_x$ mixing ratios (Table ...).
 
 %\begin{figure}[h] % allAN_netO3_rate
 %\includegraphics[width=\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3_rate.png}
