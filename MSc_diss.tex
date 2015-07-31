@@ -143,6 +143,7 @@ A considerable effort has been made to tackle these problems, and generally ther
 The second way to understanding the discrepancies between models and observations is to conduct an idealised theoretical study using a conceptual model. The advantage of this approach is that such kind of models can be quite easily constructed, and more importantly can be focused on representation of a certain chemical reactions which presumably could explain the discrepancy between models and observations. An example of such set of reactions is alkyl nitrate chemistry.
 
 \subsection{Alkyl nitrates}
+\subsubsection{Alkyl nitrates chemistry}
 Alkyl nitrates are important tropospheric trace gases which are formed following the same chemistry that leads to the production of ozone \citep{Reeves2007}. The simplest example, in case of $CH_4$ oxidation, can be described by the set of reactions below (also shown in Figure 2).
 
 %\input{O3CycleScheme}
@@ -215,7 +216,19 @@ HCHO + OH \rightarrow HO_2 + CO
 As a result, the formation of $HCHO$ has an impact on the rates of the oxidation cycles described above, through secondary radical generation \citep{Fowler2008}.
 At high NOx levels (urban environment) reactions (8) and (9) dominate for $CH_3O_2$ and $HO_2$, but $O_3$ formation becomes inhibited by further increases in NOx. In other words, at high NOx regime the $O_3$ formation rate becomes sensitive to the concentration of $CH_4$ or $CO$ and to inputs of other VOCs \citep{Fowler2008}.
 
+\subsubsection{Observational studies}
+
+mean ANs concentrations: \citep{Reeves2007}, \citep{Roberts1998}
+
+\subsubsection{Modelling studies}
+
 To sum up, alkyl nitrates are produced as a minor branch of the reaction of peroxy radicals with NO \citep{Day2003}. Since these compounds are removed from the troposphere by photolysis and OH oxidation they can provide information on photochemical evolution of an air mass through relationships with their parent hydrocarbons \citep{Bertman1995}. Acting as reservoir species for reactive nitrogen (NOy) and having a relatively long atmospheric lifetimes alkyl nitrates play an important role in long range transport of NOx. Furthermore, alkyl nitrates link to ozone and carbonyl production making them useful tracers for both species \citep{Worton2010}. Despite their relative importance alkyl nitrates are usually not included in the climate-chemistry models, for example in UKCA (Reeves, personal communication), which potentially could lead to discrepancies between models and observations described before. 
+
+[Source characterization and photochemical processes in
+transported air masses have been analyzed by examining
+RONO2 formation from anthropogenic emissions of alkane
+precursors [Simpson et al., 2003; Madronich, 2006; Simpson
+et al., 2006; Reeves et al., 2007; Worton et al., 2010]. (Neuman2012)]
 
 !! from \citep{Finlayson-Pitts2000}
 The relationship between the peroxy radical concentration and the ozone photolysis rate constant for these higher NO conditions can be again approximated using steady-state analysis [..]. While OH is recycled in its reactions with CO and CH4 via HO2, it is pernanetly removed at higher NOx concentrations by the reaction of OH with NO2, forming nitric acid:
@@ -606,35 +619,119 @@ One can see the same pattern in these two figures. At high $VOC$/$NO_x$ ratios, 
 \section{Results} \label{sec:res}
 \subsection{Sensitivity of $O_3$ production to alkyl nitrate chemistry}
 
-A number of simulations for evaluating the sensitivity of the $O_3$ production to alkyl nitrate chemistry were carried out. This was accomplished by switching on and off all reactions present in the chemical mechanism that describe formation or destruction of all alkyl nitrates.
+To evaluate the sensitivity of $O_3$ production (efficiency) to alkyl nitrate ($RONO_2$) chemistry under different $NO_x$ and $VOC$ conditions a number of simulations were carried out. In these simulations the chemical mechanism of the model was adjusted to either include or exclude the formation and loss of alkyl nitrates, which was accomplished by switching on and off all reactions that involve $RONO_2$ while keeping the rest of the mechanism unchanged. 
 
-\begin{figure}
+As it has been noted in Section \ref{sec:intro}, the relationship between $O_3$ and $RONO_2$ production rates is controlled by the branching ratio ($\alpha_3$) between reactions:
+\begin{equation}\label{reac:RO2+NO=RO+NO2}
+RO_2 + NO \xrightarrow{1-\alpha_3} RO + NO_2
+\end{equation}
+\begin{equation}\label{reac:RO2+NO=RONO2}
+RO_2 + NO \xrightarrow{\alpha_3} RONO_2
+\end{equation}
+Reaction (\ref{reac:RO2+NO=RO+NO2}) leads to $O_3$ production and $NO$ regeneration, resulting in continuing $O_3$ production, while reaction (\ref{reac:RO2+NO=RONO2}) terminates this process. Branching ratios used in the model are taken from the MCM v3.3, and their values (Table \ref{tab:ANbranching}) were kept constant in all model runs.
+
+\begin{table} %  AN branching ratios
+\caption{Branching ratios for the formation of alkyl nitrates from their precursor peroxy radicals and $NO$ (taken from the MCM v3.3 (2015)).}\label{tab:ANbranching}
+\centering
+\begin{tabular}{cc}
+\hline
+Alkyl nitrate    & Branching ratio \\
+\hline
+methyl           & 0.001 \\
+ethyl            & 0.009 \\
+iso-propyl       & 0.042 \\
+n-propyl         & 0.020 \\
+n-butyl          & 0.033 \\
+sec-butyl        & 0.090 \\
+iso-butyl        & 0.033 \\ 
+tert-butyl       & 0.025 \\
+n-pentyl         & 0.052 \\
+2-pentyl         & 0.129 \\
+3-pentyl         & 0.131 \\
+2-methylbutyl    & 0.052 \\
+3-methyl-2-butyl & 0.141 \\
+2-methyl-2-butyl & 0.047 \\
+\hline
+\end{tabular}
+\end{table}
+
+Figure \ref{fig:netO3rate_noAN_withAN_diff} shows isopleths of net $O_3$ production rate as a function of $NO_x$ and sum of $VOCs$ initial concentrations from two series of model runs (with and without alkyl chemistry) and the difference between them. Since the actual formation of $O_3$ in our model starts at 250 ppt of $NO_x$, Figure \ref{fig:netO3rate_noAN_withAN_diff} summarises modelling data from experiments with $NO_x$ initial mixing ratios from 250 ppt till 100 ppb.
+
+\begin{figure} % netO3rate noAN withAN diff
 \centering
 \begin{minipage}{.3\textwidth}
   \centering
-  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/chem_noAN_netO3rate_noINORG_NOx_5ppt_100ppb.png}
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/chem_noAN_netO3rate_noINORG_NOx_250ppt_100ppb.png}
 \end{minipage}
 \begin{minipage}{.3\textwidth}
   \centering
-  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3rate_noINORG_NOx_5ppt_100ppb.png}
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3rate_noINORG_NOx_250ppt_100ppb.png}
 \end{minipage}
 \begin{minipage}{.3\textwidth}
   \centering
-  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3ratediff_noINORG_NOx_5ppt_100ppb.png}
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3ratediff_noINORG_NOx_250ppt_100ppb.png}
 \end{minipage}
-\caption{Isopleths giving net rate of $O_3$ production (ppb/h, color) as a function of $VOC$ (ppbC) and $NO_x$ (ppb) with alkyl nitrate chemistry switched off (left) and switched on (middle). Difference between them is shown on the right.}
+\caption{Isopleths giving net rate of $O_3$ production (ppb/h, color) as a function of $VOC$ (ppbC) and $NO_x$ (ppb) with alkyl nitrate chemistry switched off (left) and switched on (middle). Difference between them is shown on the right.}\label{fig:netO3rate_noAN_withAN_diff}
 \end{figure}
+
+As expected, the inclusion of alkyl nitrate chemistry slows down the net $O_3$ production rate. At low $NO_x$ and $VOCs$ initial levels, this slowdown is -0.2...-0.6 ppb of $O_3$ per hour. As $NO_x$ and $VOCs$ levels increase the $O_3$ production rate decreases, reaching the maximum decrease of -1.94 ppb of $O_3$ per hour at 100 ppb of $NO_x$ and $VOCs$ level from case I (not the highest $VOCs$ level). At the range of $NO_x$ levels from 1 ppb to 10 ppb the $O_3$ production rate is slightly more sensitive to $VOCs$ levels, while it is almost insensitive to $VOCs$ at $NO_x$ levels higher than 10 ppb and 2050 ppbC of $VOCs$. 
+
+\begin{figure} % netO3mixrat noAN withAN diff
+\centering
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/chem_noAN_netO3mixrat_noINORG_NOx_250ppt_100ppb.png}
+\end{minipage}
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3mixrat_noINORG_NOx_250ppt_100ppb.png}
+\end{minipage}
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3mixratdiff_noINORG_NOx_250ppt_100ppb.png}
+\end{minipage}
+\caption{Isopleths giving net $O_3$ production (ppb, color) as a function of $VOC$ (ppbC) and $NO_x$ (ppb) with alkyl nitrate chemistry switched off (left) and switched on (middle). Difference between them is shown on the right. Net production = final - initial value of $O_3$ mixing ratio.}\label{fig:netO3mixrat_noAN_withAN_diff}
+\end{figure}
+
+The change in net rate of $O_3$ production due to inclusion of alkyl nitrate chemistry into the chemical mechanism has a direct impact on absolute $O_3$ levels calculated by the model. Figure \ref{fig:netO3mixrat_noAN_withAN_diff} shows that the net $O_3$ production (difference between final and initial $O_3$ mixing ratio) is smaller when alkyl nitrate chemistry is switched on. At low $NO_x$ and $VOCs$ levels the (negative) change in the net $O_3$ production is 5-10 ppb, at high $NO_x$ and $VOCs$ levels it is 35-45 ppb (per 24 hours) with maximum value of 46.5 ppb. However, these changes in the net $O_3$ production should be treated with care, because the model due to reasons described in Section \ref{sec:method} gives unrealistically high $O_3$ mixing ratios (maximum 650 ppb while typical maximum urban $O_3$ mixing ratio (Los Angeles, Mexico City) is 490 ppb (http://www-personal.umich.edu/~sillman/ozone.htm). Therefore, in this case a more useful estimate of effect of these changes is to express them in percentage form (i.e., compare like with like), and it appears that these changes are very small: ??? respectively.
+
+To see what caused these changes it is useful to look at the net production of the sum of the alkyl nitrates themselves as a function of $NO_x$ and $VOCs$ levels (Figure \ref{fig:endtotalANs}). Since alkyl nitrates are the only sink for $NO_x$ in our model the high production of these species in total was expected. The range is ppb.
+However, real concentrations reported from observational studies are of different order, tens of ppt.
+\citep{Reeves2007} 10 ppt (ITOP) \citep{Roberts1998} 14 ppt
+
+\citep{Reeves2007}
+[In the 'marine' air masses methyl nitrate shows a slightly higher mean concentration to 'other' air masses (2.40 compared to 2.29 ppt), but the concentrations of the other alkyl
+nitrates are lower by around 30–50% with the exception of
+ethyl nitrate which is lower by about 15% (1.33 compared to
+1.57 ppt), such that it becomes the second most abundant alkyl
+nitrate.
+The highest alkyl
+nitrate concentration was observed during flight B031 (air
+from New York) for 2-methyl-3-butyl nitrate (13.7 ppt),
+when the maximum concentration of 2 + 3-pentyl nitrate
+(9.0 ppt) was also measured. It is quite possible that some of
+the ‘‘marine’’ maximum concentrations of the alkyl nitrates
+were impacted by terrestrial emissions (e.g., 5.4 pptv of
+2-methyl-3-butyl nitrate and 1.7 pptv for 2 + 3-pentyl nitrate
+observed during flight B030).
+
+The mean NO concentration observed during ITOP (20 plus minus 31 pptv (Lewis et al., 2007)) is below the limit of 100–200 pptv at which the efficiency of the alkyl nitrate formation is reduced because of competition between the reaction of ROO with NO and ROO self/cross reactions (Roberts et al., 1998)]
+
+\begin{figure} % endtotalANs
+\includegraphics[width=.5\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_endtotalANs_noINORG_NOx_250ppt_100ppb.png}
+\caption{Isopleths of net production of alkyl nitrates ($\Sigma RONO_2$) as a function of $NO_x$ and $VOCs$ levels.}\label{fig:endtotalANs}
+\end{figure}
+
 
 The simulations that compared ... provided insight into which reactions... under changing $NO_x$ mixing ratios (Table ...).
 
-%\begin{figure}[h] % allAN_netO3_rate
-%\includegraphics[width=\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3_rate.png}
-%\caption{allAN, netO3 rate}\label{fig:allAN_netO3_rate}
-%\end{figure}
-
 ! Dependence of alkyl nitrate yield on carbon number (paper about n-alkanes): bigger yield of ANs from larger carbon number means that the potential for contributing to photochemical air pollution may be less for the larger (C>6) n-alkanes that for the smaller ones.
 
+\subsection{$O_3$ production and carbon bonds}
+
 \section{Discussion} \label{sec:discuss}
+Future plans and possible improvements in the model.
+
 The experimental results presented in the previous section provide an opportunity to speculate about the behaviour of our simple model of alkyl nitrate production and loss with time in comparison with the observational data. 
 
 \section{Conclusion} \label{sec:conclusion}
