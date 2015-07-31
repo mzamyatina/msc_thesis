@@ -105,7 +105,7 @@ Unlike many other air pollutants, tropospheric ozone is not directly emitted, bu
 \label{fig:O3observations}
 \end{figure}
 
-According to the Intergovernmental Panel on Climate Change (IPCC) Fifth Assessment report (AR5) for present conditions (around year 2000) the global mean tropospheric ozone budget is approximately 331 Tg \citep{Myhre2013}. However, despite general agreement on how the drivers impact ozone concentrations at global and regional scales, its budget varies considerably between different modelling and observational studies \citep{Stevenson2006,Wild2007,Young2012}. Table \ref{tab:O3budget} demonstrates that the range of the global tropospheric ozone budget estimates is approximately 60 Tg which is 18\% of the mean. In terms of ozone production the variation is even higher and account for 28\% of the corresponding value. In that regard, two questions arise: why does the tropospheric ozone budget differ between models and observations? And secondly, why does it vary to this extent, especially in terms of production? The only way to answer these questions is to perform a rigorous investigation of the factors that drive tropospheric ozone and attribute those differences to respective factors \citep{Young2012}.
+According to the Intergovernmental Panel on Climate Change (IPCC) Fifth Assessment report (AR5) for present conditions (around year 2000) the global mean tropospheric ozone budget is approximately 331 Tg \citep{Myhre2013}. However, despite general agreement on how the drivers impact ozone concentrations at global and regional scales, its budget varies considerably between different modelling and observational studies \citep{Stevenson2006,Wild2007,Young2012}. Table \ref{tab:O3budget} demonstrates that the range of the global tropospheric ozone budget estimates is approximately 60 Tg which is 18\% of the mean. In terms of ozone production the variation is even higher and accounts for 28\% of the corresponding value. In that regard, two questions arise: why does the tropospheric ozone budget differ between models and observations? And secondly, why does it vary to this extent, especially in terms of production? The only way to answer these questions is to perform a rigorous investigation of the factors that drive tropospheric ozone and attribute those differences to respective factors \citep{Young2012}.
 
 \begin{table}[h] % O3 budget
 \centering
@@ -140,22 +140,20 @@ $319–351$	& -	           & Osterman et al. (2008); 60S–60N \\
 
 A considerable effort has been made to tackle these problems, and generally there are two possible ways of doing it. The first one implies the direct analysis of tropospheric chemical schemes used in climate-chemistry models. For example, Emmerson and Evans (2009) compared the state of the art Master Chemical Mechanism which contains approximately 5600 species and 13500 reactions \citep{Jenkin2002} with other six chemical schemes and found four significant variations between them. This approach is linked with big challenges since a modern global model is a very sophisticated representation of the climate-chemistry interactions, and therefore it is often difficult to separate influence of one reaction from another. However, even being so developed climate-chemistry models do not take into account all known chemical reactions taking place in the real troposphere. A complete representation requires many thousands of species and tens of thousands of reactions, which is beyond the numerical capabilities currently available. This significantly limits the practicable size of chemical schemes and typically involves a reduction of the number of VOCs considered and lumping the carbon from the discarded species into representative surrogates.
 
-The second way to understanding the discrepancies between models and observations is to conduct an idealised theoretical study using a conceptual model. The advantage of this approach is that such kind of models can be quite easily constructed, and more importantly can be focused on representation of a certain chemical reactions which presumably could explain the discrepancy between models and observations. An example of such set of reactions is alkyl nitrate chemistry.
+! add something from report!
 
-\subsection{Alkyl nitrates}
-\subsubsection{Alkyl nitrates chemistry}
-Alkyl nitrates are important tropospheric trace gases which are formed following the same chemistry that leads to the production of ozone \citep{Reeves2007}. The simplest example, in case of $CH_4$ oxidation, can be described by the set of reactions below (also shown in Figure 2).
+The second way to understanding the discrepancies between models and observations is to conduct an idealised theoretical study using a conceptual model. The advantage of this approach is that such kind of models can be quite easily constructed, and more importantly can be focused on representation of a certain chemical reactions which presumably could explain the discrepancy between models and observations.
 
+\subsubsection*{Ozone tropospheric chemistry}
 %\input{O3CycleScheme}
-
-In the presence of UV light shorter than 320 nm and water vapour $O_3$ photolysis is the main source of OH radicals in the troposphere:
-\begin{equation} \label{eq:O3hv}
+Having clarified the role of tropospheric ozone, uncertainties in its budget and having identified the ways of revealing the cause of these uncertainties, it is time to remind ourselves the chemistry that controls the abundance of ozone in the troposphere. The key chemical processes that lead to $O_3$ production and destruction are driven by reaction cycles involving free-radical intermediates, which are mainly formed from the photolysis of $O_3$ itself (\ref{reac:O3+hv}). In the presence of UV light shorter than 320 nm and water vapour $O_3$ photolysis is the main source of OH radicals in the troposphere:
+\begin{equation} \label{reac:O3+hv}
 O_3 + hv \rightarrow O(^1D) + O_2
 \end{equation}
 \begin{equation} \label{eq:O1D+H2O}
 O(^1D) + H_2O \rightarrow 2OH
 \end{equation}
-Once formed the OH radicals react mainly with $CO$ and $CH_4$ to initiate the $O_3$ formation or removal cycles by producing peroxy radicals ($HO_2$, $CH_3O_2$):
+Once formed the OH radicals react mainly with $CO$ and $CH_4$ to initiate the $O_3$ formation or removal cycles by producing the peroxy radicals ($HO_2$, $CH_3O_2$):
 \begin{equation} \label{eq:OH+CO}
 OH + CO \rightarrow HO_2 + CO_2
 \end{equation}
@@ -163,18 +161,18 @@ OH + CO \rightarrow HO_2 + CO_2
 OH + CH_4 \rightarrow CH_3O_2 + H_2O
 \end{equation}
 
-The fate of the peroxy radicals depends on the presence of NOx. At low NOx levels (remote regions), the $HO_2$ radical reacts with another HO2 to form hydrogen peroxide, H2O2, or with the methyl peroxy radical, $CH_3O_2$, to form methyl hydrogen peroxide ($CH_3OOH$):
+The fate of the peroxy radicals depends on the presence of $NO_x$ ($=NO + NO_2$). At low $NO_x$ levels (remote regions), the $HO_2$ radical reacts with another $HO_2$ to form hydrogen peroxide ($H_2O_2$) or reacts with the methyl peroxy radical ($CH_3O_2$) to form methyl hydrogen peroxide ($CH_3OOH$):
 \begin{equation} \label{eq:HO2+HO2}
 HO_2 + HO_2 \rightarrow H_2O_2 + O_2
 \end{equation}
 \begin{equation} \label{eq:HO2+CH3O2}
 HO_2 + CH_3O_2 \rightarrow CH_3OOH + O_2
 \end{equation}
-On a whole, at low NOx levels a net $O_3$ loss takes place, because the reaction sequence is initiated by $O_3$ photolysis. Plus under the same conditions, some additional $O_3$ removal occurs due to the re-action of $HO_2$ radicals with $O_3$,
+On a whole, at low $NO_x$ levels a net $O_3$ loss takes place, because the reaction sequence is initiated by $O_3$ photolysis. Plus under the same conditions, some additional $O_3$ removal occurs due to the reaction of $HO_2$ radicals with $O_3$,
 \begin{equation} \label{eq:HO2+O3}
 HO_2 + O_3 \rightarrow OH + 2O_2
 \end{equation}
-leading to the regeneration of OH radicals as part of an $O_3$ depleting HOx catalytic cycle.
+leading to the regeneration of OH radicals as part of an $O_3$ depleting $OH-HO_2$ ($HO_x$) catalytic cycle.
 
 At intermediate NOx levels (rural areas of most industrialised countries), the peroxy radicals react with nitrogen monoxide ($NO$) to form nitrogen dioxide ($NO_2$) with the subsequent photolysis of $NO_2$ generating $O_3$:
 \begin{equation} \label{eq:HO2+NO}
@@ -215,6 +213,12 @@ HCHO + OH \rightarrow HO_2 + CO
 \end{equation}
 As a result, the formation of $HCHO$ has an impact on the rates of the oxidation cycles described above, through secondary radical generation \citep{Fowler2008}.
 At high NOx levels (urban environment) reactions (8) and (9) dominate for $CH_3O_2$ and $HO_2$, but $O_3$ formation becomes inhibited by further increases in NOx. In other words, at high NOx regime the $O_3$ formation rate becomes sensitive to the concentration of $CH_4$ or $CO$ and to inputs of other VOCs \citep{Fowler2008}.
+
+\subsection{Alkyl nitrates}
+\subsubsection{Alkyl nitrates chemistry}
+(An example of such set of reactions is alkyl nitrate chemistry)
+
+Alkyl nitrates ($RONO_2$) are organic tropospheric trace gases, which   due to one of their formation mechanisms are closely linked with the production of tropospheric ozone \citep{Reeves2007}.
 
 \subsubsection{Observational studies}
 
