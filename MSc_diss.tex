@@ -92,7 +92,7 @@ Abstract.
 \end{abstract}
 
 \section{Introduction} \label{sec:intro}
-The Earth’s atmosphere is the recipient of a vast range of chemical compounds emitted by natural and anthropogenic sources. The oxidation of these compounds is the main process taking place in the atmosphere that keeps their concentrations at levels that do not distort the chemical balance of the atmosphere \citep{Prinn2003}. In other words, oxidation is a removal “cleansing” mechanism for these compounds (various pollutants and greenhouse gases), and its rate is often referred to as the oxidizing capacity of the atmosphere. This capacity depends mainly on two factors: the global burden of the principal oxidants such as ozone ($O_3$), the hydroxyl radical ($OH$) and hydrogen peroxide ($H_2O_2$), and climate \citep{Prinn2003,Thompson1992}.
+The Earth’s atmosphere is the recipient of a vast range of chemical compounds emitted by natural and anthropogenic sources. The oxidation of these compounds is the main process taking place in the atmosphere that keeps their concentrations at levels that do not distort the chemical balance of the atmosphere \citep{Prinn2003}. In other words, oxidation is a removal 'cleansing' mechanism for these compounds (various pollutants and greenhouse gases), and its rate is often referred to as the oxidizing capacity of the atmosphere. This capacity depends mainly on two factors: climate and the global burden of the principal oxidants such as ozone ($O_3$), the hydroxyl radical ($OH$) and hydrogen peroxide ($H_2O_2$) \citep{Prinn2003,Thompson1992}.
 
 \subsection{Tropospheric ozone}
 Tropospheric ozone ($O_3$) plays an important role in the chemical and thermal balance of the atmosphere. Although it accounts only for about 10\% of the total ozone, it is a primary precursor to the formation of hydroxyl radicals ($OH$) which in association with hydrogen peroxide ($H_2O_2$) determines the ‘cleansing’ capacity of the atmosphere \citep{Prinn2003,Tarasick2008,Thompson1992}. On the other hand, being a source of main pollutant removal agents, ozone is an air pollutant itself. Long exposure to its high concentrations causes respiratory problems in humans and damage to sensitive plant species \citep{Fowler2008}. Last but not least characteristic of tropospheric ozone is that it is an important greenhouse gas with a current estimated radiative forcing of  $0.40\pm 0.20~Wm^{–2}$ which is approximately one fifth of the $CO_2$ radiative forcing \citep{Hartmann2013,Myhre2013}. Due to these reasons a considerable interest in quantifying tropospheric ozone concentrations, budget and trends exists for more than a 100 years \citep{Becker2004}.
@@ -146,79 +146,101 @@ The second way to understanding the discrepancies between models and observation
 
 \subsubsection*{Ozone tropospheric chemistry}
 %\input{O3CycleScheme}
-Having clarified the role of tropospheric ozone, uncertainties in its budget and having identified the ways of revealing the cause of these uncertainties, it is time to remind ourselves the chemistry that controls the abundance of ozone in the troposphere. The key chemical processes that lead to $O_3$ production and destruction are driven by reaction cycles involving free-radical intermediates, which are mainly formed from the photolysis of $O_3$ itself (\ref{reac:O3+hv}). In the presence of UV light shorter than 320 nm and water vapour $O_3$ photolysis is the main source of OH radicals in the troposphere:
-\begin{equation} \label{reac:O3+hv}
+Having identified the role of tropospheric ozone, it is time to remind ourselves the chemistry that controls abundance of it.
+
+The key chemical processes that lead to $O_3$ formation and destruction in the troposphere are driven by reaction cycles involving free-radical intermediates, which are mainly formed from the photolysis of $O_3$ itself (\ref{reac:O3+hv=O1D+O2}) \citep{Fowler2008}. At UV wavelengths shorter than 320 nm, $O_3$ photolysis generates electronically excited oxygen atoms ($O(^1D)$), which than can either react with water vapour to form $OH$ radicals (\ref{reac:O1D+H2O=OH+OH}), or collide with an inert molecule (denoted '$M$') to reform $O_3$ (\ref{reac:O1D=O3P} and \ref{reac:O3P+O2=O3}):
+\begin{equation}\label{reac:O3+hv=O1D+O2}
 O_3 + hv \rightarrow O(^1D) + O_2
 \end{equation}
-\begin{equation} \label{eq:O1D+H2O}
-O(^1D) + H_2O \rightarrow 2OH
+\begin{equation}\label{reac:O1D+H2O=OH+OH}
+O(^1D) + H_2O \rightarrow OH + OH
 \end{equation}
-Once formed the OH radicals react mainly with $CO$ and $CH_4$ to initiate the $O_3$ formation or removal cycles by producing the peroxy radicals ($HO_2$, $CH_3O_2$):
-\begin{equation} \label{eq:OH+CO}
-OH + CO \rightarrow HO_2 + CO_2
+\begin{equation}\label{reac:O1D=O3P}
+O(^1D) \xrightarrow{M} O(^3P)
 \end{equation}
-\begin{equation} \label{eq:OH+CH4}
-OH + CH_4 \rightarrow CH_3O_2 + H_2O
+\begin{equation}\label{reac:O3P+O2=O3}
+O(^3P) + O_2 \xrightarrow{M} O_3
 \end{equation}
-
-The fate of the peroxy radicals depends on the presence of $NO_x$ ($=NO + NO_2$). At low $NO_x$ levels (remote regions), the $HO_2$ radical reacts with another $HO_2$ to form hydrogen peroxide ($H_2O_2$) or reacts with the methyl peroxy radical ($CH_3O_2$) to form methyl hydrogen peroxide ($CH_3OOH$):
-\begin{equation} \label{eq:HO2+HO2}
+Once formed the OH radicals mainly react with $CO$ and $CH_4$ and initiate the $O_3$ formation or removal cycles by producing the peroxy radicals ($HO_2$, $CH_3O_2$):
+\begin{equation}\label{reac:OH+CO=H+CO2}
+OH + CO \rightarrow H + CO_2
+\end{equation}
+\begin{equation}\label{reac:H+O2=HO2}
+H + O_2 \xrightarrow{M} HO_2
+\end{equation}
+\begin{equation}\label{reac:OH+CH4=CH3+H2O}
+OH + CH_4 \rightarrow CH_3 + H_2O
+\end{equation}
+\begin{equation}\label{reac:CH3O+O2=CH3O2}
+CH_3 + O_2 \xrightarrow{M} CH_3O_2
+\end{equation}
+The fate of the peroxy radicals depends on the presence of $NO_x$ ($=NO + NO_2$). In low-$NO_x$ conditions (remote regions), the $HO_2$ radical reacts with another $HO_2$ to form hydrogen peroxide ($H_2O_2$) or reacts with the methyl peroxy radical ($CH_3O_2$) to form methyl hydrogen peroxide ($CH_3OOH$):
+\begin{equation} \label{reac:HO2+HO2=H2O2+O2}
 HO_2 + HO_2 \rightarrow H_2O_2 + O_2
 \end{equation}
-\begin{equation} \label{eq:HO2+CH3O2}
+\begin{equation} \label{reac:HO2+CH3O2=CH3OOH+O2}
 HO_2 + CH_3O_2 \rightarrow CH_3OOH + O_2
 \end{equation}
-On a whole, at low $NO_x$ levels a net $O_3$ loss takes place, because the reaction sequence is initiated by $O_3$ photolysis. Plus under the same conditions, some additional $O_3$ removal occurs due to the reaction of $HO_2$ radicals with $O_3$,
-\begin{equation} \label{eq:HO2+O3}
+On a whole, in low-$NO_x$ conditions, a net $O_3$ destruction takes place, because the reaction sequence is initiated by $O_3$ photolysis. Plus in the same conditions some additional $O_3$ removal can occur because of the reaction of the $HO_2$ radical with $O_3$ leading to further destruction of ozone in a chain sequence involving formation of $OH$ radicals:
+\begin{equation}\label{reac:HO2+O3=OH+2O2}
 HO_2 + O_3 \rightarrow OH + 2O_2
 \end{equation}
-leading to the regeneration of OH radicals as part of an $O_3$ depleting $OH-HO_2$ ($HO_x$) catalytic cycle.
+\begin{equation}\label{reac:OH+O3=HO2+O2}
+OH + O_3 \rightarrow HO_2 + O_2
+\end{equation}
 
-At intermediate NOx levels (rural areas of most industrialised countries), the peroxy radicals react with nitrogen monoxide ($NO$) to form nitrogen dioxide ($NO_2$) with the subsequent photolysis of $NO_2$ generating $O_3$:
-\begin{equation} \label{eq:HO2+NO}
+In intermediate $NO_x$ conditions (rural areas of most industrialised countries), the peroxy radicals react with nitrogen monoxide ($NO$) to form nitrogen dioxide ($NO_2$), which subsequent photolysis leads to $O_3$ generation:
+\begin{equation}\label{reac:HO2+NO=NO2+OH}
 HO_2 + NO \rightarrow NO_2 + OH
 \end{equation}
-\begin{equation} \label{eq:CH_3O_2+NO}
+\begin{equation}\label{reac:CH3O2+NO=NO2+CH3O}
 CH_3O_2 + NO \rightarrow NO_2 + CH_3O
 \end{equation}
-\begin{equation} \label{eq:NO2hv}
+\begin{equation}\label{reac:NO2+hv=NO+O3P}
 NO_2 + hv \rightarrow NO + O(^3P)
 \end{equation}
-\begin{equation} \label{eq:O3P+O2}
-O(^3P) + O_2 + M \rightarrow O_3 + M
+\begin{equation}\label{reac:O3P+O2=O3}
+!!!(R4)sameO(^3P) + O_2 \xrightarrow{M} O_3
 \end{equation}
-As it is shown in Figure 2 reactions (8) and (9) form part of the free-radical propagated $O_3$ forming cycles, which may occur a number of times before being halted by a radical termination reactions (not shown). However, the reaction of $CH_3O_2$ with NO is a two-channel reaction \citep{Day2003}, and its second branch can terminate the $O_3$ forming cycle earlier by producing an alkyl nitrate, in this case methyl nitrate ($CH_3ONO_2$):
-\begin{equation} \label{eq:CH3NO3form}
-CH_3O_2 + NO \rightarrow CH_3ONO_2
-\end{equation}
+As shown in Figure ??? reactions (\ref{reac:HO2+NO=NO2+OH}) and (\ref{reac:CH3O2+NO=NO2+CH3O}) form parts of the free-radical propagated $O_3$ forming cycles, which may occur a number of times before being halted by radical termination reactions (\ref{reac:HO2+HO2=H2O2+O2} and \ref{reac:HO2+CH3O2=CH3OOH+O2}), and the higher $NO_x$ level is the greater number of these cycles can occur. Therefore, in intermediate $NO_x$ conditions a net $O_3$ formation takes place and it is sensitive to $NO_x$.
 
-Being a reservoir for the short lived NOx and having atmospheric lifetimes ranging from several days to about a month \citep{Reeves2007} alkyl nitrates can be transported over long distances, and then lost through photolysis and reaction with $OH$:
-\begin{equation} \label{eq:CH3NO3hv}
-CH_3ONO_2 + hv \rightarrow CH_3O + NO_2
+In high-$NO_x$ conditions (urban environment), the $OH$ radical may have another fate rather than reacting with $CO$, $CH_4$ and $O_3$. Depending on the concentration of $NO_2$ it can react with it to form nitric acid ($HNO_3$):
+\begin{equation}\label{reac:OH+NO2=HNO3}
+OH + NO_2 \xrightarrow{M} HNO_3
 \end{equation}
-\begin{equation} \label{eq:CH3NO3+OH}
-CH_3ONO_2 + OH \rightarrow HCHO + NO_2
+The formation of $HNO_3$ terminates free-radical propagated $O_3$ forming cycles leading to a decrease in $O_3$ production rate. However, elevated emissions of $CO$ and $CH_4$ (and other nonmethane volatile organic compounds (nmVOCs)) may make reactions (\ref{reac:OH+CO=H+CO2})-(\ref{reac:OH+CH4=CH3+H2O}) more competitive with the reaction (\ref{reac:OH+NO2=HNO3}) and lead to an increase in the $O_3$ production rate. Therefore, in high-$NO_x$ conditions the $O_3$ production rate can either decrease or increase depending on $NO_x$ and $VOCs$ levels. 
+ 
+The free-radical propagated oxidation of hydrocarbons leads to the generation of carbonyl compounds, among which formaldehyde ($HCHO$) is the most common. Its photolysis and further oxidation contributes to radical generation:
+\begin{equation}\label{reac:HCHO+hv=H+HCO}
+HCHO + hv \rightarrow H + HCO
 \end{equation}
-It means that alkyl nitrates can ‘release’ $NO_2$ back to the atmosphere after a while, and in association with reactions (10) and (11) start a new $O_3$ formation cycle being quite away from the source.
-
-The free-radical propagated oxidation of hydrocarbons leads to the generation of carbonyl compounds, in this case formaldehyde ($HCHO$). Its further oxidation and photolysis contributes to radical generation:
-\begin{equation} \label{eq:HCHOhv1}
-HCHO + hv \rightarrow 2HO_2 + CO
+\begin{equation}\label{reac:HCO+O2=HO2+CO}
+HCO + O_2 \rightarrow HO_2 + CO
 \end{equation}
-\begin{equation} \label{eq:HCHOhv2}
-HCHO + hv \rightarrow CO + H_2
+\begin{equation}\label{reac:H+O2=HO2}
+!!!sameH + O_2 \xrightarrow{M} HO_2
 \end{equation}
-\begin{equation} \label{eq:HCHO+OH}
-HCHO + OH \rightarrow HO_2 + CO
-\end{equation}
-As a result, the formation of $HCHO$ has an impact on the rates of the oxidation cycles described above, through secondary radical generation \citep{Fowler2008}.
-At high NOx levels (urban environment) reactions (8) and (9) dominate for $CH_3O_2$ and $HO_2$, but $O_3$ formation becomes inhibited by further increases in NOx. In other words, at high NOx regime the $O_3$ formation rate becomes sensitive to the concentration of $CH_4$ or $CO$ and to inputs of other VOCs \citep{Fowler2008}.
+therefore also having an impact on the rates of $O_3$ production \citep{Fowler2008} as do some other species, which are not mentioned in this section. Their role is described in other sections as fas as it is necessary.
 
 \subsection{Alkyl nitrates}
 \subsubsection{Alkyl nitrates chemistry}
 (An example of such set of reactions is alkyl nitrate chemistry)
 
 Alkyl nitrates ($RONO_2$) are organic tropospheric trace gases, which   due to one of their formation mechanisms are closely linked with the production of tropospheric ozone \citep{Reeves2007}.
+
+As it is shown in Figure 2 reactions (8) and (9) form part of the free-radical propagated $O_3$ forming cycles, which may occur a number of times before being halted by a radical termination reactions (not shown). However, the reaction of $CH_3O_2$ with NO is a two-channel reaction \citep{Day2003}, and its second branch can terminate the $O_3$ forming cycle earlier by producing an alkyl nitrate, in this case methyl nitrate ($CH_3ONO_2$):
+\begin{equation} \label{eq:CH3NO3form}
+CH_3O_2 + NO \rightarrow CH_3ONO_2
+\end{equation}
+
+Being a reservoir for the short lived NOx and having atmospheric lifetimes ranging from several days to about a month \citep{Reeves2007} alkyl nitrates can be transported over long distances, and then lost through photolysis and reaction with $OH$:
+\begin{equation} \label{eq:CH3NO3+hv}
+CH_3ONO_2 + hv \rightarrow CH_3O + NO_2
+\end{equation}
+\begin{equation} \label{eq:CH3NO3+OH}
+CH_3ONO_2 + OH \rightarrow HCHO + NO_2
+\end{equation}
+It means that alkyl nitrates can ‘release’ $NO_2$ back to the atmosphere after a while, and in association with reactions (10) and (11) start a new $O_3$ formation cycle being quite away from the source.
 
 \subsubsection{Observational studies}
 
