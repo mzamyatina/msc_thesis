@@ -220,12 +220,25 @@ HCO + O_2 \rightarrow HO_2 + CO
 \begin{equation}\label{reac:H+O2=HO2}
 !!!sameH + O_2 \xrightarrow{M} HO_2
 \end{equation}
-therefore also having an impact on the rates of $O_3$ production \citep{Fowler2008} as do some other species, which are not mentioned in this section. Their role is described in other sections as fas as it is necessary.
+therefore also having an impact on the rates of $O_3$ production \citep{Fowler2008} as do some other species, which are not mentioned in this section. Their role is described in other sections as far as it is necessary.
 
 \subsection{Alkyl nitrates}
-Alkyl nitrates ($RONO_2$) are organic tropospheric trace gases, which   due to one of their formation mechanisms are closely linked with the production of tropospheric ozone \citep{Reeves2007}. This mechanism is present in the following section.
+Alkyl nitrates ($RONO_2$) are organic tropospheric trace gases, which through one of their formation mechanisms are closely linked with the production of tropospheric ozone \citep{Reeves2007}. This mechanism is present in the following section.
 
 \subsubsection*{Alkyl nitrates chemistry}
+
+The photochemical formation of the alkyl nitrates starts when the chemistry of the troposphere reaches the regime of $O_3$ production, i.e. when reactions of the peroxy radicals with $NO$ start to compete with their self- and cross-reactions more effectively due to an increase in $NO_x$ concentration. In this case the reaction between of the alkyl peroxy radicals ($RO_2$ where $R$ denotes methyl group, $CH_3$) and $NO$ can reveal its two-channel nature \citep{Day2003}, which is controlled by the branching ratio $\alpha_3$ in the following way:
+\begin{subequations} \label{eq:peroxy_no0}
+\begin{align}
+RO_2 + NO &\xrightarrow{1-\alpha_3} RO + NO_2 \label{eq:peroxy_no1}\\
+RO_2 + NO &\xrightarrow{\alpha_3} RONO_2 \label{eq:peroxy_no2}
+\end{align}
+\end{subequations}
+The former reaction is a crucial since it can serve as a termination step
+
+in the net production of tropospheric ozone, since photolysis of $NO_2$ is the main photochemical source of $O_3$ in the troposphere.
+
+In other words, a branching ratio $\alpha_3$ of the reactions between alkyl peroxy radicals and $NO$ leads to formation of alkyl nitrates via rearrangement of a high-energy intermediate \citep{Bertman1995}. The branching ratio $\alpha_3$ is larger when the parent alkane is larger and is a function of temperature and pressure.
 
 As it is shown in Figure 2 reactions (8) and (9) form part of the free-radical propagated $O_3$ forming cycles, which may occur a number of times before being halted by a radical termination reactions (not shown). However, the reaction of $CH_3O_2$ with NO is a two-channel reaction \citep{Day2003}, and its second branch can terminate the $O_3$ forming cycle earlier by producing an alkyl nitrate, in this case methyl nitrate ($CH_3ONO_2$):
 \begin{equation} \label{eq:CH3NO3form}
@@ -242,14 +255,6 @@ CH_3ONO_2 + OH \rightarrow HCHO + NO_2
 It means that alkyl nitrates can ‘release’ $NO_2$ back to the atmosphere after a while, and in association with reactions (10) and (11) start a new $O_3$ formation cycle being quite away from the source.
 
 \subsubsection*{Bertman}
-Below is the simplified scheme of atmospheric hydrocarbon oxidation leading to the formation of alkyl nitrates (see also Fig. \ref{fig:scheme_bertman}). It begins from the process of $H$ abstraction by the $OH$ radical where the fraction of the primary or secondary radical is denoted by $\alpha_1$.
-\begin{equation} \label{eq:alkane_oh}
-RH + \bullet OH \xrightarrow{k_1, \alpha_1} R\bullet + H_2O
-\end{equation}
-The resulting radical rapidly reacts with $O_2$ and forms an alkyl peroxy radical ($R\bullet$):
-\begin{equation} \label{eq:rad_o2}
-R\bullet + O_2 \xrightarrow{k_2} ROO\bullet
-\end{equation}
 Then the alkyl peroxy radical reacts with $NO$, when it can either lose an oxygen atom to form alkoxy radical ($RO\bullet$) or bond with $NO$ to form an alkyl nitrate. The former reaction is a crucial in the net production of tropospheric ozone, since photolysis of $NO_2$ is the main photochemical source of $O_3$ in the troposphere.
 \begin{subequations} \label{eq:peroxy_no0}
 \begin{align}
@@ -257,7 +262,7 @@ ROO\bullet + NO &\xrightarrow{k_3, (1-\alpha_3)} RO\bullet + NO_2 \label{eq:pero
 ROO\bullet + NO &\xrightarrow{k_3, \alpha_3} RONO_2 \label{eq:peroxy_no2}
 \end{align}
 \end{subequations}
-In other words, a branching ratio $\alpha_3$ of the reactions between alkyl peroxy radicals and $NO$ leads to formation of nitrate products via rearrangement of a high-energy intermediate \citep{Bertman1995}. The branching ratio $\alpha_3$ is larger when the parent alkane is larger and is a function of temperature and pressure.
+In other words, a branching ratio $\alpha_3$ of the reactions between alkyl peroxy radicals and $NO$ leads to formation of alkyl nitrates via rearrangement of a high-energy intermediate \citep{Bertman1995}. The branching ratio $\alpha_3$ is larger when the parent alkane is larger and is a function of temperature and pressure.
 
 \begin{figure}[h]
 \centering
@@ -297,7 +302,7 @@ RONO_2 + OH \xrightarrow{k_5} \mathit{products}
 \end{equation}
 The relative importance of these two loss reactions depends generally on the net UV intensity and the size of the carbon chain in alkyl nitrates. Photolysis is relatively more important for nitrates with $< C_4$, while nitrates with longer chains ($\geq C_5$) tend to react faster with $OH$. In case of butyl nitrates both mechanisms are of similar significance \citep{Worton2010}.
 
-Assuming that the only source of alkyl nitrates is the $OH$ reaction with alkane, and that reactions take place in $NO$-rich atmosphere (so no $ROO\bullet$ self-reactions occur), the alkyl nitrate part in this generalised scheme can be reduced to the two equations of formation and loss:
+[Assuming that the only source of alkyl nitrates is the $OH$ reaction with alkane, and that reactions take place in $NO$-rich atmosphere (so no $ROO\bullet$ self-reactions occur), the alkyl nitrate part in this generalised scheme can be reduced to the two equations of formation and loss:
 \begin{subequations} \label{eq:an_form_loss0}
 \begin{align}
 RH &\xrightarrow{\beta k_A} RONO2 \label{eq:an_form_loss1}\\
@@ -316,7 +321,7 @@ A further good approximation is that there is no alkyl nitrate initially (\texti
 \begin{equation} \label{eq:model}
 \frac{[RONO_2]}{[RH]} = \frac{\beta k_A}{k_B - k_A}\left(1-e^{(k_A - k_B)t}\right)
 \end{equation}
-It has to be noted that eq. \eqref{eq:model} assumes no mixing with surrounding air. This simplification is reasonable only when mixing affects both the parent alkane and the corresponding alkyl nitrate similarly, keeping the ratios in eqs. \eqref{eq:integral} and \eqref{eq:model} the same \citep{Reeves2007}.
+It has to be noted that eq. \eqref{eq:model} assumes no mixing with surrounding air. This simplification is reasonable only when mixing affects both the parent alkane and the corresponding alkyl nitrate similarly, keeping the ratios in eqs. \eqref{eq:integral} and \eqref{eq:model} the same \citep{Reeves2007}].
 
 \subsection{Ozone, alkyl nitrates and carbon bonds}
 
