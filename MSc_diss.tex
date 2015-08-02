@@ -93,7 +93,6 @@ Abstract.
 
 \section{Introduction} \label{sec:intro}
 The Earth’s atmosphere is the recipient of a vast range of chemical compounds emitted by natural and anthropogenic sources. The oxidation of these compounds is the main process taking place in the atmosphere that keeps their concentrations at levels that do not distort the chemical balance of the atmosphere \citep{Prinn2003}. In other words, oxidation is a removal 'cleansing' mechanism for these compounds (various pollutants and greenhouse gases), and its rate is often referred to as the oxidizing capacity of the atmosphere. This capacity depends mainly on two factors: climate and the global burden of the principal oxidants such as ozone ($O_3$), the hydroxyl radical ($OH$) and hydrogen peroxide ($H_2O_2$) \citep{Prinn2003,Thompson1992}.
-
 \subsection{Tropospheric ozone}
 Tropospheric ozone ($O_3$) plays an important role in the chemical and thermal balance of the atmosphere. Although it accounts only for about 10\% of the total ozone, it is a primary precursor to the formation of hydroxyl radicals ($OH$) which in association with hydrogen peroxide ($H_2O_2$) determines the 'cleansing' capacity of the atmosphere \citep{Prinn2003,Tarasick2008,Thompson1992}. On the other hand, being a source of main pollutant removal agents, ozone is an air pollutant itself. Long exposure to its high concentrations causes respiratory problems in humans and damage to sensitive plant species \citep{Fowler2008}. Last but not least characteristic of tropospheric ozone is that it is an important greenhouse gas with a current estimated radiative forcing of  $0.40\pm 0.20~Wm^{–2}$ which is approximately one fifth of the $CO_2$ radiative forcing \citep{Hartmann2013,Myhre2013}. Due to these reasons a considerable interest in quantifying tropospheric ozone concentrations, budget and trends exists for more than a 100 years \citep{Becker2004}.
 
@@ -106,6 +105,8 @@ Unlike many other air pollutants, tropospheric ozone is not directly emitted, bu
 \end{figure}
 
 According to the Intergovernmental Panel on Climate Change (IPCC) Fifth Assessment report (AR5) for present conditions (around year 2000) the global mean tropospheric ozone budget is approximately 331 Tg \citep{Myhre2013}. However, despite general agreement on how the drivers impact ozone concentrations at global and regional scales, its budget varies considerably between different modelling and observational studies \citep{Stevenson2006,Wild2007,Young2012}. Table \ref{tab:O3budget} demonstrates that the range of the global tropospheric ozone budget estimates is approximately 60 Tg which is 18\% of the mean. In terms of ozone production the variation is even higher and accounts for 28\% of the corresponding value. In that regard, two questions arise: why does the tropospheric ozone budget differ between models and observations? And secondly, why does it vary to this extent, especially in terms of production? The only way to answer these questions is to perform a rigorous investigation of the factors that drive tropospheric ozone and attribute those differences to respective factors \citep{Young2012}.
+
+MAKE GRAPHIC FROM TABLE ABOUT O3 BUDGETS!
 
 \begin{table}[h] % O3 budget
 \centering
@@ -258,7 +259,7 @@ OPE = \dfrac{k_{HO_2+NO}[HO_2][NO]}{k_{OH+NO_2}[OH][NO_2]} = \dfrac{P_{O_3}}{L_{
 where $OPE$ is the ozone production efficiency, $k_{HO_2+NO}$ - the rate coefficient of reaction (\ref{reac:HO2+NO=NO2+OH}), $k_{OH+NO_2}$ - the rate coefficient of reaction (\ref{reac:OH+NO2=HNO3}), $[X]$ - mixing ratios of corresponding species, $P_{O_3}$ – the $O_3$ production rate, $L_{NO_x}$ – the $NO_x$ loss rate. $OPE$ is determined by the amount of $HO_2$ reacting with $NO$ to form $NO_2$ and $OH$ (i.e., $k_{HO_2+NO}[HO_2][NO]$, (\ref{reac:HO2+NO=NO2+OH})) and the amount of $NO_x$ removed from the system by reaction of $OH$ with $NO_2$ to form nitric acid ($HNO_3$, reaction (\ref{reac:OH+NO2=HNO3})). In other words, $OPE$ shows the amount of ozone created ($P_{O_3}$) per molecule of $NO_x$ removed ($L_{NO_x}$) from the system \citep{Jacob1999}. Due to the reasons described in section \ref{sec:chem_mech} (comment at the bottom of the page!"No representation of the nitric acid ($HNO_3$) in the model"), we use another expression for calculations of the $O_3$ production efficiency. This expression has been recently proposed by Professor Matthew Evans (University of York) amid the mounting concerns about the need of thorough intercomparison of chemical mechanisms of global atmospheric models (including those used in the IPCC reports), why it is more universal and applicable to any kind of model.
 
 According to \citep{Evans2014} (personal communication), the $O_3$ production efficiency can be estimated via calculation of the number of carbon bonds emitted into the system. For example, if the system contains one molecule of methane, $CH_4$, as 'a carbon bond reservoir', it means that this system has 4 carbon bonds (4 C-H), if  instead of methane it contains one molecule of ethane, $C_2H_6$, the system has 7 carbon bonds (6 C-H bonds and 1 C-C), and so on \citep{Edwards2013}. Assuming that every carbon bond is broken chemically and every organic peroxy radical ($RO_2$) reacts with $NO$, the overall efficiency of carbon bonds conversion to $O_3$, $\epsilon$, can be calculated as: 
-\begin{equation}
+\begin{equation}\label{eq:epsilon}
 \epsilon = \dfrac{P_{O_3}}{E_{C_{bons}}} = \chi\cdot\upsilon
 \end{equation}
 where $P_{O_3}$ – the rate of $O_3$ production (mol yr-1), $E_{C_{bons}}$  – the rate of carbon bonds emission (mol yr-1), $\chi$ – ratio between the rate of carbon bonds loss to form $RO_2$ and the loss rate of all carbon bonds, $\upsilon$ – ratio between the rate of $RO_2$ loss in reaction with $NO$ resulting in $NO$-to-$NO_2$ conversion and the loss rate of all $RO_2$. In other words, chemical loss of 1 carbon bond produces 1 peroxy radical:
@@ -285,24 +286,25 @@ or no peroxy radicals because of dry or wet deposition:
 
 The fact that $\epsilon$ does not account for reactions where no $NO$-to-$NO_2$ conversion happens, as, for example, in case of the formation of the alkyl nitrates, $\epsilon$ provides a way to relate the rate of $O_3$ production to the alkyl nitrate chemistry. Knowing the rate of carbon bond emissions ($E_{C_{bons}}$) from emissions inventory data and knowing the rate of $O_3$ production from a model run ($P_{O_3}$), one can estimate the efficiency of $O_3$ production per carbon bond emitted in their model, and than compare it with other such values from different models potentially revealing the true cause of discrepancies between models and observations of tropospheric $O_3$ budgets.
 
-For link at the bottom? The same kind of approach is used in the Common Representative Intermediates (CRI) mechanism for VOC degradation \citep{Jenkin2002, Jenkin2008}. It is a reduced chemical mechanism that describes $O_3$ formation from the tropospheric degradation of methane and 115 emitted non-methane hydrocarbons and oxygenated volatile organic compounds developed using the Master Chemical Mechanism version 3.1 (MCM v3.1) as a reference benchmark.
-\subsection{Motivation}
+For link at the bottom? The same kind of approach is used in the Common Representative Intermediates (CRI) mechanism for VOC degradation \citep{Jenkin2002, Jenkin2008}. It is a reduced chemical mechanism that describes $O_3$ formation from the tropospheric degradation of methane and 115 emitted non-methane hydrocarbons and oxygenated volatile organic compounds developed using the Master Chemical Mechanism version 3.1 (MCM v3.1) as a reference benchmark
+\section{Overall objective and specific aims}
+As the reader might anticipateit is mentioned in section \ref{sec:lit_review}
 \citep{Sommariva2008}
 [Typically, chemical mechanisms do not contain
 enough information about the various formation routes of secondary organic compounds, leading to the underestimation of their concentrations, with possible consequences on the estimates of ozone production in remote regions, or to ineffective ozone-control policies. In this work, a quasi-explicit chemical model based upon the Master Chemical Mechanism (MCM) has been used to study in detail the photochemistry of a number of alkyl nitrates and determine quantitatively their formation processes. This kind of study shows the potential of using mechanisms with a high level of chemical detail to study the formation of pollutants in the atmosphere (Madronich, 2006).]
-
-\section{Overall objective and specific aims}
 \subsection{Overall objective}
 The overall purpose of this research is to investigate the impact of alkyl nitrate chemistry on ozone production efficiency.
 \subsection{Specific aims}
-Specific aims are:
+Specific aims are to investigate:
 \begin{itemize}
-\item to investigate of the relationship between ozone production and carbon bond emissions (see Data and Methods);
-\item to analyse the impact of inclusion of alkyl nitrates chemistry on this relationship;
-\item to analyse everything mentioned above in various NOx regimes.
+\item[(1)] the relationship between ozone production and carbon bond emissions;
+\item[(2)] the impact of inclusion of alkyl nitrates chemistry on this relationship;
+\item[(3)] how (1) and (2) vary in different $NO_x$ and $VOC$ regimes;
+\item[(4)] build different version of the box model;
+\item[(5)] to evaluate the results.
 \end{itemize}
 
-\section{Literature review} \label{sec:data}
+\section{Literature review} \label{sec:lit_review}
 \subsubsection{Observational studies}
 
 \citep{Sommariva2008}
