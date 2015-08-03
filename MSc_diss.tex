@@ -503,28 +503,26 @@ Results:
 - The model predicts alkyl nitrate concentrations of 21-83 pptv for UHIGH and 4-12 pptv for ULOW for the hours 120-240.
 - General: The model predictions of 12-83 pptv (af- ter 120 hours) and 4-21 pptv (after 240 hours) are of the same order as observations.
 
-\citep{Sommariva2008}
-Validation: typical urban plume in the North-East of the United States, measurements taken during three flights of the NOAA WP-3D aircraft, which sampled a plume from the New York City area during the New England Air Quality Study (NEAQS) 2004 campaign
-- Seven alkyl nitrates (ethyl- nitrate, i-propylnitrate, n-propylnitrate, 2-butylni- trate, 2-pentylnitrate, 3-pentylnitrate, 3-methyl-2- butylnitrate) were measured during these flights together with a full suite of VOCs and other chemical parameters, such as CO, O3,NOx, HNO3 and PANs (Neuman et al., 2006).
-- The model results have been qualitatively compared to measurements of alkyl nitrates taken on 20–22 July 2004, when the NOAA WP-3D aircraft made three flights aimed to inter- cept the New York City plume.
-Model: subset! of MCM v3.1 (The MCM is one of the most detailed chemical mechanism for tropospheric chemistry available)
-- to study the formation processes and photochemical evolution of alkyl nitrates
-Chemistry: oxidation mechanisms of 64 VOCs (50 hydrocar-
-bons and 14 oxygenates) plus CH4 and CO, The inorganic chemistry mechanism was taken from the IUPAC recommendation (Atkinson et al., 2003). A dimethyl sulphide (DMS) mechanism (Sommariva et al., 2004) was also included. The photolysis rates were calculated using the MCM parametrization (Saunders et al., 2003) for end of July 2004 at the latitude and longitude of Boston, MA. only gas-phase!!! Measurements made during NEAQS 2004 showed that there was very little removal of, for example,HNO3 by dry deposition in plumes decoupled from the marine boundary layer during transport from New York City (NYC) to the North Atlantic (Neuman et al., 2006). Therefore, removal by dry deposition was neglected in the model.
-Initialisation: measurements taken in the Boston metropolitan area during the 2002 and 2004 NEAQS campaigns. The initial concentrations of VOCs were determined using emission ratios; CH4 and O3 were set to typical values for urban conditions (1800 and 90 ppb) (Table 1). The model has been initialized using measurements and VOCs emission ratios from the 2002 and 2004 New England Air Quality Studies.
-Simulation time: 5 days.
-Scenarios: 2: A (higher OH, good with obs, reference), B
-Time: 20-22 July.
-Results:
-- While long-chain (C5) alkyl nitrates are produced for 90\% or more from the oxidation of a single parent alkane, short-chain <C4 alkyl nitrates can be formed from several precursors. The relative importance of each production route has been quantitatively determined thanks to the high level of chemical detail provided by the MCM. These secondary routes
-to the formation of alkyl nitrates include the oxidation of longer-chain alkanes and oxygenated intermediates, like carbonyls, peroxides and carboxylic acids.
-- The best agreement is in the case of 3-methyl-2-butylnitrate and the discrepancy between the modelled and the measured ratios clearly increases with decreasing carbon number .
-- RH/AN, Except in the case of ethylnitrate, the model can reproduce the measured rate of increase in the alkyl nitrate to alkane ratios fairly well, which suggests that the kinetic parameters used in the MCMmodel are overall correct.
-- By considering together Figs. 3 and 4 it can be reasonably concluded that the chemistry of alkyl nitrates is well represented in the MCM model.
-- Using the explicit description of the chemistry provided by the MCM, it has been possible to determine quantitatively the photochemical formation and the evolution of alkyl nitrates and the relative importance of their different formation pathways. The results are summarized in Table 2. Large alkyl nitrates are produced almost exclusively from the reaction of a single parent
-alkane. Smaller <=C4 alkyl nitrates also have other significant precursors, like longer-chain alkanes and alkenes. For n-propylnitrate and ethylnitrate, pro- panal and butanal, which are largely emitted, are important sources within the first 24 h. For all alkyl nitrates, the role of organic peroxides and car- boxylic acids formed by the reactions of peroxy radicals with HO2 at low [NOx] increases with time. These species contribute to sustain the production of alkyl nitrates far from the emission points of the parent VOCs. The relative importance of the different pathways
-and how they change with time are dependent on the initial conditions of the model. In a scenario with lower O3 and CO and higher NOx the
-importance of the direct routes (alkane ?OH) is typically lower during the first two–three days, and the contributions of peroxides and carboxylic acids become significant later and are on average less important. These results suggest that secondary chemistry in the formation of the alkyl nitrates, particularly oC4, cannot be neglected and should be included in the chemical models, due to its potential impact on ozone-controlling strategies.
+Probably the most detailed investigation of the formation processes and photochemical evolution of alkyl nitrates (but not their impact on $O_3$) has been done by \citep{Sommariva2008}. Using a subset of the Master Chemical Mechanism v3.1 (MCM) they constructed a highly detailed chemical model and run it for 5 days under two scenarios (Table \ref{tab:Sommariva2008init}) to explore the sensitivity of the evolution of the chemical composition of an air mass emitted from an urban environment to the initial conditions. As it seen in Figure ??? according to the modelling results $O_3$ is produced and $NO_x$ is removed from the system with the consequent formation of $HNO_3$ via the reaction of $NO_2$ with $OH$, which broadly agrees with the observations [(Neuman et al., 2006).]. In scenario A the concentration of $NO_x$ after the first day is about 0.5–1 ppb for $NO_2$ and approximately 100 ppt for $NO$, which is high enough to sustain the production of $O_3$ to up to 135 ppb and the formation of alkyl nitrates during the simulation. In scenario B (Figure ??? right) the increase in $O_3$ is slower (note that initial concentration is 0) and the maximum concentration after five days is about 100 ppb. The concentration of $NO_x$ remains relatively high during the second (10–15 ppb) and third day (3–5 ppb) and then decreases to $<$200 ppt of $NO$ and $<$1ppb of $NO_2$ on the fourth and fifth days, therefore allowing the formation of alkyl nitrates too. 
+
+\begin{table}\label{tab:Sommariva2008init}
+\caption{Initial values of the some model parameters (in ppb) for two scenarios used in \citep{Sommariva2008}}
+\begin{tabular}{ccc}
+\hline
+Parameter & Initial value Scenario A & Scenario B \\
+\hline
+$CO$      & 332.5 & 232.5 \\
+$NO_x$    & 34.9  & 46.5  \\
+$O_3$     & 90    & 0   \\
+\hline
+\end{tabular}
+\end{table}
+\begin{figure}
+\includegraphics[width=\linewidth]{{D:/UEA/ENV-MB4X_Dissertation/ENV-MB4X_Dissertation_thesis/ENV-MB4X_Dissertation_thesis_latex/pics/Sommariva2008_Fig.1}.png}
+\caption{Modelled concentrations of $O_3$, $NO_x$ and $HNO_3$ for scenario A (left) and B (right). Source: \citep{Sommariva2008}.}
+\end{figure}
+
+Comparison of modelling results with the values observed inside a typical urban plume sampled using the NOAA WP-3D aircraft from the New York City area during the New England Air Quality Study (NEAQS) 2004 campaign enabled \citep{Sommariva2008} to conclude that the chemistry of alkyl nitrates is well represented in the MCM model. They found that short-chain $<C_4$ alkyl nitrates can be formed from several precursors, while long-chain ($C_5$) alkyl nitrates are produced for 90\% or more from the oxidation of a single parent alkane. They also found that at lower $O_3$ and $CO$ initial concentrations and higher $NOx$ (scenario A) the importance of the reactions between alkane and $OH$ is typically lower during the first two-three days, and the contributions of peroxides and carboxylic acids become significant later and are on average less important.
 
 \citep{Newland2013}
 Model1: 2-D atmospheric model
