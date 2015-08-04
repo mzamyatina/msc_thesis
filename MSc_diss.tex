@@ -46,6 +46,8 @@
 \usetikzlibrary{positioning}
 \usetikzlibrary{calc}
 \usepackage{epstopdf}
+% Tables
+\usepackage{multirow}
 % Tikz styles
 \tikzstyle{reg} = [rounded rectangle, text width=2cm, fill=black!5, align=center, anchor=west,font=\sffamily\Large\bfseries, minimum height=1cm, inner sep=0]
 \tikzstyle{rad} = [rounded rectangle, draw=none, text width=2cm, fill=red!10, align=center, anchor=west,font=\sffamily\Large\bfseries, minimum height=1cm, inner sep=0]
@@ -107,8 +109,6 @@ Unlike many other air pollutants, tropospheric ozone is not directly emitted, bu
 \end{figure}
 
 According to the Intergovernmental Panel on Climate Change (IPCC) Fifth Assessment report (AR5) for present conditions (around year 2000) the global mean tropospheric ozone budget is approximately 331 Tg \citep{Myhre2013}. However, despite general agreement on how the drivers impact ozone concentrations at global and regional scales, its budget varies considerably between different modelling and observational studies \citep{Stevenson2006,Wild2007,Young2012}. Table \ref{tab:O3budget} demonstrates that the range of the global tropospheric ozone budget estimates is approximately 60 Tg which is 18\% of the mean. In terms of ozone production the variation is even higher and accounts for 28\% of the corresponding value. In that regard, two questions arise: why does the tropospheric ozone budget differ between models and observations? And secondly, why does it vary to this extent, especially in terms of production? The only way to answer these questions is to perform a rigorous investigation of the factors that drive tropospheric ozone and attribute those differences to respective factors \citep{Young2012}.
-
-MAKE GRAPHIC FROM TABLE ABOUT O3 BUDGETS!
 
 \begin{table}[h] % O3 budget
 \centering
@@ -345,27 +345,40 @@ Concentrations of methyl, ethyl, 1-propyl, 2-propyl, 2-butyl, 2-methyl-3-butyl a
 The alkyl nitrate concentrations observed during
 ITOP are typical of those found a few days downwind of precursor source regions. Although there is some evidence for an oceanic source of methyl nitrate, for the most part the air samples collected during ITOP do not appear to be strongly influenced by oceanic sources of the alkyl nitrates. Elevated concentrations were observed in air masses which have been influenced by emissions from the N.E. United States and from Alaskan fires. The large variations in ratios between the C5 and C2-C4 nitrates suggest that emission ratios for the parent hydrocarbons vary between different regions of the N.E. United States. [49] In general the alkyl nitrate data agrees well with photochemical theory. This suggests that at least during the first few days of transport from the source region photo- chemical production of alkyl nitrates had taken place. This implies that ozone production had also occurred. There also appears to be a widespread common source of ethyl nitrate and 1-propyl nitrate other than from their parent hydro- carbons. This might be from longer-chain hydrocarbons, possibly pentanes. [50] The observations in the more photochemically pro- cessed air masses are consistent with the concentration of NO dropping to a point where the rates of the alkyl nitrate production reactions no longer dominate the peroxy radical self/cross reactions. However, in these low levels of NO, where the balance between ozone production and destruc- tion is highly sensitive to NOX, the alkyl nitrates might contribute to maintaining the ozone levels in air as it undergoes long-range transport. [51] The observed patterns of the alkyl nitrates also suggest that the rates of photochemical processing in the Alaskan smoke plumes were small and that the rates of ozone formation in these air masses were low.
 
-\subsubsection*{Mean AN concentrations}
-\begin{table}
+\begin{table}%[ht] % mean AN mixing ratios
 \begin{tabular}{cccc}
 \hline
-Environment   & Mean $RONO_2$ mixing ratio                & $RONO_2$ breakdown & Reference \\
+Environment     & Mean $\Sigma RONO_2$ & $\Sigma RONO_2$ breakdown & Reference \\
 \hline
-ITOP?         & mean $\Sigma RONO_2$ 10 ppt               &          & \citep{Reeves2007} \\
-???           & mean $\Sigma RONO_2$ 14 ppt               &          & \citep{Roberts1998} \\
-remote marine & 2-butyl and 2- and 3-pentyl: 0.8-37 pptv & &\citep{Atherton1989} [Atlas, 1988]\\
-urban         & 2-butyl and 2- and 3-pentyl?: approx. 2 ppb & & \citep{Atherton1989} [Hanst et al., 1982] \\
-??                         & MeONO2: 1.2 to 43 pptv     &          & \citep{Chuck2002} \\
-??                         & EtONO2: 0.8 to 10 pptv     &          & \citep{Chuck2002} \\
-remote marine & MeONO2: 0.2 to 50 pptv     & in lit. (2, 8, 9) & \citep{Chuck2002} \\
-remote marine & EtONO2: 0.3 to 12.2 pptv   & in lit. (2, 8, 9) & \citep{Chuck2002} \\
-Pacific Ocean & MeONO2: 50 pptv            &                   & \citep{Blake2003} \\
-airborne      & $\Sigma RONO_2$: approx 1 ppb         & difference between NOy and (NOx+PAN+HNO3) 
-                                                        is sample closest to the plume center & \citep{Neuman2012} \\
-rural         & mean $\Sigma RONO_2$ (C1-C8): range: 30-630 ppt, mean over the whole period 120 ppt & & \citep{Flocke1998} \\
+remote marine   & 10 pptv    & methyl                   & \citep{Reeves2007} \\
+(North Atlantic)&            & ethyl                    & \\
+airborne        &            & 1-propyl                 & \\   
+                             && 2-propyl                & \\   
+                             && 2-butyl                 & \\                                                                                               
+                             && 2-methyl-3-butyl        & \\
+                             && sum of 2- and 3-pentyl  & \\
+\hline
+rural           & 14 pptv    & methyl                   & \citep{Roberts1998} \\
+(Nova Scotia, Canada)        &&  ethyl   & \\
+stationary                   && n-propyl & \\
+Chebogue Point               && 2-propyl & \\
+                             && 2-butyl  & \\ 
+\hline
+rural         & 120 ppt (30-630 ppt) & $C_1$-$C_8$       & \citep{Flocke1998} \\
+(Black Forest, Germany)      &&& \\ 
+stationary                   &&& \\
+\hline
+polluted marine & approx 1 ppb        & $NO_y$-($NO_x$+$HNO_3$+$PAN$) & \citep{Neuman2012} \\
+(Gulf of Mexico)&(plume center) && \\
+airborne &&& \\
 \hline
 \end{tabular}
 \end{table}
+%??                         & MeONO2: 1.2 to 43 pptv     &          & \citep{Chuck2002} \\
+%??                         & EtONO2: 0.8 to 10 pptv     &          & \citep{Chuck2002} \\
+%remote marine & MeONO2: 0.2 to 50 pptv     & in lit. (2, 8, 9) & \citep{Chuck2002} \\
+%remote marine & EtONO2: 0.3 to 12.2 pptv   & in lit. (2, 8, 9) & \citep{Chuck2002} \\
+%Pacific Ocean & MeONO2: 50 pptv            &                   & \citep{Blake2003} \\
 
 \subsubsection*{Comparison methodology}
 \citep{Sommariva2008}
