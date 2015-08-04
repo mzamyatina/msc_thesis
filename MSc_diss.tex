@@ -97,7 +97,7 @@ Abstract.
 
 \section{Introduction} \label{sec:intro}
 The Earth’s atmosphere is the recipient of a vast range of chemical compounds emitted by natural and anthropogenic sources. The oxidation of these compounds is the main process taking place in the atmosphere that keeps their concentrations at levels that do not distort the chemical balance of the atmosphere \citep{Prinn2003}. In other words, oxidation is a removal 'cleansing' mechanism for these compounds (various pollutants and greenhouse gases), and its rate is often referred to as the oxidizing capacity of the atmosphere. This capacity depends mainly on two factors: climate and the global burden of the principal oxidants such as ozone ($O_3$), the hydroxyl radical ($OH$) and hydrogen peroxide ($H_2O_2$) \citep{Prinn2003,Thompson1992}.
-\subsection{Tropospheric ozone}
+\subsection{Tropospheric ozone}\label{sec:into_O3}
 Tropospheric ozone ($O_3$) plays an important role in the chemical and thermal balance of the atmosphere. Although it accounts only for about 10\% of the total ozone, it is a primary precursor to the formation of hydroxyl radicals ($OH$) which in association with hydrogen peroxide ($H_2O_2$) determines the 'cleansing' capacity of the atmosphere \citep{Prinn2003,Tarasick2008,Thompson1992}. On the other hand, being a source of main pollutant removal agents, ozone is an air pollutant itself. Long exposure to its high concentrations causes respiratory problems in humans and damage to sensitive plant species \citep{Fowler2008}. Last but not least characteristic of tropospheric ozone is that it is an important greenhouse gas with a current estimated radiative forcing of  $0.40\pm 0.20~Wm^{–2}$ which is approximately one fifth of the $CO_2$ radiative forcing \citep{Hartmann2013,Myhre2013}. Due to these reasons a considerable interest in quantifying tropospheric ozone concentrations, budget and trends exists for more than a 100 years \citep{Becker2004}.
 
 Unlike many other air pollutants, tropospheric ozone is not directly emitted, but produced following the oxidation of carbon monoxide ($CO$), methane ($CH_4$), and nonmethane volatile compounds (nmVOCs) in the presence of nitrogen oxides (NOx) \citep{Crutzen1973,Myhre2013}. The emissions of these precursors arise from both natural and anthropogenic sources which have intensified since pre-industrial times \citep{Parrish2014,Volz1988} (Figure \ref{fig:O3observations}). Presumably it has led to roughly a doubling in background tropospheric ozone concentration \citep{Guicherit2000,Hartmann2013,Tarasick2008,Vingarzan2004}, although contribution from another major source, transport from the stratosphere, may also took place \citep{Fowler2008}. Climate is also believed to be a key driver of ozone production and destruction since the chemical reactions affecting ozone concentration are strongly dependent on such climatic factors as temperature, rainfall and humidity. Therefore in a changing climate tropospheric ozone is not anymore a local air quality issue, but is a global pollution problem \citep{Fowler2008}.
@@ -147,7 +147,7 @@ A considerable effort has been made to tackle these problems, and generally ther
 
 The second way to understanding the discrepancies between models and observations is to conduct an idealised theoretical study using a conceptual model. The advantage of this approach is that such kind of models can be quite easily constructed, and more importantly can be focused on representation of a certain chemical reactions which presumably could explain the discrepancy between models and observations.
 
-\subsubsection*{Ozone tropospheric chemistry}
+\subsubsection*{Ozone tropospheric chemistry}\label{intro_O3chem}
 %\input{O3CycleScheme}
 Having identified the role of tropospheric ozone, it is time to remind ourselves the chemistry that controls abundance of it.
 
@@ -225,9 +225,9 @@ HCO + O_2 \rightarrow HO_2 + CO
 \end{equation}
 therefore also having an impact on the rates of $O_3$ production \citep{Fowler2008} as do some other species, which are not mentioned in this section. Their role is described in other sections as far as it is necessary.
 
-\subsection{Alkyl nitrates}
+\subsection{Alkyl nitrates}\label{sec:intro_AN}
 Alkyl nitrates ($RONO_2$) are organic trace gases, which through one of their formation mechanisms are closely linked with the production of tropospheric ozone \citep{Reeves2007}. This mechanism is present in the following section.
-\subsubsection*{Alkyl nitrates chemistry}
+\subsubsection*{Alkyl nitrates chemistry}\label{into_ANchem}
 The photochemical formation of the alkyl nitrates starts when chemistry of the troposphere reaches the regime of $O_3$ production, i.e. when reactions of the peroxy radicals with $NO$ start to compete with their self- and cross-reactions more effectively due to an increase in $NO_x$ mixing ratio. In this case the reaction between the alkyl peroxy radical ($RO_2$, where $R$ denotes methyl group, $CH_3$) and $NO$ can reveal its two-channel nature \citep{Day2003}:
 \begin{subequations} \label{reac:RONO2alpha}
 \begin{align}
@@ -289,14 +289,14 @@ or no peroxy radicals because of dry or wet deposition:
 The fact that $\epsilon$ does not account for reactions where no $NO$-to-$NO_2$ conversion happens, as, for example, in case of the formation of the alkyl nitrates, $\epsilon$ provides a way to relate the rate of $O_3$ production to the alkyl nitrate chemistry. Knowing the rate of carbon bond emissions ($E_{C_{bons}}$) from emissions inventory data and knowing the rate of $O_3$ production from a model run ($P_{O_3}$), one can estimate the efficiency of $O_3$ production per carbon bond emitted in their model, and than compare it with other such values from different models potentially revealing the true cause of discrepancies between models and observations of tropospheric $O_3$ budgets.
 
 For link at the bottom? The same kind of approach is used in the Common Representative Intermediates (CRI) mechanism for VOC degradation \citep{Jenkin2002, Jenkin2008}. It is a reduced chemical mechanism that describes $O_3$ formation from the tropospheric degradation of methane and 115 emitted non-methane hydrocarbons and oxygenated volatile organic compounds developed using the Master Chemical Mechanism version 3.1 (MCM v3.1) as a reference benchmark
-\section{Overall objective and specific aims}
+\section{Overall objective and specific aims}\label{sec:objams}
 As the reader might anticipateit is mentioned in section \ref{sec:lit_review}
 \citep{Sommariva2008}
 [Typically, chemical mechanisms do not contain
 enough information about the various formation routes of secondary organic compounds, leading to the underestimation of their concentrations, with possible consequences on the estimates of ozone production in remote regions, or to ineffective ozone-control policies. In this work, a quasi-explicit chemical model based upon the Master Chemical Mechanism (MCM) has been used to study in detail the photochemistry of a number of alkyl nitrates and determine quantitatively their formation processes. This kind of study shows the potential of using mechanisms with a high level of chemical detail to study the formation of pollutants in the atmosphere (Madronich, 2006).]
-\subsection{Overall objective}
+\subsection{Overall objective}\label{sec:objams_obj}
 The overall purpose of this research is to investigate the impact of alkyl nitrate chemistry on ozone production efficiency.
-\subsection{Specific aims}
+\subsubsection*{Specific aims}\label{sec:objams_ams}
 Specific aims are to investigate:
 \begin{itemize}
 \item[(1)] the relationship between ozone production and carbon bond emissions;
@@ -427,7 +427,7 @@ The first 3-D chemical transport  model simulations examining the impact of meth
 To sum up, alkyl nitrates are produced as a minor branch of the reaction of peroxy radicals with NO \citep{Day2003}. Since these compounds are removed from the troposphere by photolysis and OH oxidation they can provide information on photochemical evolution of an air mass through relationships with their parent hydrocarbons \citep{Bertman1995}. Acting as reservoir species for reactive nitrogen (NOy) and having a relatively long atmospheric lifetimes alkyl nitrates play an important role in long range transport of NOx. Furthermore, alkyl nitrates link to ozone and carbonyl production making them useful tracers for both species \citep{Worton2010}. Despite their relative importance alkyl nitrates are usually not included in the climate-chemistry models, for example in UKCA (Reeves, personal communication), which potentially could lead to discrepancies between models and observations described before. 
 
 \section{Methodology} \label{sec:method}
-\subsection{Model development and description}
+\subsection{Model development and description}\label{sec:method_develop}
 A zero-dimensional (box) model is developed to investigate the impact of alkyl nitrate chemistry on ozone production efficiency. Its code is written using FACSIMILE for Windows. FACSIMILE is a special high-level programming language which is a powerful modelling tool designed to efficiently solve differential equations including those resulting from a set of chemical reactions.
 
 ! \citep{Newland2013}
@@ -435,7 +435,7 @@ A zero-dimensional (box) model is developed to investigate the impact of alkyl n
 
 The model is intended to represent the steady state of the troposphere under mean summer daytime meteorology and clear skies. To achieve that a number of assumptions have been made. First, the model assumes a uniform mixing of individual constituents of the troposphere, second, there are no atmospheric transport (no 'winds') and no emissions of species into the box meaning that the time evolution of each species is controlled by the chemical interactions alone and determined by their initial concentrations. The air temperature and relative humidity are assumed to be $25^{\circ}C$ and 70\% respectively and are fixed in all model runs. Other assumptions concerning the chemical mechanism and photolysis rates can be found in the following sections.
 
-\subsection{Chemical mechanism}\label{sec:chem_mech}
+\subsection{Chemical mechanism}\label{sec:method_chem}
 The chemical mechanism of the model is based on recommendations from \citep{Atkinson2004} and information from the Master Chemical Mechanism, MCM v3.3 \citep{Jenkin1997,Saunders2003}, retrieved via website: http://mcm.leeds.ac.uk/MCM. On a whole it includes 90 species and 165 reactions. The mechanism is developed to represent the chemistry that governs the production and loss of ozone, hydrocarbons and alkyl nitrates. These include:
 
 ! \citep{Newland2013}
@@ -495,7 +495,7 @@ and then is 'terminated' after formation of certain species. Ethane oxidation is
 [The alkanes and alkyl nitrates studied in this work were all explicitly described in the model with oxidation of the alkane giving a peroxy radical and reaction of the peroxy radical with NO giving an alkyl nitrate.]
 
 Lastly, the chemical mechanism of the model does not include halogen chemistry. Despite that halogens (chlorine ($Cl$), bromine ($Br$) and iodine ($I$)) are very reactive chemical compounds mostly known by their role in anthropogenic stratospheric ozone-depletion chemistry, and that they are directly (for example, reaction of the $Cl$ radical with hydrocarbons (e.g., $CH_4$)) and indirectly (coupling with the cycles of sulfur and nitrogen that eventually influence $O_3$, $OH$ and $NO_x$ concentrations) involved in the tropospheric chemistry \citep{VonGlasow2014,Platt2003}, they are excluded from the chemical mechanism to keep it more transparent.
-\subsection{Photolysis}
+\subsection{Photolysis}\label{sec:method_photolysis}
 To estimate photolysis rates for a given geographical location, one must take into account the latitude and season, as well as the time of the day. For the purpose of this research 24-hour average photolysis rates are calculated externally (outside FACSIMILE program) for 1 July using the formula and parametrisations from the MCM v3.3. The formula that describes variation of photolysis rate with solar zenith angle for the core photolysis reactions in the MCM was obtained by its authors using cross-section and quantum yield data and two stream isotopic scattering model described in \citep{Hayman1997}. Their calculations were performed for clear sky conditions at an altitude of 0.5 km for 1 July at a latitude of 45$^{\circ}$N, resulting in the following formula:
 \begin{equation} \label{eq:MCMphotolysis}
 \renewcommand{\theequation}{\arabic{equation}}
@@ -505,7 +505,7 @@ where $J$ - photolysis rate coefficient, $\chi$ - solar zenith angle, $l$, $m$ a
 
 The values of solar zenith angle are calculated using NOAA Solar Calculator (http://www.esrl.noaa.gov/gmd/grad/solcalc/).
 
-\subsection{Design of experiments}
+\subsection{Design of experiments}\label{sec:method_expdesign}
 To investigate the influence of alkyl nitrate chemistry on (potential changes in) tropospheric $O_3$ production, box model runs were performed at a series of different $NO_x$ and $VOCs$ initial concentrations, so that an $O_3$ isopleth plot could be constructed, similar to those found in \citep{Dodge1977} and \citep{Sillman1999}.   Table \ref{tab:setupO3CO} shows initial concentrations of 'independent'/global parameters and indicates which of them are fixed or allowed to vary during the model run. Table \ref{tab:setupNOx} and Table \ref{tab:setupVOCs} show the initial concentrations of $NO_x$ and $VOCs$ respectively that are used at a series of experiments.
 
 The lower limit of the range of $NO_x$ and $VOCs$ initial concentrations is based on observational data from Mauna Loa station (Hawaii, US) which is believed to be representative for conditions of remote troposphere. The upper limit is based on data from 
@@ -549,8 +549,6 @@ $iC_5H_{12}$ & $???$                       & 2-methylbutyl nitrate    & $\Sigma 
 \hline
 \end{tabular}
 \end{table}
-
-!! For long-lived species, averaging may be reasonable.
 
 \begin{table} % model setup: O3, CO
 \caption{Fixed and variable 'independent' parameters used in box model runs}\label{tab:setupO3CO}
@@ -695,9 +693,9 @@ The same kind of plot can be found in Figure \ref{fig:noAN_netO3rate}, which is 
 One can see the same pattern in these two figures. At high $VOC$/$NO_x$ ratios, the rate of $O_3$ production increases with increasing $NO_x$ and reaches its maximum at the highest $NO_x$ and $VOC$ levels (which corresponds to the top right corner of the green dashed square). The change in $O_3$ production rate at high $VOC$/$NO_x$ ratios in our model is largely insensitive to $VOC$, which fits into the theory. At low $VOC$/$NO_x$ ratios the $O_3$ production rate starts to depend on $VOC$ concentration also resembling the behaviour of ozone isopleths at the top left corner of the green dashed square. The overall tendency of $O_3$ production rate to increase with increasing $VOC$ and $NO_x$ is present in both figures showing that the model reproduces this feature according to the theory. However, the modelled values of $O_3$ production rates are much lower than those in Figure \ref{fig:Sillman1999}: in the model the maximum production rate is 9 ppb/h, while in theory it is 30 ppb/h, meaning that our model underestimates the $O_3$ production rate, but reproduces some features of the relationship between $O_3$, $NO_x$ and $VOC$.
 
 \section{Results} \label{sec:res}
-\subsection{Sensitivity of $O_3$ production to alkyl nitrate chemistry}
+\subsection{Sensitivity of $O_3$ production to alkyl nitrate chemistry}\label{sec:res_O3ANsensetivity}
 
-To evaluate the sensitivity of $O_3$ production (efficiency) to alkyl nitrate ($RONO_2$) chemistry under different $NO_x$ and $VOC$ conditions a number of simulations were carried out. In these simulations the chemical mechanism of the model was adjusted to either include or exclude the formation and loss of alkyl nitrates, which was accomplished by switching on and off all reactions that involve $RONO_2$ while keeping the rest of the mechanism unchanged. 
+To evaluate the sensitivity of $O_3$ production to alkyl nitrate chemistry under different $NO_x$ and $VOC$ conditions a number of simulations were carried out. In these simulations the chemical mechanism of the model was adjusted to either include or exclude the formation and loss of alkyl nitrates, which was accomplished by switching on and off all reactions that involve $RONO_2$ while keeping the rest of the mechanism unchanged. 
 
 As it has been noted in Section \ref{sec:intro}, the relationship between $O_3$ and $RONO_2$ production rates is controlled by the branching ratio ($\alpha_3$) between reactions:
 \begin{equation}\label{reac:RO2+NO=RO+NO2}
@@ -733,6 +731,7 @@ n-pentyl         & 0.052 \\
 \end{tabular}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Figure \ref{fig:netO3rate_noAN_withAN_diff} shows isopleths of net $O_3$ production rate as a function of $NO_x$ and sum of $VOCs$ initial concentrations from two series of model runs (with and without alkyl chemistry) and the difference between them. Since the actual formation of $O_3$ in our model starts at 250 ppt of $NO_x$, Figure \ref{fig:netO3rate_noAN_withAN_diff} summarises modelling data from experiments with $NO_x$ initial mixing ratios from 250 ppt till 100 ppb.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure} % netO3rate noAN withAN diff
@@ -753,8 +752,8 @@ Figure \ref{fig:netO3rate_noAN_withAN_diff} shows isopleths of net $O_3$ product
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 As expected, the inclusion of alkyl nitrate chemistry slows down the net $O_3$ production rate. At low $NO_x$ and $VOCs$ initial levels, this slowdown is -0.2...-0.6 ppb of $O_3$ per hour. As $NO_x$ and $VOCs$ levels increase the $O_3$ production rate decreases, reaching the maximum decrease of -1.94 ppb of $O_3$ per hour at 100 ppb of $NO_x$ and $VOCs$ level from case I (not the highest $VOCs$ level). At the range of $NO_x$ levels from 1 ppb to 10 ppb the $O_3$ production rate is slightly more sensitive to $VOCs$ levels, while it is almost insensitive to $VOCs$ at $NO_x$ levels higher than 10 ppb and 2050 ppbC of $VOCs$. 
-
-\begin{figure} % netO3mixrat noAN withAN diff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure} % netO3mixrat noAN allAN diff
 \centering
 \begin{minipage}{.3\textwidth}
   \centering
@@ -770,23 +769,71 @@ As expected, the inclusion of alkyl nitrate chemistry slows down the net $O_3$ p
 \end{minipage}
 \caption{Isopleths giving net $O_3$ production (ppb, color) as a function of $VOC$ (ppbC) and $NO_x$ (ppb) with alkyl nitrate chemistry switched off (left) and switched on (middle). Difference between them is shown on the right. Net production = final - initial value of $O_3$ mixing ratio.}\label{fig:netO3mixrat_noAN_withAN_diff}
 \end{figure}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The change in net rate of $O_3$ production due to inclusion of alkyl nitrate chemistry into the chemical mechanism has a direct impact on absolute $O_3$ levels calculated by the model. Figure \ref{fig:netO3mixrat_noAN_withAN_diff} shows that the net $O_3$ production (difference between final and initial $O_3$ mixing ratio) is smaller when alkyl nitrate chemistry is switched on. At low $NO_x$ and $VOCs$ levels the (negative) change in the net $O_3$ production is 5-10 ppb, at high $NO_x$ and $VOCs$ levels it is 35-45 ppb (per 24 hours) with maximum value of 46.5 ppb. However, these changes in the net $O_3$ production should be treated with care, because the model due to reasons described in Section \ref{sec:method} gives unrealistically high $O_3$ mixing ratios (maximum 650 ppb while typical maximum urban $O_3$ mixing ratio (Los Angeles, Mexico City) is 490 ppb (http://www-personal.umich.edu/~sillman/ozone.htm). Therefore, in this case a more useful estimate of effect of these changes is to express them in percentage form (i.e., compare like with like), and it appears that these changes are very small: ??? respectively.
 
-To see what caused these changes it is useful to look at the net production of the sum of the alkyl nitrates themselves as a function of $NO_x$ and $VOCs$ levels (Figure \ref{fig:endtotalANs}). Since alkyl nitrates are the only sink for $NO_x$ in our model the high production of these species in total was expected. The range is ppb.
+To see what caused these changes it is useful to look at the net production of the sum of the alkyl nitrates themselves as a function of $NO_x$ and $VOCs$ levels (Figure \ref{fig:endtotalANs}). Since alkyl nitrates are the only sink for $NO_x$ in our model high production of these species was expected. The range is from 0.2 ppb to 1.4 ppb for the range of $NO_x$ levels inspected from 250 ppt to 100 ppb.
 However, real concentrations reported from observational studies are of different order, tens of ppt.
-\citep{Reeves2007} 10 ppt (ITOP) \citep{Roberts1998} 14 ppt
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure} % endtotalANs
 \includegraphics[width=.5\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_endtotalANs_noINORG_NOx_250ppt_100ppb.png}
 \caption{Isopleths of net production of alkyl nitrates ($\Sigma RONO_2$) as a function of $NO_x$ and $VOCs$ levels.}\label{fig:endtotalANs}
 \end{figure}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ! Dependence of alkyl nitrate yield on carbon number (paper about n-alkanes): bigger yield of ANs from larger carbon number means that the potential for contributing to photochemical air pollution may be less for the larger (C>6) n-alkanes that for the smaller ones.
 
-\subsection{$O_3$ production and carbon bonds}
+\subsection{$O_3$ production and carbon bonds}\label{sec:res_O3ANCB}
 
+As it has been noted in section \ref{sec:intro_ANs}, there is a way to estimate the $O_3$ production per carbon bond emitted into the system and relate it to the alkyl nitrate chemistry. Such calculations have been first conducted by \citep{Evans2014} for the global 3D chemistry-climate model GEOS-Chem\citep{Bey2001}. They estimated that $\epsilon$ value for the GEOS-Chem model in simulation with full chemistry is equal to 0.2 meaning that to produce 1 molecule of $O_3$ 0.2 carbon bonds should have been emitted. They also estimated that in simulation with $CH_4$ only $\epsilon$ is equal to 0.3, meaning that more carbon bonds should have been emitted to produce the same amount of $O_3$.
+
+We tried to calculate the same value for our model, however since it does not include any emissions, the $\epsilon$'s denominator has been treated a little bit differently. To be exact the term $E_{C_{bons}}$ is calculated as a rate of change of the difference between final and initial sum of carbon bonds ($\Sigma Cbonds$) in the system at constant sum of carbon bonds contained in all of the alkanes and $CO$ ($\Sigma Cbonds_{alkanes, CO}$): 
+\begin{equation}\label{eq:ECbonds}
+E_{C_{bons}} = {\dfrac{\Sigma Cbonds|_{final} - \Sigma Cbonds|_{initial}}{24 hours}}\bigg|_{\Sigma Cbonds_{alkanes, CO} =const}
+\end{equation}
+In other words, we calculate an increment in the amount of carbon bonds contained in all organic species except for alkanes and $CO$ (e.g., in $ROOH$, $RONO_2$) in the system by the end of simulation and divide it by simulation time (24 hours). Despite that we somewhat excluded the impact of alkanes and $CO$ on $O_3$ production efficiency, we have managed to save an opportunity to take into account the impact of alkyl nitrates, because the carbon bonds contained in them are still in this formula.
+
+Figure \ref{fig:epsilon250ppt100ppb} shows $\epsilon$ values calculated from our model as a function of $NO_x$ (250 ppt - 100 ppb) and $VOCs$ mixing ratios. It appears that in both cases with and without alkyl nitrates $\epsilon$ is insensitive to $NO_x$ in the range of 1-100 ppb of $NO_x$, but quickly drops within this $NO_x$ range with increasing $VOCs$. At the rest of $\epsilon$ isopleth field it is equally sensitive to $NO_x$ and $VOCs$. The difference in $\epsilon$ between two series of model runs is small. The average $\epsilon$ value in model runs without alkyl nitrates and $NO_x$ of 250 ppt - 100 ppb is equal to 0.44, in case with them it is equal to 0.41, which means that 2.3 carbon bonds should have been emitted to produce 1 molecule of $O_3$ in case without alkyl nitrates, while in case with alkyl nitrates 2.4 carbon bonds should have been emitted to produce the same amount of $O_3$.
+
+If we construct the same kind of plot for all $NO_x$ conditions considered in the model, from 5 ppt to 100 ppb, we find that $\epsilon$ could be negative (Figure \ref{fig:epsilon5ppt100ppb}), which could be explained by a net $O_3$ removal at $NO_x$ levels lower 250 ppt in our model. The lower $VOCs$ level is more negative $epsilon$ becomes. The average $\epsilon$ value in all model runs without alkyl nitrates is equal to 0.25, in case with them it is equal to 0.22, meaning that 4 carbon bonds should have been emitted to produce 1 molecule of $O_3$ in case without alkyl nitrates, while in case with alkyl nitrates 4.5 carbon bonds should have been emitted to produce the same amount of $O_3$. The difference between $\epsilon$ values between two series of model runs is small.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure} % epsilon noANs allANs diff 250 ppt 100 ppb
+\centering
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/chem_noAN_epsilon_noINORG_NOx_250ppt_100ppb.png}
+\end{minipage}
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_epsilon_noINORG_NOx_250ppt_100ppb.png}
+\end{minipage}
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_epsilondiff_noINORG_NOx_250ppt_100ppb.png}
+\end{minipage}
+\caption{Isopleths giving net $O_3$ production efficiency (or $\epsilon$, molecules of $O_3$ per carbon bond, color) as a function of $VOC$ (ppbC) and $NO_x$ (250ppt - 100 ppb) with alkyl nitrate chemistry switched off (left) and switched on (middle). Difference between them is shown on the right.}\label{fig:epsilon250ppt100ppb}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure} % epsilon noANs allANs diff 5 ppt 100 ppb
+\centering
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/chem_noAN_epsilon_noINORG_NOx_5ppt_100ppb.png}
+\end{minipage}
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_epsilon_noINORG_NOx_5ppt_100ppb.png}
+\end{minipage}
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_epsilondiff_noINORG_NOx_5ppt_100ppb.png}
+\end{minipage}
+\caption{Isopleths giving net $O_3$ production efficiency (or $\epsilon$, molecules of $O_3$ per carbon bond, color) as a function of $VOC$ (ppbC) and $NO_x$ (5 ppt - 100 ppb) with alkyl nitrate chemistry switched off (left) and switched on (middle). Difference between them is shown on the right.}\label{fig:epsilon5ppt100ppb}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion} \label{sec:discuss}
+Use CRI.
 Future plans and possible improvements in the model.
 
 The experimental results presented in the previous section provide an opportunity to speculate about the behaviour of our simple model of alkyl nitrate production and loss with time in comparison with the observational data. 
