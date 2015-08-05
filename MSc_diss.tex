@@ -695,6 +695,7 @@ One can see the same pattern in these two figures. At high $VOC$/$NO_x$ ratios, 
 
 \section{Results} \label{sec:res}
 \subsection{Sensitivity of $O_3$ production to alkyl nitrate chemistry}\label{sec:res_O3ANsensetivity}
+\subsubsection{$O_3$ and total alkyl nitrates}
 
 To evaluate the sensitivity of $O_3$ production to alkyl nitrate chemistry under different $NO_x$ and $VOC$ conditions a number of simulations were carried out. In these simulations the chemical mechanism of the model was adjusted to either include or exclude the formation and loss of alkyl nitrates, which was accomplished by switching on and off all reactions that involve $RONO_2$ while keeping the rest of the mechanism unchanged. 
 
@@ -755,6 +756,7 @@ Figure \ref{fig:netO3rate_noAN_withAN_diff} shows isopleths of net $O_3$ product
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 As expected, the inclusion of alkyl nitrate chemistry slows down the net $O_3$ production rate. At low $NO_x$ and $VOCs$ initial levels, this slowdown is -0.2...-0.6 ppb of $O_3$ per hour. As $NO_x$ and $VOCs$ levels increase the $O_3$ production rate decreases, reaching the maximum decrease of -1.94 ppb of $O_3$ per hour at 100 ppb of $NO_x$ and $VOCs$ level from case I (not the highest $VOCs$ level). At the range of $NO_x$ levels from 1 ppb to 10 ppb the difference in $O_3$ production rate is slightly more sensitive to $VOCs$ levels, while it is almost insensitive to $VOCs$ at $NO_x$ levels higher than 10 ppb and 2050 ppbC of $VOCs$. 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure} % netO3mixrat noAN allAN diff diffpercent
 \centering
@@ -791,6 +793,38 @@ To see what caused these changes it is useful to look at the net production of t
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ! Dependence of alkyl nitrate yield on carbon number (paper about n-alkanes): bigger yield of ANs from larger carbon number means that the potential for contributing to photochemical air pollution may be less for the larger (C>6) n-alkanes that for the smaller ones.
+
+\subsubsection{$O_3$ and individual alkyl nitrates}
+
+To estimate the impact of individual alkyl nitrates or their groups on $O_3$ production an additional series of experiments have been conducted (Figure \ref{fig:timeO3diff10ppbNOx6VOC}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_timeO3diff_10ppbNOx6VOC.eps}
+\caption{Time evolution of the difference in $O_3$ mixing ratio between base experiment (with all alkyl nitrate chemistry switched on) and experiments where chemistry of individual alkyl nitrates or their groups is switch on. Black line shows the difference between base experiment and an experiment with all alkyl nitrate chemistry switched off. $NO_x$ = 10 ppb, $VOCs$ = case F.}\label{fig:timeO3diff10ppbNOx6VOC}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}
+\caption{Difference in $O_3$ mixing ratio by the end of simulation depending alkyl nitrate chemistry.}\label{tab:timeO3diff10ppbNOx6VOC}
+\begin{tabular}{cc}
+\hline
+Alkyl nitrate            & $O_3$ difference (ppb) \\
+\hline
+$CH_3ONO_2$              & -11.5 \\
+$C_2H_5ONO_2$            & -11.6 \\
+$\Sigma C_3H7ONO_2$      & -10.5 \\
+$\Sigma nC_4H_9ONO_2$    & -8.7  \\
+$\Sigma iC_4H_9ONO_2$    & -11.0 \\
+$\Sigma nC_5H_{11}ONO_2$ & -10.1 \\
+$\Sigma iC_5H_{11}ONO_2$ & -8.0  \\
+$\Sigma RONO_2$          & -11.9 \\
+\hline
+\end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \subsection{$O_3$ production and carbon bonds}\label{sec:res_O3ANCB}
 
