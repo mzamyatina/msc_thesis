@@ -13,7 +13,7 @@
 \usepackage{pdflscape}
 %\usepackage[a4paper,showframe]{geometry}
 \usepackage{vmargin}
-\setmarginsrb{2cm}{2cm}{2cm}{2cm}{0cm}{0cm}{0cm}{1.5cm}
+\setmarginsrb{2.5cm}{2cm}{2.5cm}{2cm}{0cm}{0cm}{0cm}{1.5cm}
 \usepackage{pdflscape}
 \usepackage{afterpage}
 % Indenting and line spacing
@@ -58,6 +58,10 @@
 \usepackage{wrapfig}
 % Tables
 \usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{ragged2e}
+\newcolumntype{P}[1]{>{\RaggedRight\hspace{0pt}}p{#1}}
 % Tikz styles
 \tikzstyle{reg} = [rounded rectangle, text width=2cm, fill=black!5, align=center, anchor=west,font=\sffamily\Large\bfseries, minimum height=1cm, inner sep=0]
 \tikzstyle{rad} = [rounded rectangle, draw=none, text width=2cm, fill=red!10, align=center, anchor=west,font=\sffamily\Large\bfseries, minimum height=1cm, inner sep=0]
@@ -100,7 +104,7 @@
 %\onehalfspacing
 
 \begin{abstract}
-Abstract.
+Abstract.300 words.
 \end{abstract}
 
 \tableofcontents
@@ -315,42 +319,21 @@ There have been a number of studies of the seasonal variations of alkyl nitrates
 \renewcommand{\arraystretch}{1}
 \begin{table}[h!]
 \caption{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}\label{tab:ANmean} % mean AN mixing ratios
-\begin{tabular}{cccc}
+\begin{tabularx}{\linewidth}{P{3cm}P{2cm}P{5cm}X}
 \hline
 Environment     & Mean $\Sigma RONO_2$ & $\Sigma RONO_2$ breakdown & Reference \\
 \hline
-remote marine   & 10 pptv    & methyl                   & \citep{Reeves2007} \\
-(North Atlantic)&            & ethyl                    & \\
-airborne        &            & 1-propyl                 & \\   
-                             && 2-propyl                & \\   
-                             && 2-butyl                 & \\                                                                                               
-                             && 2-methyl-3-butyl        & \\
-                             && sum of 2- and 3-pentyl  & \\
+remote marine (North Atlantic), airborne   & 10 pptv    & methyl, ethyl, 1-propyl, 2-propyl, 2-butyl, 2-methyl-3-butyl, sum of 2- and 3-pentyl  & \citep{Reeves2007} \\
 \hline
-rural           & 14 pptv    & methyl                   & \citep{Roberts1998} \\
-(Nova Scotia, Canada)        && ethyl   & \\
-ground                       && n-propyl & \\
-                             && 2-propyl & \\
-                             && 2-butyl  & \\ 
+rural ground (Nova Scotia, Canada)        & 14 pptv    & methyl, ethyl, n-propyl, 2-propyl, 2-butyl  & \citep{Roberts1998} \\
 \hline
-suburban                     & 17.48 pptv  & 2-propyl    & \citep{DeKock1994} \\
-(Cape Retire, South Africa)  &(3.62-122.23)& 1-propyl & \\
-ground                                    && 2-butyl  & \\
-                                          && 1-butyl  & \\
-                                          && 3-pentyl & \\
-                                          && 2-pentyl & \\
-                                          && 2-methyl-1-butyl & \\
-                                          && i-pentyl & \\
+suburban ground (Cape Retire, South Africa)  & 17.48 pptv (3.62-122.23) & 2-propyl, 1-propyl, 2-butyl, 1-butyl, 3-pentyl, 2-pentyl, 2-methyl-1-butyl, i-pentyl & \citep{DeKock1994} \\
 \hline
-suburban                     & 119.8 ppt  & $C_1$-$C_8$       & \citep{Flocke1998} \\
-(Black Forest, Germany)      & (30-630 ppt) && \\ 
-ground                                     &&& \\
+suburban ground (Black Forest, Germany)    & 119.8 ppt (30-630 ppt) & $C_1-C_8$ & \citep{Flocke1998} \\
 \hline
-polluted marine & approx 1 ppb & $NO_y$-($NO_x$+$HNO_3$+$PAN$) & \citep{Neuman2012} \\
-(Gulf of Mexico)&(plume center) && \\
-airborne &&& \\
+polluted marine airborne (Gulf of Mexico) & approx 1 ppb (plume center)& $NO_y-(NO_x+HNO_3+PAN)$ & \citep{Neuman2012} \\
 \hline
-\end{tabular}
+\end{tabularx}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -708,7 +691,7 @@ RO_2 + NO \xrightarrow{1-\alpha_3} RO + NO_2\tag{\ref{reac:RO2+NO=aphaRO+NO2}}
 RO_2 + NO \xrightarrow{\alpha_3} RONO_2\tag{\ref{reac:RO2+NO=aphaRONO2}}
 \end{equation}
 Reaction (\ref{reac:RO2+NO=aphaRO+NO2}) leads to $O_3$ production and $NO$ regeneration, resulting in continuing $O_3$ production, while reaction (\ref{reac:RO2+NO=aphaRONO2}) terminates this process. Branching ratios used in the model are taken from the MCM v3.3, and their values (Table \ref{tab:ANbranching}) were kept constant in all model runs.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table} %  AN branching ratios
 \caption{Branching ratios for the formation of alkyl nitrates from their precursor peroxy radicals and $NO$ (taken from the MCM v3.3 (2015)).}\label{tab:ANbranching}
 \centering
@@ -733,49 +716,55 @@ n-pentyl         & 0.052 \\
 \hline
 \end{tabular}
 \end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Figure \ref{fig:netO3rate_noAN_withAN_diff} shows isopleths of net $O_3$ production rate as a function of $NO_x$ and sum of $VOCs$ initial concentrations from two series of model runs (with and without alkyl chemistry) and the difference between them. Since the actual formation of $O_3$ in our model starts at 250 ppt of $NO_x$, Figure \ref{fig:netO3rate_noAN_withAN_diff} summarises modelling data from experiments with $NO_x$ initial mixing ratios from 250 ppt till 100 ppb.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure} % netO3rate noAN withAN diff
-\centering
-\begin{minipage}{.3\textwidth}
-  \centering
-  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/chem_noAN_netO3rate_noINORG_NOx_250ppt_100ppb.png}
-\end{minipage}
-\begin{minipage}{.3\textwidth}
-  \centering
-  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3rate_noINORG_NOx_250ppt_100ppb.png}
-\end{minipage}
-\begin{minipage}{.3\textwidth}
-  \centering
-  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3ratediff_noINORG_NOx_250ppt_100ppb.png}
-\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!] % netO3rate noAN withAN diff
+	\centering
+	\begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/chem_noAN_netO3rate_noINORG_NOx_250ppt_100ppb.eps}
+        \caption{}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3rate_noINORG_NOx_250ppt_100ppb.eps}
+        \caption{}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3ratediff_noINORG_NOx_250ppt_100ppb.eps}
+        \caption{}
+    \end{subfigure}%
+    \hfill
 \caption{Isopleths giving net rate of $O_3$ production (ppb/h, color) as a function of $VOC$ (ppbC) and $NO_x$ (ppb) with alkyl nitrate chemistry switched off (left) and switched on (middle). Difference between them is shown on the right.}\label{fig:netO3rate_noAN_withAN_diff}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 As expected, the inclusion of alkyl nitrate chemistry slows down the net $O_3$ production rate. At low $NO_x$ and $VOCs$ initial levels, this slowdown is -0.2...-0.6 ppb of $O_3$ per hour. As $NO_x$ and $VOCs$ levels increase the $O_3$ production rate decreases, reaching the maximum decrease of -1.94 ppb of $O_3$ per hour at 100 ppb of $NO_x$ and $VOCs$ level from case I (not the highest $VOCs$ level). At the range of $NO_x$ levels from 1 ppb to 10 ppb the difference in $O_3$ production rate is slightly more sensitive to $VOCs$ levels, while it is almost insensitive to $VOCs$ at $NO_x$ levels higher than 10 ppb and 2050 ppbC of $VOCs$. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure} % netO3mixrat noAN allAN diff diffpercent
+\begin{figure}[h] % netO3mixrat noAN allAN diff diffpercent
 \centering
-\begin{minipage}{.4\textwidth} % noAN
+\begin{minipage}{.45\textwidth} % noAN
   \centering
-  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/chem_noAN_netO3mixrat_noINORG_NOx_250ppt_100ppb.png}
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/chem_noAN_netO3mixrat_noINORG_NOx_250ppt_100ppb.eps}
 \end{minipage}
-\begin{minipage}{.4\textwidth} % diff
+\begin{minipage}{.45\textwidth} % diff
   \centering
-  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3mixratdiff_noINORG_NOx_250ppt_100ppb.png}
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3mixratdiff_noINORG_NOx_250ppt_100ppb.eps}
 \end{minipage}
-\begin{minipage}{.4\textwidth} % allAN
+\begin{minipage}{.45\textwidth} % allAN
   \centering
-  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3mixrat_noINORG_NOx_250ppt_100ppb.png}
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3mixrat_noINORG_NOx_250ppt_100ppb.eps}
 \end{minipage}
-\begin{minipage}{.4\textwidth} % diffpercent
+\begin{minipage}{.45\textwidth} % diffpercent
   \centering
-  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3mixratdiffpercent_noINORG_NOx_250ppt_100ppb.png}
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3mixratdiffpercent_noINORG_NOx_250ppt_100ppb.eps}
 \end{minipage}
 \caption{Isopleths giving net $O_3$ production (ppb, color) as a function of $VOC$ (ppbC) and $NO_x$ (ppb, range 250 ppt - 100 ppb) with alkyl nitrate chemistry switched off (a) and switched on (b). Absolute difference (with alkyl nitrates minus without them) between two series of model runs in ppb (c), same in \% (d). Net production = final - initial value of $O_3$ mixing ratio.}\label{fig:netO3mixrat_noAN_withAN_diff}
 \end{figure}
@@ -789,7 +778,8 @@ To see what caused these changes it is useful to look at the net production of t
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure} % endtotalANs
-\includegraphics[width=.5\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_endtotalANs_noINORG_NOx_250ppt_100ppb.png}
+\centering
+\includegraphics[width=.7\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_endtotalANs_noINORG_NOx_250ppt_100ppb.eps}
 \caption{Isopleths of net production of alkyl nitrates ($\Sigma RONO_2$) as a function of $NO_x$ and $VOCs$ levels.}\label{fig:endtotalANs}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
