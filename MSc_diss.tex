@@ -253,7 +253,7 @@ RONO_2 + OH \rightarrow RCHO + NO_2
 The relative importance of these two loss reactions depends generally on the net UV intensity and the size of the carbon chain in the alkyl nitrate. Photolysis is relatively more important for nitrates with $< C_4$, while nitrates with longer chains ($\geq C_5$) tend to react faster with $OH$ \citep{Worton2010}.
 
 The lifetimes of alkyl nitrates depend on the seasonality of the photolysis and $OH$ sink, which in turn vary with latitude and altitude. According to \citep{Clemitshaw1997} and \citep{Turberg1990} alkyl nitrates have atmospheric lifetimes of several days to several years, which makes them temporary reservoirs for the short lived $NO_x$ compounds. Being transported from polluted areas to remote background regions and eventually destroyed alkyl nitrates can 'release' $NO_2$ back to the atmosphere, thereby contributing to tropospheric ozone formation.
-\subsection{Ozone, alkyl nitrates and carbon bonds}
+\subsection{Ozone, alkyl nitrates and carbon bonds}\label{sec:intro_CB}
 In the previous sections we covered the chemistry that controls the production of $O_3$ in the troposphere. A traditional way to assess the efficiency of this production is to calculate the ratio:
 \begin{equation}\label{eq:OPE}
 OPE = \dfrac{k_{HO_2+NO}[HO_2][NO]}{k_{OH+NO_2}[OH][NO_2]} = \dfrac{P_{O_3}}{L_{NO_x}}
@@ -686,6 +686,7 @@ The best way to illustrate the central features of the relationship between $O_3
 \end{minipage}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Rewrite!
 
 The same kind of plot can be found in Figure \ref{fig:noAN_netO3rate}, which is produced using data from our model from the first experiment with alkyl nitrate chemistry switched off. Taking into account the fact that the maximum $NO_x$ mixing ratio considered in the experiment is 10 ppb, our results are directly comparable only with a part of the data from Figure \ref{fig:Sillman1999}, namely with those inside the green dashed square. Moreover, since the minimum $NO_x$ mixing ratio considered in the experiment is 5 ppt, while the corresponding value in Figure \ref{fig:Sillman1999} is 1 ppb, a negative $O_3$ production rate is seen in our results, whereas it stays out of range of Figure \ref{fig:Sillman1999}.
@@ -733,6 +734,7 @@ n-pentyl         & 0.052 \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Figure \ref{fig:netO3rate_noAN_withAN_diff} shows isopleths of net $O_3$ production rate as a function of $NO_x$ and sum of $VOCs$ initial concentrations from two series of model runs (with and without alkyl chemistry) and the difference between them. Since the actual formation of $O_3$ in our model starts at 250 ppt of $NO_x$, Figure \ref{fig:netO3rate_noAN_withAN_diff} summarises modelling data from experiments with $NO_x$ initial mixing ratios from 250 ppt till 100 ppb.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure} % netO3rate noAN withAN diff
 \centering
@@ -751,29 +753,37 @@ Figure \ref{fig:netO3rate_noAN_withAN_diff} shows isopleths of net $O_3$ product
 \caption{Isopleths giving net rate of $O_3$ production (ppb/h, color) as a function of $VOC$ (ppbC) and $NO_x$ (ppb) with alkyl nitrate chemistry switched off (left) and switched on (middle). Difference between them is shown on the right.}\label{fig:netO3rate_noAN_withAN_diff}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-As expected, the inclusion of alkyl nitrate chemistry slows down the net $O_3$ production rate. At low $NO_x$ and $VOCs$ initial levels, this slowdown is -0.2...-0.6 ppb of $O_3$ per hour. As $NO_x$ and $VOCs$ levels increase the $O_3$ production rate decreases, reaching the maximum decrease of -1.94 ppb of $O_3$ per hour at 100 ppb of $NO_x$ and $VOCs$ level from case I (not the highest $VOCs$ level). At the range of $NO_x$ levels from 1 ppb to 10 ppb the $O_3$ production rate is slightly more sensitive to $VOCs$ levels, while it is almost insensitive to $VOCs$ at $NO_x$ levels higher than 10 ppb and 2050 ppbC of $VOCs$. 
+
+As expected, the inclusion of alkyl nitrate chemistry slows down the net $O_3$ production rate. At low $NO_x$ and $VOCs$ initial levels, this slowdown is -0.2...-0.6 ppb of $O_3$ per hour. As $NO_x$ and $VOCs$ levels increase the $O_3$ production rate decreases, reaching the maximum decrease of -1.94 ppb of $O_3$ per hour at 100 ppb of $NO_x$ and $VOCs$ level from case I (not the highest $VOCs$ level). At the range of $NO_x$ levels from 1 ppb to 10 ppb the difference in $O_3$ production rate is slightly more sensitive to $VOCs$ levels, while it is almost insensitive to $VOCs$ at $NO_x$ levels higher than 10 ppb and 2050 ppbC of $VOCs$. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure} % netO3mixrat noAN allAN diff
+\begin{figure} % netO3mixrat noAN allAN diff diffpercent
 \centering
-\begin{minipage}{.3\textwidth}
+\begin{minipage}{.4\textwidth} % noAN
   \centering
   \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/noAN/chem_noAN_netO3mixrat_noINORG_NOx_250ppt_100ppb.png}
 \end{minipage}
-\begin{minipage}{.3\textwidth}
-  \centering
-  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3mixrat_noINORG_NOx_250ppt_100ppb.png}
-\end{minipage}
-\begin{minipage}{.3\textwidth}
+\begin{minipage}{.4\textwidth} % diff
   \centering
   \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3mixratdiff_noINORG_NOx_250ppt_100ppb.png}
 \end{minipage}
-\caption{Isopleths giving net $O_3$ production (ppb, color) as a function of $VOC$ (ppbC) and $NO_x$ (ppb) with alkyl nitrate chemistry switched off (left) and switched on (middle). Difference between them is shown on the right. Net production = final - initial value of $O_3$ mixing ratio.}\label{fig:netO3mixrat_noAN_withAN_diff}
+\begin{minipage}{.4\textwidth} % allAN
+  \centering
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3mixrat_noINORG_NOx_250ppt_100ppb.png}
+\end{minipage}
+\begin{minipage}{.4\textwidth} % diffpercent
+  \centering
+  \includegraphics[width=.99\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_netO3mixratdiffpercent_noINORG_NOx_250ppt_100ppb.png}
+\end{minipage}
+\caption{Isopleths giving net $O_3$ production (ppb, color) as a function of $VOC$ (ppbC) and $NO_x$ (ppb, range 250 ppt - 100 ppb) with alkyl nitrate chemistry switched off (a) and switched on (b). Absolute difference (with alkyl nitrates minus without them) between two series of model runs in ppb (c), same in \% (d). Net production = final - initial value of $O_3$ mixing ratio.}\label{fig:netO3mixrat_noAN_withAN_diff}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The change in net rate of $O_3$ production due to inclusion of alkyl nitrate chemistry into the chemical mechanism has a direct impact on absolute $O_3$ levels calculated by the model. Figure \ref{fig:netO3mixrat_noAN_withAN_diff} shows that the net $O_3$ production (difference between final and initial $O_3$ mixing ratio) is smaller when alkyl nitrate chemistry is switched on. At low $NO_x$ and $VOCs$ levels the (negative) change in the net $O_3$ production is 5-10 ppb, at high $NO_x$ and $VOCs$ levels it is 35-45 ppb (per 24 hours) with maximum value of 46.5 ppb. However, these changes in the net $O_3$ production should be treated with care, because the model due to reasons described in Section \ref{sec:method} gives unrealistically high $O_3$ mixing ratios (maximum 650 ppb while typical maximum urban $O_3$ mixing ratio (Los Angeles, Mexico City) is 490 ppb (http://www-personal.umich.edu/~sillman/ozone.htm). Therefore, in this case a more useful estimate of effect of these changes is to express them in percentage form (i.e., compare like with like), and it appears that these changes are very small: ??? respectively.
 
-To see what caused these changes it is useful to look at the net production of the sum of the alkyl nitrates themselves as a function of $NO_x$ and $VOCs$ levels (Figure \ref{fig:endtotalANs}). Since alkyl nitrates are the only sink for $NO_x$ in our model high production of these species was expected. The range is from 0.2 ppb to 1.4 ppb for the range of $NO_x$ levels inspected from 250 ppt to 100 ppb.
-However, real concentrations reported from observational studies are of different order, tens of ppt.
+The change in net rate of $O_3$ production due to inclusion of alkyl nitrate chemistry into the chemical mechanism has a direct impact on absolute $O_3$ levels calculated by the model. Figure \ref{fig:netO3mixrat_noAN_withAN_diff} shows that the net $O_3$ production (difference between final and initial $O_3$ mixing ratio) is smaller when alkyl nitrate chemistry is switched on. At low $NO_x$ and $VOCs$ levels the negative (!) change in the net $O_3$ production is 5-10 ppb, at high $NO_x$ and $VOCs$ levels it is 35-45 ppb (per 24 hours) with maximum value of 46.5 ppb.
+
+These changes in the net $O_3$ production should be treated with care, because the model due to reasons described in Section \ref{sec:method} gives unrealistically high $O_3$ mixing ratios. The maximum $O_3$ mixing ratio in the model is equal to 650 ppb (at the highest $NO_x$ level (100 ppb) and the lowest $VOCs$ level (case A)), while maximum typical urban (Los Angeles, Mexico City) $O_3$ mixing ratio is 490 ppb (http://www-personal.umich.edu/~sillman/ozone.htm). Therefore, a more useful estimate is a percentage difference in $O_3$ mixing ratios between two series of model runs shown in Figure \ref{fig:netO3rate_noAN_withAN_diff} DDDDD!. It appears that the largest absolute changes in $O_3$ mixing ratios (40-45 ppb) are changes by only 20-30\%, while changes up to 90\% take place the model is in low $NO_x$ and high $VOCs$ conditions.
+
+To see what caused these changes it is useful to look at the net production of the sum of the alkyl nitrates themselves as a function of $NO_x$ (250 ppt - 100 ppb) and $VOCs$ (Figure \ref{fig:endtotalANs}). Since alkyl nitrates are the only sink for $NO_x$ in our model high production of these species was expected. The $NO_x$-$VOC$ field of total $RONO_2$ isopleths is mostly characterized by mixing ratios of ppb level (0.2-1.4 ppb), while the observations show that their mean mixing ratios lay at a level of tens-thousands of ppt (Table \ref{tab:ANmean}). Nevertheless, Figure \ref{fig:endtotalANs} will be of interest to other researches, because it is probably the first ever attempt to derive the distribution of $\Sigma RONO_2$ mixing ratios in $NO_x$-$VOC$ field.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure} % endtotalANs
 \includegraphics[width=.5\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_endtotalANs_noINORG_NOx_250ppt_100ppb.png}
@@ -784,7 +794,7 @@ However, real concentrations reported from observational studies are of differen
 
 \subsection{$O_3$ production and carbon bonds}\label{sec:res_O3ANCB}
 
-As it has been noted in section \ref{sec:intro_ANs}, there is a way to estimate the $O_3$ production per carbon bond emitted into the system and relate it to the alkyl nitrate chemistry. Such calculations have been first conducted by \citep{Evans2014} for the global 3D chemistry-climate model GEOS-Chem\citep{Bey2001}. They estimated that $\epsilon$ value for the GEOS-Chem model in simulation with full chemistry is equal to 0.2 meaning that to produce 1 molecule of $O_3$ 0.2 carbon bonds should have been emitted. They also estimated that in simulation with $CH_4$ only $\epsilon$ is equal to 0.3, meaning that more carbon bonds should have been emitted to produce the same amount of $O_3$.
+As it has been noted in section \ref{sec:intro_CB}, there is a way to estimate the $O_3$ production per carbon bond emitted into the system and relate it to the alkyl nitrate chemistry. Such calculations have been first conducted by \citep{Evans2014} for the global 3D chemistry-climate model GEOS-Chem \citep{Bey2001}. They estimated that $\epsilon$ value for the GEOS-Chem model in simulation with full chemistry is equal to 0.2 meaning that to produce 1 molecule of $O_3$ 0.2 carbon bonds should have been emitted. They also estimated that in simulation with $CH_4$ only $\epsilon$ is equal to 0.3, meaning that more carbon bonds should have been emitted to produce the same amount of $O_3$.
 
 We tried to calculate the same value for our model, however since it does not include any emissions, the $\epsilon$'s denominator has been treated a little bit differently. To be exact the term $E_{C_{bons}}$ is calculated as a rate of change of the difference between final and initial sum of carbon bonds ($\Sigma Cbonds$) in the system at constant sum of carbon bonds contained in all of the alkanes and $CO$ ($\Sigma Cbonds_{alkanes, CO}$): 
 \begin{equation}\label{eq:ECbonds}
