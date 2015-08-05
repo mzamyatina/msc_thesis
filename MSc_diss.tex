@@ -35,7 +35,6 @@
 \newenvironment{matriz}{\refstepcounter{matriz}\equation}{\tag{\thematriz}\endequation}
 \renewcommand{\theequation}{R\arabic{equation}}
 
-
 % References
 \usepackage{natbib}
 \bibliographystyle{apalike}
@@ -124,10 +123,9 @@ Unlike many other air pollutants, tropospheric ozone is not directly emitted, bu
 According to the Intergovernmental Panel on Climate Change (IPCC) Fifth Assessment report (AR5) for present conditions (around year 2000) the global mean tropospheric ozone budget is approximately 331 Tg \citep{Myhre2013}. However, despite general agreement on how the drivers impact ozone concentrations at global and regional scales, its budget varies considerably between different modelling and observational studies \citep{Stevenson2006,Wild2007,Young2012}. Figure \ref{fig:O3budget} demonstrates that the range of the global tropospheric ozone budget estimates is approximately 60 Tg which is 18\% of the mean. In terms of ozone production the variation is even higher and accounts for 28\% of the corresponding value. In that regard, two questions arise: why does the tropospheric ozone budget differ between models and observations? And secondly, why does it vary to this extent, especially in terms of production? The only way to answer these questions is to perform a rigorous investigation of the factors that drive tropospheric ozone and attribute those differences to respective factors \citep{Young2012}.
 
 \begin{figure}[t] % O3 budget
-\caption{Summary of tropospheric ozone global budget model and observation estimates for present (about 2000) conditions. All uncertainties quoted as 1 standard deviation (68\% confidence interval). Adapted from \citep{Myhre2013}}
 \centering
-\label{tab:O3budget}
 \includegraphics[width=0.7\linewidth]{o3_studies.eps}
+\caption{Summary of tropospheric ozone global budget model and observation estimates for present (about 2000) conditions. All uncertainties quoted as 1 standard deviation (68\% confidence interval). Adapted from \citep{Myhre2013}}\label{fig:O3budget}
 \end{figure}
 
 A considerable effort has been made to tackle these problems, and generally there are two possible ways of doing it. The first one implies the direct analysis of tropospheric chemical schemes used in climate-chemistry models. For example, Emmerson and Evans (2009) compared the state of the art Master Chemical Mechanism which contains approximately 5600 species and 13500 reactions \citep{Jenkin2002} with other six chemical schemes and found four significant variations between them. This approach is linked with big challenges since a modern global model is a very sophisticated representation of the climate-chemistry interactions, and therefore it is often difficult to separate influence of one reaction from another. However, even being so developed climate-chemistry models do not take into account all known chemical reactions taking place in the real troposphere. A complete representation requires many thousands of species and tens of thousands of reactions, which is beyond the numerical capabilities currently available. This significantly limits the practicable size of chemical schemes and typically involves a reduction of the number of VOCs considered and lumping the carbon from the discarded species into representative surrogates.
@@ -227,17 +225,17 @@ Alkyl nitrates ($RONO_2$) are organic trace gases, which through one of their fo
 The photochemical formation of the alkyl nitrates starts when chemistry of the troposphere reaches the regime of $O_3$ production, i.e. when reactions of the peroxy radicals with $NO$ start to compete with their self- and cross-reactions more effectively due to an increase in $NO_x$ mixing ratio. In this case the reaction between the alkyl peroxy radical ($RO_2$, where $R$ denotes methyl group, $CH_3$) and $NO$ can reveal its two-channel nature \citep{Day2003}:
 \begin{subequations} \label{reac:RONO2alpha}
 \begin{align}
-RO_2 + NO &\xrightarrow{1-\alpha_3} RO + NO_2 \label{reac:RO+NO=aphaRO+NO2}\\
-RO_2 + NO &\xrightarrow{\alpha_3} RONO_2 \label{reac:RO+NO=aphaRONO2}
+RO_2 + NO &\xrightarrow{1-\alpha_3} RO + NO_2 \label{reac:RO2+NO=aphaRO+NO2}\\
+RO_2 + NO &\xrightarrow{\alpha_3} RONO_2 \label{reac:RO2+NO=aphaRONO2}
 \end{align}
 \end{subequations}
-The latter reaction can serve as a termination step of the propagated $O_3$ forming cycle (Figure ???), and as \citep{Roberts1998} estimated it is likely to begin to occur when the $NO$ mixing ratio increases up to 100-200 ppt. The yield of alkyl nitrate formation is controlled by the branching ratio ($\alpha_3$), which is temperature and pressure dependent and increases with the number of carbons in the alkyl peroxy radical \citep{Roberts1990}.
+The latter reaction can serve as a termination step of the propagated $O_3$ forming cycle (Figure \ref{fig:O3scheme}), and as \citep{Roberts1998} estimated it is likely to begin to occur when the $NO$ mixing ratio increases up to 100-200 ppt. The yield of alkyl nitrate formation is controlled by the branching ratio ($\alpha_3$), which is temperature and pressure dependent and increases with the number of carbons in the alkyl peroxy radical \citep{Roberts1990}.
 
 An alternative photochemical pathway of the formation of alkyl nitrates is the reaction of the alkoxy radical ($RO$) with $NO_2$:
 \begin{equation}\label{reac:RO+NO2=RONO2}
 RO + NO_2 \rightarrow RONO_2
 \end{equation}
-This pathway has been shown to become dominant over reaction (\ref{reac:RO+NO=aphaRONO2}) only for the production of lower (methyl ($C_1$), ethyl ($C_2$)) nitrates when $NO_x$ mixing ratio exceeds 35 ppb \citep{Archibald2007}, i.e. in highly polluted environments.
+This pathway has been shown to become dominant over reaction (\ref{reac:RO2+NO=aphaRONO2}) only for the production of lower (methyl ($C_1$), ethyl ($C_2$)) nitrates when $NO_x$ mixing ratio exceeds 35 ppb \citep{Archibald2007}, i.e. in highly polluted environments.
 
 Alkyl nitrates are removed from the atmosphere by photolysis \citep{Turberg1990} and $OH$ radical oxidation \citep{Talukdar1997}:
 \begin{equation} \label{reac:RONO2+hv=RO+NO2}
@@ -254,7 +252,7 @@ In the previous sections we covered the chemistry that controls the production o
 \begin{matriz}\label{eq:OPE}
 OPE = \dfrac{k_{HO_2+NO}[HO_2][NO]}{k_{OH+NO_2}[OH][NO_2]} = \dfrac{P_{O_3}}{L_{NO_x}}
 \end{matriz}
-where $OPE$ is the ozone production efficiency, $k_{HO_2+NO}$ - the rate coefficient of reaction (\ref{reac:HO2+NO=NO2+OH}), $k_{OH+NO_2}$ - the rate coefficient of reaction (\ref{reac:OH+NO2=HNO3}), $[X]$ - mixing ratios of corresponding species, $P_{O_3}$ – the $O_3$ production rate, $L_{NO_x}$ – the $NO_x$ loss rate. $OPE$ is determined by the amount of $HO_2$ reacting with $NO$ to form $NO_2$ and $OH$ (i.e., $k_{HO_2+NO}[HO_2][NO]$, (\ref{reac:HO2+NO=NO2+OH})) and the amount of $NO_x$ removed from the system by reaction of $OH$ with $NO_2$ to form nitric acid ($HNO_3$, reaction (\ref{reac:OH+NO2=HNO3})). In other words, $OPE$ shows the amount of ozone created ($P_{O_3}$) per molecule of $NO_x$ removed ($L_{NO_x}$) from the system \citep{Jacob1999}. Due to the reasons described in section \ref{sec:chem_mech} (comment at the bottom of the page!"No representation of the nitric acid ($HNO_3$) in the model"), we use another expression for calculations of the $O_3$ production efficiency. This expression has been recently proposed by Professor Matthew Evans (University of York) amid the mounting concerns about the need of thorough intercomparison of chemical mechanisms of global atmospheric models (including those used in the IPCC reports), why it is more universal and applicable to any kind of model.
+where $OPE$ is the ozone production efficiency, $k_{HO_2+NO}$ - the rate coefficient of reaction (\ref{reac:HO2+NO=NO2+OH}), $k_{OH+NO_2}$ - the rate coefficient of reaction (\ref{reac:OH+NO2=HNO3}), $[X]$ - mixing ratios of corresponding species, $P_{O_3}$ – the $O_3$ production rate, $L_{NO_x}$ – the $NO_x$ loss rate. $OPE$ is determined by the amount of $HO_2$ reacting with $NO$ to form $NO_2$ and $OH$ (i.e., $k_{HO_2+NO}[HO_2][NO]$, (\ref{reac:HO2+NO=NO2+OH})) and the amount of $NO_x$ removed from the system by reaction of $OH$ with $NO_2$ to form nitric acid ($HNO_3$, reaction (\ref{reac:OH+NO2=HNO3})). In other words, $OPE$ shows the amount of ozone created ($P_{O_3}$) per molecule of $NO_x$ removed ($L_{NO_x}$) from the system \citep{Jacob1999}. Due to the reasons described in section \ref{sec:method_chem} \footnote{No representation of the nitric acid ($HNO_3$) in the model.}, we use another expression for calculations of the $O_3$ production efficiency. This expression has been recently proposed by Professor Matthew Evans (University of York) amid the mounting concerns about the need of thorough intercomparison of chemical mechanisms of global atmospheric models (including those used in the IPCC reports), why it is more universal and applicable to any kind of model.
 
 According to \citep{Evans2014} (personal communication), the $O_3$ production efficiency can be estimated via calculation of the number of carbon bonds emitted into the system. For example, if the system contains one molecule of methane, $CH_4$, as 'a carbon bond reservoir', it means that this system has 4 carbon bonds (4 C-H), if  instead of methane it contains one molecule of ethane, $C_2H_6$, the system has 7 carbon bonds (6 C-H bonds and 1 C-C), and so on \citep{Edwards2013}. Assuming that every carbon bond is broken chemically and every organic peroxy radical ($RO_2$) reacts with $NO$, the overall efficiency of carbon bonds conversion to $O_3$, $\epsilon$, can be calculated as: 
 \begin{matriz}\label{eq:epsilon}
@@ -370,12 +368,12 @@ A study that enabled us to focus on examination of $O_3$ and $RONO_2$ formation 
 
 $O_3$ production efficiencies in the DWH plume were 6 plus minus 0.5 ppbv $O_3$ per ppbv of $NO_x$ oxidized after 1 h of transport. These values are comparable with those measured in U.S. urban areas [Trainer et al., 1995; Neuman et al., 2009], but smaller than those measured in the petrochemical plumes with $OH$ loss rates dominated by alkenes (10-18 ppbv $O_3$ per ppbv of $NO_x$) [Ryerson et al., 2003].
 
-Temporal changes in reactive nitrogen partitioning in the DWH plume (Figure \ref{fig:Neuman2012}) nicely illustrate that in fresh part of the plume (Figure ??? a) $NO_x$ accounted for over 80\% of plume $NO_y$, in aged plumes (Figure ??? b), $NO_x$ oxidation was nearly complete, but NOx, PAN, HNO3, and the sum of eight $C_5$–$C_{10}$ $RONO_2$ accounted for only 22\% of plume $NO_y$. It means that $C_6$–$C_{10}$ $RONO_2$ account for 78\% of the aged plume $NO_y$\citep{Neuman2012}. This result differs dramatically from previous studies, where the estimated contribution of $RONO_2$ to $NO_y$ was much lower: approximately 4\% in urban and petrochemical plumes [Neuman et al., 2002; Ryerson et al., 2003], approx. 10\% in rural areas [Parrish et al., 1993], a few percent in urban air masses [O’Brien et al., 1997; Flocke et al.,1998; Schneider et al., 1998; Talbot et al., 2003; Ryerson et al., 2003], and up to 10–20\% of NOy in some studies [Day et al., 2003; Perring et al., 2010].
+Temporal changes in reactive nitrogen partitioning in the DWH plume (Figure \ref{fig:Neuman2012}) nicely illustrate that in fresh part of the plume (Figure \ref{fig:Neuman2012}a) $NO_x$ accounted for over 80\% of plume $NO_y$, in aged plumes (Figure \ref{fig:Neuman2012}b), $NO_x$ oxidation was nearly complete, but NOx, PAN, HNO3, and the sum of eight $C_5$–$C_{10}$ $RONO_2$ accounted for only 22\% of plume $NO_y$. It means that $C_6$–$C_{10}$ $RONO_2$ account for 78\% of the aged plume $NO_y$ \citep{Neuman2012}. This result differs dramatically from previous studies, where the estimated contribution of $RONO_2$ to $NO_y$ was much lower: approximately 4\% in urban and petrochemical plumes [Neuman et al., 2002; Ryerson et al., 2003], approx. 10\% in rural areas [Parrish et al., 1993], a few percent in urban air masses [O’Brien et al., 1997; Flocke et al.,1998; Schneider et al., 1998; Talbot et al., 2003; Ryerson et al., 2003], and up to 10–20\% of NOy in some studies [Day et al., 2003; Perring et al., 2010].
 
 Probably the most detailed investigation of the formation processes and photochemical evolution of alkyl nitrates (but not their impact on $O_3$) has been done by \citep{Sommariva2008}. Using a subset of the Master Chemical Mechanism v3.1 (MCM) they constructed a highly detailed chemical model and run it for 5 days under two scenarios (Table \ref{tab:Sommariva2008init}) to explore the sensitivity of the evolution of the chemical composition of an air mass emitted from an urban environment to the initial conditions. As it seen in Figure \ref{fig:Sommariva2008fig} according to the modelling results $O_3$ is produced and $NO_x$ is removed from the system with the consequent formation of $HNO_3$ via the reaction of $NO_2$ with $OH$, which broadly agrees with the observations [(Neuman et al., 2006).]. In scenario A the concentration of $NO_x$ after the first day is about 0.5–1 ppb for $NO_2$ and approximately 100 ppt for $NO$, which is high enough to sustain the production of $O_3$ to up to 135 ppb and the formation of alkyl nitrates during the simulation. In scenario B (Figure \ref{fig:Sommariva2008fig} right) the increase in $O_3$ is slower (note that initial concentration is 0) and the maximum concentration after five days is about 100 ppb. The concentration of $NO_x$ remains relatively high during the second (10–15 ppb) and third day (3–5 ppb) and then decreases to $<$200 ppt of $NO$ and $<$1ppb of $NO_2$ on the fourth and fifth days, therefore allowing the formation of alkyl nitrates too. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}\label{tab:Sommariva2008init}
-\caption{Initial values of the some model parameters (in ppb) for two scenarios used in \citep{Sommariva2008}}
+\begin{table}
+\caption{Initial values of the some model parameters (in ppb) for two scenarios used in \citep{Sommariva2008}}\label{tab:Sommariva2008init}
 \centering
 \begin{tabular}{ccc}
 \hline
@@ -387,41 +385,41 @@ $O_3$     & 90    & 0   \\
 \hline
 \end{tabular}
 \end{table}
-\begin{figure}\label{fig:Sommariva2008fig}
+\begin{figure}
 \includegraphics[width=\linewidth]{{D:/UEA/ENV-MB4X_Dissertation/ENV-MB4X_Dissertation_thesis/ENV-MB4X_Dissertation_thesis_latex/pics/Sommariva2008_Fig.1}.png}
-\caption{Modelled concentrations of $O_3$, $NO_x$ and $HNO_3$ for scenario A (left) and B (right). Source: \citep{Sommariva2008}.}
+\caption{Modelled concentrations of $O_3$, $NO_x$ and $HNO_3$ for scenario A (left) and B (right). Source: \citep{Sommariva2008}.}\label{fig:Sommariva2008fig}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Comparison of modelling results with the values observed inside a typical urban plume sampled using the NOAA WP-3D aircraft from the New York City area during the New England Air Quality Study (NEAQS) 2004 campaign enabled \citep{Sommariva2008} to conclude that the chemistry of alkyl nitrates is well represented in the MCM model. They found that short-chain $<C_4$ alkyl nitrates can be formed from several precursors, while long-chain ($C_5$) alkyl nitrates are produced for 90\% or more from the oxidation of a single parent alkane. They also found that at lower $O_3$ and $CO$ initial concentrations and higher $NOx$ (scenario A) the importance of the reactions between alkane and $OH$ is typically lower during the first two-three days, and the contributions of peroxides and carboxylic acids become significant later and are on average less important.
 
-The first 3-D chemical transport  model simulations examining the impact of methyl and ethyl nitrates on tropospheric ozone chemistry in remote regions have been conducted by \citep{Neu2008}. In their study, they incorporated methyl and ethyl nitrates in the chemical mechanism of the UCI CTM [Carver et al., 1997] and by matching their observed atmospheric abundances derived a total oceanic emission flux of these two nitrates (0.35 Tg of N per year). Comparing two simulations with and without spatially uniform emissions of methyl and ethyl nitrates they found that the largest impact of oceanic alkyl nitrates is seen over the equatorial Western Pacific (Figure ???). Atmospheric circulation (convergence of the trade winds) in this region isolates the marine boundary layer, resulting in sustained photochemical loss of $O_3$ (Figure ??? c) and at the same time accumulation of alkyl nitrates (Figure ??? a), which drive up boundary layer $NO_x$ abundances by as much as 250\% (Figure ??? b). Such combination of factors leads to increases in $O_3$ of up to 20\% (Figures ??? c and d), with the largest increases occurring from May to October.
+The first 3-D chemical transport  model simulations examining the impact of methyl and ethyl nitrates on tropospheric ozone chemistry in remote regions have been conducted by \citep{Neu2008}. In their study, they incorporated methyl and ethyl nitrates in the chemical mechanism of the UCI CTM [Carver et al., 1997] and by matching their observed atmospheric abundances derived a total oceanic emission flux of these two nitrates (0.35 Tg of N per year). Comparing two simulations with and without spatially uniform emissions of methyl and ethyl nitrates they found that the largest impact of oceanic alkyl nitrates is seen over the equatorial Western Pacific (Figure \ref{fig:Neu2008}). Atmospheric circulation (convergence of the trade winds) in this region isolates the marine boundary layer, resulting in sustained photochemical loss of $O_3$ (Figure \ref{fig:Neu2008M_O3contol}) and at the same time accumulation of alkyl nitrates (Figure \ref{fig:Neu2008M_MeONO2}), which drive up boundary layer $NO_x$ abundances by as much as 250\% (Figure \ref{fig:Neu2008M_NOxdiff}). Such combination of factors leads to increases in $O_3$ of up to 20\% (Figures \ref{fig:Neu2008M_O3contol} and \ref{fig:Neu2008M_O3diff}), with the largest increases occurring from May to October.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[t!]\label{fig:Neu2008}
+\begin{figure}[t!]
 	\centering
 	\begin{subfigure}[t]{0.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{{\picspath Neu2008_Fig.2_MeONO2_OCT_merge}.png}
-        \caption{}
+        \caption{}\label{fig:Neu2008M_MeONO2}
     \end{subfigure}%
     ~ % glues subplots on the same line somehow...
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[width=\linewidth]{{\picspath Neu2008_Fig.3_OCT_O3contol}.png}
-        \caption{}
+        \caption{}\label{fig:Neu2008M_O3contol}
     \end{subfigure}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[width=\linewidth]{{\picspath Neu2008_Fig.3_OCT_NOxdiff}.png}
-        \caption{}
+        \caption{}\label{fig:Neu2008M_NOxdiff}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[width=\linewidth]{{\picspath Neu2008_Fig.3_OCT_O3diff}.png}
-        \caption{}
+        \caption{}\label{fig:Neu2008M_O3diff}
     \end{subfigure}
-\caption{October monthly mean mixing ratios of (a) methyl nitrate ($MeONO_2$, $CH_3ONO_2$) and (c) $O_3$, and percent difference (perturbation - control) in (b) $NO_x$, (d) $O_3$. All averaged over the boundary layer (below 850 mb). Adapted from \citep{Neu2008}}
+\caption{October monthly mean mixing ratios of (a) methyl nitrate ($MeONO_2$, $CH_3ONO_2$) and (b) $O_3$, and percent difference (perturbation - control) in (c) $NO_x$, (d) $O_3$. All averaged over the boundary layer (below 850 mb). Adapted from \citep{Neu2008}}\label{fig:Neu2008}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -451,7 +449,7 @@ The chemical mechanism of the model is based on recommendations from \citep{Atki
 \item the loss of alkyl nitrates through their photolysis and reaction with $OH$;
 \item the subsequent reactions of hydroperoxides and aldehydes formed from the organic reactions mentioned above.
 \end{itemize}
-The full list of reactions can be found in Appendix ?? \ref{sec:appendix1}. It is important to mention that due to purely theoretical purpose of this research and its focus on investigation of the impact of alkyl nitrate chemistry on ozone production some of the reactions that lead to formation of species that serve as a sink for $NO_x$ are not included into the chemical mechanism. However, these reactions play an important role in the chemistry of the troposphere, and below here is a description of their role and anticipated effect of their exclusion.
+The full list of reactions can be found in Appendix \ref{sec:appendix1}. It is important to mention that due to purely theoretical purpose of this research and its focus on investigation of the impact of alkyl nitrate chemistry on ozone production some of the reactions that lead to formation of species that serve as a sink for $NO_x$ are not included into the chemical mechanism. However, these reactions play an important role in the chemistry of the troposphere, and below here is a description of their role and anticipated effect of their exclusion.
 \begin{itemize}
 \item The formation of the nitric acid ($HNO_3$) is a major loss process for $NO_x$ during daytime in the atmosphere. Being a 'sticky' molecule $HNO_3$ readily adsorbs to surfaces, particularly if there is water on the surface, and deposits either in precipitation (wet deposition) or in dry form (dry deposition). Because of the high deposition velocity, dry deposition of $HNO_3$ can be responsible for much of the removal of inorganic nitrogen from the troposphere \citep{Finlayson-Pitts2000}, which means that exclusion of $HNO_3$ (formation and removal)/(chemistry) from the chemical mechanism potentially leads to overproduction of ozone in the model, especially at high $NO_2$ concentrations because the competition between $NO_2$ photolysis and its reaction with $OH$ radical ($NO_2 + OH \xrightarrow{M} HNO_3$) is ignored.
 \item Since this research is focused on the daytime chemistry some reactions that are believed to be significant in nighttime are not included into the chemical mechanism of the model. Among them are reactions that involve the nitrate radical ($NO_3$) and dinitrogen pentoxide ($N_2O_5$).
@@ -610,69 +608,69 @@ K  & 2050 &	7.000 &	3.000 &	2.000 &	1.000 &	0.500 &	2.000 \\
 \hline
 \end{tabular}
 \end{table}
+
 \subsection{Model performance}
 Due to imperfection of the chemical mechanism time evolution of species concentrations given by the model does not completely agree with the photochemical theory, but reproduces it to some extent. Figure \ref{fig:model_validation} shows an example of output from the model, namely the changes in mixing ratios of the main species within 24-hours of simulation time under contrasting $NO_x$ and $VOCs$ conditions. The values shown in Figure \ref{fig:model_validation} have been justified from the theoretical point of view and also compared with those derived from the Atmospheric Chemistry Learner's Box Model (ACLBM, \href{http://guille.uea.ac.uk/ACLBM/}{http://guille.uea.ac.uk/ACLBM/}). ACLBM is an on-line box model for atmospheric chemistry developed by Prof. Roland von Glasow (University of East Anglia) that allows the selection of several chemical reaction mechanisms, choice of initial concentrations and emission fluxes. For comparison with our modelling data the ACLBM was set up and initialized with values from Tables \ref{tab:setupO3CO}, \ref{tab:setupNOx} and \ref{tab:setupVOCs}, and the '$O_3$-$NO_x$-$CO$-$CH_4$' chemical mechanism was chosen as it is the closest version of the chemical mechanism available in the ACLBM to our model.
 
-The concentration of $NO_x$ is the main factor which determines whether $O_3$ is produced or removed in the atmosphere, and theoretically there are three regimes of $O_3$ production that depend on $NO_x$ levels: at low $NO_x$ levels the regime is characterized by net $O_3$ removal, at intermediate $NO_x$ (also called $NO_x$-sensitive) - by net $O_3$ formation, and at high $NO_x$ - by net $O_3$ formation or removal depending more on $VOCs$ concentration (therefore called $VOC$-sensitive) (e.g., \citep{Fowler2008}). When the prevailing $NO_x$ levels are low, a net $O_3$ removal takes place because there is not enough $NO$ around to react with the peroxy radicals ($HO_2$ and $RO_2$) to produce $NO_2$, which photolysis in conjunction with the reaction (\ref{reac:O3P+O2}) is the main source of $O_3$ in the troposphere. Some additional $O_3$ removal in this regime occurs due to reaction of $HO_2$ radicals with $O_3$ leading to the regeneration of $OH$ radicals as part of an $O_3$ depleting $OH$-$HO_2$ ($HO_x$) cycle. In other words, the following reaction sequence predominates:
-\begin{equation}\label{reac:O3+hv}
-O_3 + hv \rightarrow O(^1D) + O_2
+The concentration of $NO_x$ is the main factor which determines whether $O_3$ is produced or removed in the atmosphere, and theoretically there are three regimes of $O_3$ production that depend on $NO_x$ levels: at low $NO_x$ levels the regime is characterized by net $O_3$ removal, at intermediate $NO_x$ (also called $NO_x$-sensitive) - by net $O_3$ formation, and at high $NO_x$ - by net $O_3$ formation or removal depending more on $VOCs$ concentration (therefore called $VOC$-sensitive) (e.g., \citep{Fowler2008}). When the prevailing $NO_x$ levels are low, a net $O_3$ removal takes place because there is not enough $NO$ around to react with the peroxy radicals ($HO_2$ and $RO_2$) to produce $NO_2$, which photolysis in conjunction with the reaction (\ref{reac:O3P+O2=O3}) is the main source of $O_3$ in the troposphere. Some additional $O_3$ removal in this regime occurs due to reaction of $HO_2$ radicals with $O_3$ leading to the regeneration of $OH$ radicals as part of an $O_3$ depleting $OH$-$HO_2$ ($HO_x$) cycle. In other words, the following reaction sequence predominates:
+\begin{equation}
+O_3 + hv \rightarrow O(^1D) + O_2\tag{\ref{reac:O3+hv=O1D+O2}}
 \end{equation}
-\begin{equation}\label{reac:O1D+H2O}
-O(^1D) + H_2O \rightarrow OH + OH
+\begin{equation}
+O(^1D) + H_2O \rightarrow OH + OH\tag{\ref{reac:O1D+H2O=OH+OH}}
 \end{equation}
-\begin{equation}\label{reac:O1D=O3P}
-O(^1D) \xrightarrow{M} O(^3P
+\begin{equation}
+O(^1D) \xrightarrow{M} O(^3P)\tag{\ref{reac:O1D=O3P}}
 \end{equation}
-\begin{equation}\label{reac:O3P+O2}
-O(^3P) + O_2 \xrightarrow{M} O_3
+\begin{equation}
+O(^3P) + O_2 \xrightarrow{M} O_3\tag{\ref{reac:O3P+O2=O3}}
 \end{equation}
-\begin{equation}\label{reac:OH+CO}
-OH + CO \rightarrow HO_2 + CO_2
+\begin{equation}
+OH + CO \rightarrow HO_2 + CO_2\tag{\ref{reac:OH+CO=H+CO2}}
 \end{equation}
-\begin{equation}\label{reac:OH+RH}
+\begin{equation}\label{reac:OH+RH=RO2+H2O}
 OH + RH \rightarrow RO_2 + H_2O
 \end{equation}
-\begin{equation}\label{reac:HO2+HO2}
-HO_2 + HO_2 \rightarrow H_2O_2 + O_2
+\begin{equation}
+HO_2 + HO_2 \rightarrow H_2O_2 + O_2\tag{\ref{reac:HO2+HO2=H2O2+O2}}
 \end{equation}
-\begin{equation}\label{reac:RO2+HO2}
+\begin{equation}\label{reac:RO2+HO2=ROOH+O2}
 RO_2 + HO_2 \rightarrow ROOH + O_2
 \end{equation}
-\begin{equation}\label{reac:O3+HO2}
-O_3 + HO_2 \rightarrow OH + 2O_2
+\begin{equation}
+O_3 + HO_2 \rightarrow OH + 2O_2\tag{\ref{reac:HO2+O3=OH+2O2}}
 \end{equation}
 At low $NO_x$ regime (for example, 50 ppt) our modelling data agrees well with the theory (Figure \ref{fig:O3valid}). $O_3$ mixing ratio decreases with time, and this decrease is comparable to one derived from ACLBM (by 6 ppb and 4.5 ppb at low and high $VOCs$ concentrations respectively). $NO$ is rapidly (almost instantly) converted to $NO_2$ representing a state equilibrium between the two molecules in the troposphere (Figures \ref{fig:NOvalid}, \ref{fig:NO2valid}). $CO$ is lost due to its reaction with $OH$ (Figure \ref{fig:COvalid}). Mixing ratios of other species in our model are of the order of magnitude as in ACLBM.
 
 \input{diss_valid_vs_time}
 
-When the prevailing $NO_x$ levels are more than 0.5 ppb \citep{Sillman1999}, but less than a certain critical value, reactions (\ref{reac:HO2+NO}) and (\ref{reac:RO2+NO}) represent the dominant reaction pathways for $HO_2$ and $RO_2$ providing a link for catalytic generation of $O_3$:
-\begin{equation}\label{reac:HO2+NO}
-HO_2 + NO \rightarrow OH + NO_2
+When the prevailing $NO_x$ levels are more than 0.5 ppb \citep{Sillman1999}, but less than a certain critical value, reactions (\ref{reac:HO2+NO=NO2+OH}) and (\ref{reac:RO2+NO=RO+NO2}) represent the dominant reaction pathways for $HO_2$ and $RO_2$ providing a link for catalytic generation of $O_3$:
+\begin{equation}
+HO_2 + NO \rightarrow OH + NO_2\tag{\ref{reac:HO2+NO=NO2+OH}}
 \end{equation}
-\begin{equation}\label{reac:RO2+NO}
+\begin{equation}\label{reac:RO2+NO=RO+NO2}
 RO_2 + NO \rightarrow RO + NO_2
 \end{equation}
-\begin{equation}\label{eq:NO2+hv}
-NO_2 + hv \rightarrow NO + O(^3P)
+\begin{equation}
+NO_2 + hv \rightarrow NO + O(^3P)\tag{\ref{reac:NO2+hv=NO+O3P}}
 \end{equation}
-\begin{equation} %same
-!!!!! same O(^3P) + O_2 \xrightarrow{M} O_3
+\begin{equation}
+O(^3P) + O_2 \xrightarrow{M} O_3\tag{\ref{reac:O3P+O2=O3}}
 \end{equation}
-The competition between reactions (\ref{reac:HO2+NO}) and (\ref{reac:HO2+HO2}) for $HO_2$, and reactions (\ref{reac:RO2+NO}) and (\ref{reac:RO2+HO2}) for $RO_2$, allows a greater number of free-radical propagated $O_3$ forming cycles to happen prior to termination (reactions (\ref{reac:HO2+HO2}) and (\ref{reac:RO2+HO2})), therefore resulting in a net $O_3$ formation. 
+The competition between reactions (\ref{reac:HO2+NO=NO2+OH}) and (\ref{reac:HO2+HO2=H2O2+O2}) for $HO_2$, and reactions (\ref{reac:RO2+NO=RO+NO2}) and (\ref{reac:RO2+HO2=ROOH+O2}) for $RO_2$, allows a greater number of free-radical propagated $O_3$ forming cycles to happen prior to termination (reactions (\ref{reac:HO2+HO2=H2O2+O2}) and (\ref{reac:RO2+HO2=ROOH+O2})), therefore resulting in a net $O_3$ formation. 
 
-When the prevailing $NO_x$ levels are high, reactions (\ref{reac:HO2+NO}) and (\ref{reac:RO2+NO}) dominate for $HO_2$ and $RO_2$, making the rate of $O_3$ production being controlled by the availability of these radicals. The availability of $OH$ radical is also important at high $NO_x$ levels because $OH$ connects the $O_3$ production rate with rates of its reactions with $CO$ and $RH$ (reactions (\ref{reac:OH+CO}) and (\ref{reac:OH+RH})), therefore making this regime $VOC$-sensitive. Plus at this point the reaction of $OH$ with $NO_2$ to form nitric acid ($HNO_3$) becomes the major termination reaction for free radicals:
-\begin{equation}\label{reac:OH+NO2}
-OH + NO_2 \xrightarrow{M} HNO_3
+When the prevailing $NO_x$ levels are high, reactions (\ref{reac:HO2+NO=NO2+OH}) and (\ref{reac:RO2+NO=RO+NO2}) dominate for $HO_2$ and $RO_2$, making the rate of $O_3$ production being controlled by the availability of these radicals. The availability of $OH$ radical is also important at high $NO_x$ levels because $OH$ connects the $O_3$ production rate with rates of its reactions with $CO$ and $RH$ (reactions (\ref{reac:OH+CO=H+CO2}) and (\ref{reac:OH+RH=RO2+H2O})), therefore making this regime $VOC$-sensitive. Plus at this point the reaction of $OH$ with $NO_2$ to form nitric acid ($HNO_3$) becomes the major termination reaction for free radicals:
+\begin{equation}
+OH + NO_2 \xrightarrow{M} HNO_3\tag{\ref{reac:OH+NO2=HNO3}}
 \end{equation}
-Under these circumstances, the number of free-radical propagated $O_3$ forming cycles decreases with increasing $NO_x$, and the production rate of $O_3$ decreases. However, if the concentrations of $VOCs$ are high, reactions of $OH$ with $CO$ and $RH$ ((\ref{reac:OH+CO}), (\ref{reac:OH+RH})) can compete with reaction (\ref{reac:OH+NO2}), leading to an increase in the $O_3$ production rate.
+Under these circumstances, the number of free-radical propagated $O_3$ forming cycles decreases with increasing $NO_x$, and the production rate of $O_3$ decreases. However, if the concentrations of $VOCs$ are high, reactions of $OH$ with $CO$ and $RH$ ((\ref{reac:OH+CO=H+CO2}), (\ref{reac:OH+RH=RO2+H2O})) can compete with reaction (\ref{reac:OH+NO2=HNO3}), leading to an increase in the $O_3$ production rate.
 
 Since the chemical mechanism of our model does not include the reaction of $HNO_3$ formation, a good representation of $VOC$-sensitive regime by our model is not expected. It also makes it difficult to split $NO_x$-sensitive and $VOC$-sensitive regimes in our model, because this split is determined by the recurrence (size) of the peroxide- and nitric-acid forming reactions \citep{Sillman1999}, while our mechanism lacks one of these reactions. However, needing to evaluate performance of our model under higher $NO_x$ conditions anyway below we consider just a contrasting case of $NO_x$ levels, for example, 5 ppb (Figure \ref{fig:model_validation}).
 
-At higher $NO_x$ regime (5 ppb) $O_3$ mixing ratio in the model increases with time (Figure \ref{fig:O3valid}) which agrees with the photochemical theory. The net increase is by 186 ppb and 171 ppb at low and high $VOCs$ concentrations respectively. $NO$ is rapidly converted to $NO_2$, but slower than at low $NO_x$ levels because of their higher initial concentrations (Figure \ref{fig:NOvalid}, \ref{fig:NO2valid}). Due to a higher efficiency of reaction (\ref{reac:HO2+NO}) $OH$ mixing ratio is higher at higher $NO_x$ levels, resulting in a more pronounced loss of $CO$ (Figure \ref{fig:COvalid}).
+At higher $NO_x$ regime (5 ppb) $O_3$ mixing ratio in the model increases with time (Figure \ref{fig:O3valid}) which agrees with the photochemical theory. The net increase is by 186 ppb and 171 ppb at low and high $VOCs$ concentrations respectively. $NO$ is rapidly converted to $NO_2$, but slower than at low $NO_x$ levels because of their higher initial concentrations (Figure \ref{fig:NOvalid}, \ref{fig:NO2valid}). Due to a higher efficiency of reaction (\ref{reac:HO2+NO=NO2+OH}) $OH$ mixing ratio is higher at higher $NO_x$ levels, resulting in a more pronounced loss of $CO$ (Figure \ref{fig:COvalid}).
 
 The best way to illustrate the central features of the relationship between $O_3$, $NO_x$ and $VOC$ mentioned above is to construct a ozone isopleth plot in a form shown in Figure \ref{fig:Sillman1999}. The isopleth plot shows that the rate of $O_3$ production is a nonlinear function of the $NO_x$ and $VOC$ concentrations. When $VOC$/$NO_x$ ratios are high, the $O_3$ production rate increases with increasing $NO_x$ eventually reaching a local maximum, and decreasing afterwards as $NO_x$ concentrations continue to increase. The local maximum (the 'ridge line') defines the split into $NO_x$-sensitive and $VOC$-sensitive regimes. Under the 'ridge line' the $VOC$/$NO_x$ ratios are high, and the $O_3$ production rate increases with increasing $NO_x$ and almost insensitive to $VOC$. Above the 'ridge line' the $VOC$/$NO_x$ ratios are low, and the $O_3$ production rate increases with increasing $VOC$ and decreases with increasing $NO_x$ \citep{Sillman2013}.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t!]
 	\centering
     \begin{subfigure}[t]{0.45\linewidth}
@@ -703,13 +701,13 @@ One can see the same pattern in these two figures. At high $VOC$/$NO_x$ ratios, 
 To evaluate the sensitivity of $O_3$ production to alkyl nitrate chemistry under different $NO_x$ and $VOC$ conditions a number of simulations were carried out. In these simulations the chemical mechanism of the model was adjusted to either include or exclude the formation and loss of alkyl nitrates, which was accomplished by switching on and off all reactions that involve $RONO_2$ while keeping the rest of the mechanism unchanged. 
 
 As it has been noted in Section \ref{sec:intro}, the relationship between $O_3$ and $RONO_2$ production rates is controlled by the branching ratio ($\alpha_3$) between reactions:
-\begin{equation}\label{reac:RO2+NO=RO+NO2}
-RO_2 + NO \xrightarrow{1-\alpha_3} RO + NO_2
+\begin{equation}
+RO_2 + NO \xrightarrow{1-\alpha_3} RO + NO_2\tag{\ref{reac:RO2+NO=aphaRO+NO2}}
 \end{equation}
-\begin{equation}\label{reac:RO2+NO=RONO2}
-RO_2 + NO \xrightarrow{\alpha_3} RONO_2
+\begin{equation}
+RO_2 + NO \xrightarrow{\alpha_3} RONO_2\tag{\ref{reac:RO2+NO=aphaRONO2}}
 \end{equation}
-Reaction (\ref{reac:RO2+NO=RO+NO2}) leads to $O_3$ production and $NO$ regeneration, resulting in continuing $O_3$ production, while reaction (\ref{reac:RO2+NO=RONO2}) terminates this process. Branching ratios used in the model are taken from the MCM v3.3, and their values (Table \ref{tab:ANbranching}) were kept constant in all model runs.
+Reaction (\ref{reac:RO2+NO=aphaRO+NO2}) leads to $O_3$ production and $NO$ regeneration, resulting in continuing $O_3$ production, while reaction (\ref{reac:RO2+NO=aphaRONO2}) terminates this process. Branching ratios used in the model are taken from the MCM v3.3, and their values (Table \ref{tab:ANbranching}) were kept constant in all model runs.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table} %  AN branching ratios
 \caption{Branching ratios for the formation of alkyl nitrates from their precursor peroxy radicals and $NO$ (taken from the MCM v3.3 (2015)).}\label{tab:ANbranching}
@@ -920,6 +918,7 @@ We hope that our results concerning the sensitivity of ozone calculations to alk
 
 \bibliography{diss_refs}
 
+\appendix
 \section{Appendix I} \label{sec:appendix1}
 
 \end{document}
