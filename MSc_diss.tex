@@ -520,7 +520,7 @@ For the second experiment the model was run using the same approach concerning v
 !! C2H5NO3 ethylnitrate, IC3H7NO3 i-propylnitrate, NC3H7NO3  n-propylnitrate, SC4H9NO3 2-butylnitrate, PEBNO3 2-pentylnitrate;PECNO3 3-pentylnitrate, IPEBNO3 3-methyl-2-butylnitrate
 
 \begin{table} % RH and ANs
-\caption{Alkyl nitrates and their parent alkanes}\label{tab:RHandANS}
+\caption{Alkyl nitrates and their parent alkanes}\label{tab:RHandANs}
 \centering
 \begin{tabular}{llll}
 \hline
@@ -796,7 +796,11 @@ To see what caused these changes it is useful to look at the net production of t
 
 \subsubsection{$O_3$ and individual alkyl nitrates}
 
-To estimate the impact of individual alkyl nitrates or their groups on $O_3$ production an additional series of experiments have been conducted (Figure \ref{fig:timeO3diff10ppbNOx6VOC}).
+To estimate the impact of individual alkyl nitrates on $O_3$ production an additional series of experiments have been conducted. Prior to calculations some of the alkyl nitrates have been gathered into groups according to their parent alkanes as it shown in Table \ref{tab:RHandANs}. Setting initial $NO_x$ mixing ratio to 10 ppb and taking the middlemost $VOCs$ initial values (i.e., case F), the model has been run with certain alkyl nitrate chemistry switched on. For example, to estimate the impact of $CH_3ONO_2$ the reactions involving this nitrate were switched on, while the other reactions with nitrates were switched off. Experiment with all alkyl nitrate chemistry is considered as a base run.
+
+To estimate the impact of certain alkyl nitrates on $O_3$ the difference between base run and other runs including one with all alkyl nitrate chemistry switched off has been calculated. Figure \ref{fig:timeO3diff10ppbNOx6VOC} shows the time evolution of this difference. This difference becomes more and more negative with time as the mixing ratio of alkyl nitrates themselves rises (Figure \ref{fig:timeANs10ppbNOx6VOC}). By the end of simulation the drop in $O_3$ mixing ratio due to the rise in mixing ratio of total alkyl nitrates is equal to -11.9 ppb (Table \ref{tab:timeO3diffANs10ppbNOx6VOC}.
+
+The contribution of different alkyl nitrates to drop in $O_3$ is not the same. By the end of simulation, the drop in $O_3$ mixing ratio due to ethyl nitrate only ($C_2H_5ONO_2$) is 11.6 ppb, and is almost the same drop is caused by methyl nitrate.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
@@ -806,20 +810,27 @@ To estimate the impact of individual alkyl nitrates or their groups on $O_3$ pro
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{D:/FACSIMILE/ANsCBmodel/matlab/ANsCB_pics/ANsNOxVOC/allAN/chem_allAN_timeANs_10ppbNOx6VOC.eps}
+\caption{Time evolution of alkyl nitrates mixing ratios. $NO_x$ = 10 ppb, $VOCs$ = case F.}\label{fig:timeANs10ppbNOx6VOC}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}
-\caption{Difference in $O_3$ mixing ratio by the end of simulation depending alkyl nitrate chemistry.}\label{tab:timeO3diff10ppbNOx6VOC}
-\begin{tabular}{cc}
+\caption{Difference in $O_3$ mixing ratio by the end of simulation depending alkyl nitrate chemistry.}\label{tab:timeO3diffANs10ppbNOx6VOC}
+\begin{tabular}{ccc}
 \hline
-Alkyl nitrate            & $O_3$ difference (ppb) \\
+Alkyl nitrate            & $RONO_2$ mixing ratio (ppt) & $O_3$ difference (ppb) \\
 \hline
-$CH_3ONO_2$              & -11.5 \\
-$C_2H_5ONO_2$            & -11.6 \\
-$\Sigma C_3H7ONO_2$      & -10.5 \\
-$\Sigma nC_4H_9ONO_2$    & -8.7  \\
-$\Sigma iC_4H_9ONO_2$    & -11.0 \\
-$\Sigma nC_5H_{11}ONO_2$ & -10.1 \\
-$\Sigma iC_5H_{11}ONO_2$ & -8.0  \\
-$\Sigma RONO_2$          & -11.9 \\
+$CH_3ONO_2$              & 43  & -11.5 \\
+$C_2H_5ONO_2$            & 38  & -11.6 \\
+$\Sigma C_3H7ONO_2$      & 115 & -10.5 \\
+$\Sigma nC_4H_9ONO_2$    & 192 & -8.7  \\
+$\Sigma iC_4H_9ONO_2$    & 81  & -11.0 \\
+$\Sigma nC_5H_{11}ONO_2$ & 108 & -10.1 \\
+$\Sigma iC_5H_{11}ONO_2$ & 290 & -8.0  \\
+$\Sigma RONO_2$          & 867 & -11.9 \\
 \hline
 \end{tabular}
 \end{table}
