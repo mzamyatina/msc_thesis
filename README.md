@@ -1,5 +1,3 @@
-# README #
-
 Thesis presented in part-fulfilment of the degree of Master of Science
 in accordance with the regulations of the University of East Anglia.
 
