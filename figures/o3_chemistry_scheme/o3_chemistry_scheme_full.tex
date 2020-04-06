@@ -1,0 +1,122 @@
+%\documentclass[]{standalone}
+%\usepackage[utf8]{inputenc}
+%\usepackage[english]{babel}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+%\usepackage{eulervm}
+%
+%\usepackage{graphicx}
+%
+%% Figures
+%\usepackage{tikz}
+%\usetikzlibrary{shapes,arrows}
+%\usetikzlibrary{positioning}
+%\usetikzlibrary{calc}
+%
+%\begin{document}
+
+% Comment out everything above before including this .tex file via \input
+% and \end{document} at the end
+
+% Tikz styles
+\tikzstyle{ar} = [->,draw=black!70, line width=1]
+\tikzstyle{ar_decis} = [-|,draw=black!70, line width=1]
+\tikzstyle{ar_red} = [->,draw=red, line width=1]
+\tikzstyle{ln} = [-,draw=black!70, line width=1]
+\tikzstyle{ln_dash} = [-,dashed,draw=black!70, line width=1]
+\tikzstyle{bord} = [rounded rectangle, draw=black]
+
+% Set a length that is relative to \linewidth
+\newlength{\scl} \setlength{\scl}{0.08\linewidth}
+
+% Begin Tikz picture
+\begin{tikzpicture}[node distance = 4cm, auto]
+
+% Nodes
+\node (o3hv) at (0,0) {$O_3 + h\nu$};
+\node[bord] (oh_1) at (2\scl, 0) {$OH$};
+\node (h2o_1) at ($(o3hv)!.5!(oh_1)+(0,-0.25\scl)$) {$H_2O$};
+\node [align=center] (plus_rh) at (2\scl, -0.7\scl) {$+$\\$RH$};
+\node (r) at (2\scl, -2\scl) {$R$};
+\node (plus_o2) at (2.5\scl, -2.5\scl) {$+O_2$};
+\node (ro2) at (2\scl, -3\scl) {$RO_2$};
+\node (ro) at (2\scl, -5\scl) {$RO$};
+\node (ho2) at (0, -3\scl) {$HO_2$};
+\node (rooh) at (0, -5\scl) {$ROOH$};
+\node (foo1) at (1\scl, -4\scl) {};
+\node (foo2) at (3\scl, -4\scl) {};
+\node (foo3) at (3.5\scl, -5\scl) {};
+\node (alpha3) at (3.5\scl, -4.75\scl) {$\alpha_3$};
+\node (no_1) at (4.25\scl, -3\scl) {$NO$};
+\node (no2_1) at (4.25\scl, -5\scl) {$NO_2$};
+\node (rono2) at (4.5\scl, -6\scl) {$RONO_2$};
+\node (foo4) at (5.5\scl, -4\scl) {};
+\node (o3_1) at (6.5\scl, -3\scl) {$O_3$};
+\node (hvo2_1) at (6.25\scl, -3.5\scl) {$h\nu + O_2$};
+
+\node (ho2_2) at (2\scl, -7\scl) {$HO_2$};
+\node[bord] (oh_2) at (2\scl, -9\scl) {$OH$};
+\node (o3_2) at (0, -7\scl) {$O_3$};
+\node (o2) at (0, -9\scl) {$O_2$};
+\node (foo5) at (1\scl, -8\scl) {};
+\node (foo9) at (3\scl, -8\scl) {};
+\node (no_2) at (4.25\scl, -7\scl) {$NO$};
+\node (no2_2) at (4.25\scl, -9\scl) {$NO_2$};
+\node (foo10) at (5.5\scl, -8\scl) {};
+\node (o3_3) at (6.5\scl, -7\scl) {$O_3$};
+\node (hvo2_2) at (6.25\scl, -7.5\scl) {$h\nu + O_2$};
+
+\node (plus_o2_2) at (2.5\scl, -6\scl) {$+O_2$};
+\node (foo6) at (1.95\scl, -6\scl) {};
+\node (foo7) at (1.5\scl, -6.25\scl) {};
+\node (foo8) at (1.5\scl, -9.25\scl) {};
+\node (rcho) at (2\scl, -10\scl) {$RCHO$};
+\node (hv) at (2.25\scl, -10.5\scl) {$h\nu$};
+\node (co) at (2\scl, -11\scl) {$CO~(+2HO_2)$};
+\node (co2) at (2\scl, -12\scl) {$CO_2$};
+
+\node (oz_loss) at (0\scl, -12\scl) {NET OZONE LOSS};
+\node (oz_gain) at (4\scl, -12\scl) {NET OZONE GAIN};
+
+% Connections
+\draw[ar] (o3hv.east) to [out=0,in=180](oh_1.west);
+\draw[ar] (plus_rh.south) to [out=270,in=90](r.north);
+\draw[ar] (r.south) to [out=270,in=90](ro2.north);
+\draw[ln] (ho2.east) to [out=0,in=90](foo1.center);
+\draw[ln] (ro2.west) to [out=180,in=90](foo1.center);
+\draw[ar] (foo1.center) to [out=270,in=45](rooh.north east);
+\draw[ar] (rooh.east) to [out=0,in=180](ro.west);
+\draw[ln] (ro2.east) to [out=0,in=90](foo2.center);
+\draw[ar] (foo2.center) to [out=270,in=0](ro.east);
+\draw[ln] (no_1.west) to [out=180,in=90](foo2.center);
+\draw[ar_decis] (foo2.center) to [out=270,in=180](foo3.center);
+\draw[ar_red] (foo3.center) to [out=0,in=180](no2_1.west);
+\draw[ar_red] (foo3.center) to [out=0,in=180](rono2.west);
+\draw[ln,red, dashed] (no2_1.east) to [out=0,in=270](foo4.center);
+\draw[ar_red, dashed] (foo4.center) to [out=90,in=0](no_1.east);
+\draw[ar_red, dashed] (foo4.center) to [out=90,in=180](o3_1.west);
+
+\draw[ar] (ro.south) to [out=270,in=90](ho2_2.north);
+\draw[ln] (o3_2.east) to [out=0,in=90](foo5.center);
+\draw[ln] (ho2_2.west) to [out=180,in=90](foo5.center);
+\draw[ar] (foo5.center) to [out=270,in=0](o2.east);
+\draw[ar] (foo5.center) to [out=270,in=180](oh_2.west);
+\draw[ln] (ho2_2.east) to [out=0,in=90](foo9.center);
+\draw[ar] (foo9.center) to [out=270,in=0](oh_2.east);
+\draw[ln] (no_2.west) to [out=180,in=90](foo9.center);
+\draw[ar] (foo9.center) to [out=270,in=180](no2_2.west);
+\draw[ln] (no2_2.east) to [out=0,in=270](foo10.center);
+\draw[ln] (foo10.center) to [out=90,in=0](no_2.east);
+\draw[ar] (foo10.center) to [out=90,in=180](o3_3.west);
+
+\draw[ln] (foo6.center) to [out=180,in=90](foo7.center);
+\draw[ln_dash] (foo7.center) to [out=270,in=90](foo8.center);
+\draw[ar] (foo8.center) to [out=270,in=90](rcho.north);
+\draw[ar] (rcho.south) to [out=270,in=90](co.north);
+\draw[ar] (co.south) to [out=270,in=90](co2.north);
+\draw[ar] (co.east) to [out=0,in=315](oh_2.south east);
+
+\end{tikzpicture}
+
+%\end{document} 
