@@ -1,10 +1,10 @@
-*.bib
 *.aux
 *.bbl
+*.bib
 *.blg
+*.gz
 *.log
 *.out
-*.pdf
 *.toc
-*.gz
 *.zip
+msc_thesis.pdf
